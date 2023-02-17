@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="/CSS/navBar.css">
+<link rel="stylesheet" type="text/css" href="resources/styles/navBar.css">
 
 <div class="bar">
     <div class="ls1">
