@@ -1,9 +1,8 @@
-<?php $this->view('shared/navBar'); ?>
 <?php $this->view('shared/header','Main Index'); ?>
 
-<!-- from here is still in a div Wrapper, div Wrapper start in header.php and close in footer.php. --> 
 
-<div class="body">
+<body>
+<?php $this->view('shared/navBar'); ?>
 	<div class="carouselSize">
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -24,8 +23,6 @@
   </button>
 </div>
 </div>
-</div>
+</body>
 
 <script src="/resources/scripts/bootstrap.js"></script>
-
-<?php $this->view('shared/footer'); ?>

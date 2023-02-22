@@ -29,6 +29,7 @@
 }
 
 .bar a {
+  font-family: var(--bs-font-sans-serif);
   justify-content: space-between;
   text-align: center;
   color: black;

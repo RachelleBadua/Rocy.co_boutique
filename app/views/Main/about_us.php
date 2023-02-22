@@ -1,8 +1,13 @@
 <?php $this->view('shared/header','About Us'); ?>
+
+
+<body>
 <?php $this->view('shared/navBar'); ?>
+	<div>
+        <p>Hi</p>
+    </div>
+</body>
 
 
-	<div class="boby">
-		<h1>GREY TEAM!!!</h1>
-	</div>
-<?php $this->view('shared/footer'); ?>
+
+

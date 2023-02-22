@@ -1,12 +1,9 @@
 <?php $this->view('shared/header','Contact Index'); ?>
+
+<body>
 <?php $this->view('shared/navBar'); ?>
+	<div>
+        <p>Hi</p>
+    </div>
+</body>
 
-<div class="contactWrapper">
-	<h1>Contact Us!!</h1>
-
-	<form method="post" action="">
-		
-	</form>
-</div>
-
-<?php $this->view('shared/footer'); ?>
