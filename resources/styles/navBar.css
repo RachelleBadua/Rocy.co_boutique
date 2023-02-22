@@ -1,25 +1,19 @@
 .bar {
+    margin-top: 50px;
     width: 900px;
     height: 40px;
-    margin: 0 auto;
-    position: absolute;
-
     border-radius: 100px 100px 100px 100px;
     background: rgb(247, 235, 209);
-    
     border-style: solid;
     border-width: 5px;
     border-color: rgb(121, 72, 102);
-
-    margin: 50px auto 0 auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-evenly;
 }
 
-.bar .ellipse {
-    width: 17%;
+.ellipse {
+    width: 150;
     height: 110px;
     border-style: solid;
     border-width: 5px;
@@ -29,30 +23,28 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    float: left;
-    margin: -40px auto;
-    margin-left: 2px;
-}
-
-.bar .ls1 {
-    width: 40%;
-    float: left;
-    
-}
-
-.bar .ls2 {
-    width: 40%;
-    float: right;
+    margin-top: -40px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bar a {
-    padding-left: 65px;
+  justify-content: space-between;
+  text-align: center;
+  color: black;
 }
 
 .bar * {
-    margin-top: 3px;
-    display: inline-block;
-    color: black;
     text-decoration: none;
     font-size: x-large;
+}
+
+.grid-container {
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: auto auto auto auto auto;    
+  }
+
+.grid-item {
+    text-align: center;
 }

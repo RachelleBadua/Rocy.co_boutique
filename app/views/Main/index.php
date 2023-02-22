@@ -1,9 +1,5 @@
-<?php $this->view('shared/header','Main Index'); ?>
 <?php $this->view('shared/navBar'); ?>
-
-<link rel="stylesheet" href="/resources/styles/bootstrap.css">
-<link rel="stylesheet" href="/resources/styles/home.css">
-
+<?php $this->view('shared/header','Main Index'); ?>
 
 <!-- from here is still in a div Wrapper, div Wrapper start in header.php and close in footer.php. --> 
 
