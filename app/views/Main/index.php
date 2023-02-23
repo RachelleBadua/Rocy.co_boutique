@@ -2,15 +2,18 @@
 
 
 <body>
+
 <?php $this->view('shared/navBar'); ?>
+
 	<div class="carouselSize">
+  <h2>Featured Bunnies</h2>
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/resources/images/bunny.jpg" class="d-block w-100" alt="...">
+      <a href="/Product/index"><img src="/resources/images/bunny.jpg"  class="d-block w-100" alt="..."></a>
     </div>
     <div class="carousel-item">
-      <img src="/resources/images/bunny2.webp" class="d-block w-100" alt="...">
+    <a href="/Product/index"> <img src="/resources/images/bunny2.webp" class="d-block w-100" alt="..."></a>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

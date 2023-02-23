@@ -1,7 +1,12 @@
 .carouselSize {
-    margin-top: 200px;
+    margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
-    height: auto;
+    width: 800px;
+   height: auto;
+}
+
+.carouselSize img { 
+    min-height: 600px;
+    object-fit: cover;
 }
