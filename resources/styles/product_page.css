@@ -1,8 +1,10 @@
+/* navbar is bugged when height is defined bigger than 100% of body */
+
 .product_grid{
     margin-left: auto;
     margin-right: auto;
     margin-top: 150px;
-    width: 1000px;
-    height: 400px;
+    width: 400px;
+    height: 300px;
     background-color: white;
 }
