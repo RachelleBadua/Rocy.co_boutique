@@ -3,7 +3,7 @@ Feature: view catalog
   As a user 
   I need to press catalog button
 
-  Scenario: try view catalog as a user
+  Scenario: try viewing catalog
   	Given I am on the home page
-  	When I click on "catalog"
-  	Then I should be on the catalog page  
+  	When I click on "Catalog"
+  	Then I see "The Catalog"  

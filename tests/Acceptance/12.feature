@@ -1,10 +1,10 @@
 Feature: View orders
   In order to view orders
-  As a administrator
+  As a Admin
   I need to click on "orders" 
 
-  Scenario: the administrator clicks on "orders"
-  	Given I am on the home page
-    And I am loggd in as admin
+  Scenario: try clicking on "orders" as Admin
+  	Given I am logged in as Admin
+    And I am on the home page
   	When I click on "orders"
-  	Then I should see "Customers' Orders"
+  	Then I see "Customer Orders"

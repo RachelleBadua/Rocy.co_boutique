@@ -3,7 +3,7 @@ Feature: Scroll to category location in catalog
   As a user
   I need to click on a specific category
 
-  Scenario: Scroll to "bracelet" category
+  Scenario: try jumping/scrolling to "bracelet" category
   	Given I am on the catalog page
   	When I click on "bracelet"
   	Then I see bracelet products

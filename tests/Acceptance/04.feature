@@ -4,8 +4,8 @@ Feature: Search products by name
   I need to be able to input text
   and get results
 
-  Scenario: Search products has name contains "blue"
+  Scenario: try searching products that contains "blue" in its name 
   	Given I am on the Catalog page
   	When I input "blue" in "q"
-  	And I press search
-  	Then I see products has name contains "blue"
+  	And I press "search"
+  	Then I see products that contains "blue" in its name

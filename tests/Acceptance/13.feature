@@ -1,12 +1,20 @@
 Feature: Set order status
-  In order to set order
-  As a administrator 
-  I need to click "edit status" and select "In process" or "Finished"
+  In order to set order status
+  As a Admin 
+  I need to click "edit status" and select "In progress" or "Finished"
 
-  Scenario: the administrator can set order status
-  	Given I am on Orders page
-  	And I am logged in as administrator
+  Scenario: try setting order status to "In progress"
+  	Given I am logged in as Admin
+  	And I am on Orders page
   	When I click on "edit status"
-  	And select a status, "In process"
-    And click "update status"
-  	Then I should see the status, "In process"
+  	And I set the status to "In progress"
+    And I click "update status"
+  	Then I see "Status updated"
+
+  Scenario: try setting order status to "Finished"
+  	Given I am logged in as Admin
+  	And I am on Orders page
+  	When I click on "edit status"
+  	And I set the status to "Finished"
+    And I click "update status"
+  	Then I see "Status updated"

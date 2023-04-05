@@ -1,12 +1,13 @@
 Feature: Edit product 
   In order to edit product
-  As a administrator
+  As a Admin
   I need to click "edit product"
 
-  Scenario: The administrator editing a product
-  	Given I am on Products Page
-  	And I am logged in as administrator
-  	When I click "Edit Product" 
-  	And I edit description of a bracelet
-    And I click "save changes"
-  	Then I should see the description of the bracelet changed
+  Scenario: try editing a product as Admin
+  	Given I am logged in as Admin
+  	And I am on Products Page
+  	And I click on "Edit" on the record of "bracelet1" 
+  	And I input "15.99" in "sellingPrice"
+    When I click "Save Changes"
+    And I click "Confirm"
+  	Then I see "Changes were saved"

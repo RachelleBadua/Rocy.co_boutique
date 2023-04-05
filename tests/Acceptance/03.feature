@@ -4,7 +4,7 @@ Feature: Filter Products in Catalog
   I need to be able to select filter options
   and get filtered results
 
-  Scenario: Filter products under $20 in Catalog
-  	Given I am on the catalog page
-  	When I clicks clicks on "Under $20"
+  Scenario: try filtering products under $20 in Catalog
+  	Given I am on the Catalog page
+  	When I click on "Under $20"
   	Then I see products has price under $20
