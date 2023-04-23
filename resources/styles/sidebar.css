@@ -8,7 +8,8 @@
   left: 0;
   background-color: #FFFFFF;
   overflow-x: hidden;
-  padding-top: 20px;
+  /*padding-top: 20px;*/
+  border-right: solid;
 }
 
 /* Style the sidenav links and the dropdown button */
@@ -16,14 +17,19 @@
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 20px;
-  color: #818181;
+  color: #000000; /*#818181;*/
   display: block;
-  border: none;
+  border: solid;
   background: none;
   width:100%;
   text-align: left;
   cursor: pointer;
   outline: none;
+}
+
+/* button color */
+.dropdown-btn {
+  background-color: #D4D8E5;
 }
 
 /* On mouse-over */
@@ -40,7 +46,7 @@
 
 /* Add an active class to the active dropdown button */
 .active {
-  background-color: green;
+  background-color: #D4D8E5;
   color: white;
 }
 
@@ -57,7 +63,13 @@
   padding-right: 8px;
 }
 
-/* image size and background*/
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* div size and background*/
 .image {
   background-color: #FFF4F4;
   width: 250px;
@@ -65,7 +77,20 @@
 
 }
 
-.img {
+/* image size */
+.sidebarlogo {
   width: 250px;
   height: 200px;
+}
+
+/* sign out button color */
+/*.signout {
+  background-color: #FEC4C4;  
+}
+*/
+
+/* image size */
+.flowerlogo {
+  width: 1200px;
+  height: 100%;
 }

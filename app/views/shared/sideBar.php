@@ -1,9 +1,6 @@
-<link rel="stylesheet" type="text/css" href="/resources/styles/sidebar.css"> -->
+<link rel="stylesheet" type="text/css" href="/resources/styles/sidebar.css">
 
-<?php $this->view('shared/header','Main Index Admin'); ?>
-<?php $this->view('shared/sideBar'); ?>
-
-<!-- <body>
+<body>
 	<div class="sidenav">
 		<div class="image">
 			<img class="sidebarlogo" src="/resources/images/rocylogoTransBG.png">
@@ -20,7 +17,7 @@
 		  <i class="fa fa-caret-down"></i>
 	  	</button>
 	  	<div class="dropdown-container">
-		  <a href="#">Product List</a>
+		  <a href="/AdminOrder/index">Order List</a>
 	  	</div>
 		<button class="dropdown-btn">Customers 
 		  <i class="fa fa-caret-down"></i>
@@ -36,13 +33,6 @@
 		  <a href="#">Edit About Us</a>
 	  	</div>
 	  	<a class="signout" href="#signOut">Sign out</a>
-	</div> -->
-
-
-	<div class="main">
-		<img class="flowerlogo" src="/resources/images/flowerLogo.png">
 	</div>
 
-</body>
-
-<!-- <script src="/resources/scripts/dropdown.js"></script>
+<script src="/resources/scripts/dropdown.js"></script>
