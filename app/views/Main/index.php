@@ -3,7 +3,7 @@
 <body>
 
 <?php $this->view('shared/navBar'); ?>
-
+<!-- 
 <div class="carouselSize">
   <div class="container text-center my-3">
   <h2 id="headerText">Featured Bunnies</h2>
@@ -80,8 +80,8 @@
         </div>
     </div>
 </div>
-</div>
+</div> -->
 </body>
 
-<script src="/resources/scripts/carousel.js"></script>
-<script src="/resources/scripts/bootstrap.js"></script>
+<!-- <script src="/resources/scripts/carousel.js"></script> 
+<script src="/resources/scripts/bootstrap.js"></script> -->
