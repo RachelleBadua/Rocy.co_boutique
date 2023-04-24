@@ -12,7 +12,7 @@ class Model{
 			//load the .env file from the given folder
 			$env = \Dotenv\Dotenv::createImmutable(getcwd());
 			$env->load();
-			$env->required(['db_host','db_user','db_pass','db_name','db_charset'])->notEmpty();
+			$env->required(['db_host','db_user','db_pass','db_name','db_charset']);//->notEmpty();
 			$host = $_ENV['db_host'];
 			$dbname = $_ENV['db_name'];
 			$user = $_ENV['db_user'];

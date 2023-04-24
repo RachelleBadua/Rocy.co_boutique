@@ -1,4 +1,5 @@
-<link rel="stylesheet" type="text/css" href="/resources/styles/sidebar.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="/resources/styles/sidebar.css"> -->
+<link rel="stylesheet" type="text/css" href="/resources/styles/adminHome.css">
 
 <?php $this->view('shared/header','Main Index Admin'); ?>
 <?php $this->view('shared/sideBar'); ?>

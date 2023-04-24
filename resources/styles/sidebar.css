@@ -20,6 +20,7 @@
   color: #000000; /*#818181;*/
   display: block;
   border: solid;
+  background-color: #FFFFFF;
   background: none;
   width:100%;
   text-align: left;
@@ -39,8 +40,8 @@
 
 /* Main content */
 .main {
-  margin-left: 200px; /* Same as the width of the sidenav */
-  font-size: 20px; /* Increased text to enable scrolling */
+  margin-left: 250px; /* Same as the width of the sidenav */
+  font-size: 20px;  /* Increased text to enable scrolling */
   padding: 0px 10px;
 }
 
@@ -53,7 +54,7 @@
 /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
 .dropdown-container {
   display: none;
-  background-color: #262626;
+  background-color: #E2D6D6;
   padding-left: 8px;
 }
 
@@ -84,13 +85,8 @@
 }
 
 /* sign out button color */
-/*.signout {
+.signout {
   background-color: #FEC4C4;  
 }
-*/
 
-/* image size */
-.flowerlogo {
-  width: 1200px;
-  height: 100%;
-}
+

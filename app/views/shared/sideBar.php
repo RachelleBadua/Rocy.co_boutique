@@ -1,15 +1,16 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/sidebar.css">
 
+
 <body>
 	<div class="sidenav">
 		<div class="image">
-			<img class="sidebarlogo" src="/resources/images/rocylogoTransBG.png">
+			<a href="/MainAdmin/index"><img class="sidebarlogo" src="/resources/images/rocylogoTransBG.png"></a>
 		</div>
 		<button class="dropdown-btn">Products 
 		  <i class="fa fa-caret-down"></i>
 	  	</button>
 	  	<div class="dropdown-container">
-		  <a href="#">Product List</a>
+		  <a href="/AdminProduct/index">Product List</a>
 		  <a href="#">Add product</a>
 		  <a href="#">Category</a>
 	  	</div>
@@ -32,7 +33,9 @@
 	  	<div class="dropdown-container">
 		  <a href="#">Edit About Us</a>
 	  	</div>
-	  	<a class="signout" href="#signOut">Sign out</a>
+	  	<div class="signout">
+		  	<a href="#signOut">Sign out</a>
+	  	</div>
 	</div>
 
 <script src="/resources/scripts/dropdown.js"></script>
