@@ -5,7 +5,14 @@
 <body>
 <?php $this->view('shared/navBar'); ?>
 	<div class="product_grid">
-        <p>Hi</p>
+        <div class="sideBar">
+            <p>sideBar</p>
+        </div>
+        <div class="vl"></div>
+        <div class="products">
+            <p>products</p>
+            <?= var_dump($data) ?>
+        </div>
     </div>
 </body>
     

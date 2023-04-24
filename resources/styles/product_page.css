@@ -3,8 +3,31 @@
 .product_grid{
     margin-left: auto;
     margin-right: auto;
-    margin-top: 150px;
-    width: 400px;
-    height: 600px;
+    margin-top: 50px;
+    width: 90%;
+    height: 100%;
     background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sideBar {
+    order: 1;
+
+    width: 23%;
+    border: 1px solid black;
+}
+
+.vl {
+    order: 2;
+    border-left: 2px solid black;
+    height: 100%;
+}
+
+.products {
+    display: flex;
+    order: 3;
+
+    width: 72%;
+    border: 1px solid black;
 }
