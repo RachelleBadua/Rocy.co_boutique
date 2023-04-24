@@ -17,7 +17,7 @@
 					<th>Actions</th>
 				</tr>
 				<!-- print_r(getenv()); -->
-					foreach ($products as $product) { ?>
+					<?php foreach ($data as $product) { ?>
 					<tr>
 						<td><?= htmlentities($product->product_id) ?></td>
 						<td><?= htmlentities($product->product_name) ?></td>
