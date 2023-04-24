@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2023 at 01:30 AM
+-- Generation Time: Apr 24, 2023 at 04:53 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -31,6 +31,15 @@ CREATE TABLE `category` (
   `category_id` int(2) NOT NULL,
   `category` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`category_id`, `category`) VALUES
+(1, 'scrunchy'),
+(2, 'bracelet'),
+(3, 'keychain');
 
 -- --------------------------------------------------------
 
@@ -75,6 +84,14 @@ CREATE TABLE `product` (
   `description` varchar(128) NOT NULL,
   `quantity` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `category_id`, `product_name`, `image`, `sellingPrice`, `description`, `quantity`) VALUES
+(1, 1, 'dark red fabric scrunchy', 'dark_red_fabric_scrunchy.jpg', 5.99, 'Made out of dark red handpicked fabric, sure to give wearer a nice look with low price', 5),
+(2, 3, 'pink Rojin keychain', 'pink_rojin_keychain.jpg', 3.99, 'for test', 3);
 
 -- --------------------------------------------------------
 
@@ -141,7 +158,7 @@ ALTER TABLE `product`
 -- Indexes for table `profile`
 --
 ALTER TABLE `profile`
-  ADD KEY `user_id_profile_to_user` (`user_id`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- Indexes for table `user`
@@ -157,7 +174,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `detail`
@@ -175,7 +192,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
