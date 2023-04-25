@@ -1,10 +1,10 @@
-Feature: View orders
-  In order to view orders
+Feature: View products
+  In order to view products
   As a Admin
-  I need to click on "orders" 
+  I need to click on "product list" 
 
-  Scenario: try clicking on "orders" as Admin
+  Scenario: try clicking on "product list" as Admin
   	Given I am logged in as Admin
     And I am on the home page
-  	When I click on "orders"
-  	Then I see "Customer Orders"
+  	When I click on "product list"
+  	Then I see "Product List"

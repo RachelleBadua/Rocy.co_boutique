@@ -4,8 +4,11 @@ namespace app\controllers;
 class AdminProduct extends \app\core\Controller{
 
 	public function index(){
-		$products = new \app\models\Product();
-		$products = $products->getAll();
+		$product = new \app\models\Product();
+		$products = $product->getProductCategory();
+
+		// $category = new \app\models\Category();
+		// $categories = $category->getAll();
 		$this->view('AdminProduct/index', $products);
 	}
 
@@ -46,7 +49,7 @@ class AdminProduct extends \app\core\Controller{
 		$uploadedFile = array();
 
 		if(isset($_FILES['image']) && ($_FILES['image']['error'] == UPLOAD_ERR_OK)){
-
+echo "first IF";
 			$info = getimagesize($_FILES['image']['tmp_name']);
 
 			$allowedTypes = ["jpg", "png", "gif"];
@@ -56,7 +59,7 @@ class AdminProduct extends \app\core\Controller{
             $fileType = strtolower(pathinfo($fileName,PATHINFO_EXTENSION));
 
 			if($info == false){
-
+echo "Second IF";
                 $uploadedFile["upload_message"] = "Bad image file format!";
                 $uploadedFile["target_file"] = null;
 
@@ -82,7 +85,7 @@ class AdminProduct extends \app\core\Controller{
             }
 
         }else{
-
+echo "string";
             $uploadedFile["upload_message"] = "Image not specified or not uploaded successfully.";
 
             $uploadedFile["target_file"] = null;

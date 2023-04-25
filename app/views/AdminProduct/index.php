@@ -20,7 +20,7 @@
 				<tr>
 					<td><?= htmlentities($product->product_id) ?></td>
 					<td><?= htmlentities($product->product_name) ?></td>
-					<td><?= htmlentities($product->category_id) ?></td>
+					<td><?= htmlentities($product->category) ?></td>
 					<td><?= htmlentities($product->sellingPrice) ?></td>
 					<td><?= htmlentities($product->quantity) ?></td>
 

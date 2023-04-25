@@ -7,13 +7,13 @@
 	<div class="main">
 		<h2>Add Product</h2>
 
+		<form method ="post" action="" enctype="multipart/form-data">	
 		<!-- TODO: add image here-->
-		<div class="addImage"> 
-		Image
-    		<input type="file" name="image"/>
-		</div>
-
-		<form method ="post" action="">
+			<div class="addImage"> 
+			Image
+	    		<input type="file" name="image"/>
+			</div>
+		
 			<div class="insertProdInfo">
 				<label><?= _('ID:') ?></label><input type="text" name="product_id"><br>
 				<br>
@@ -39,6 +39,6 @@
 				<br>
 			</div>
 				<input type="submit" name="action" value="Create">
-			</form>
+		</form>
 	</div>
 </div>

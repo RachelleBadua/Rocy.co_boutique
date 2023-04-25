@@ -68,4 +68,12 @@ class Product extends \app\core\Model{
 		return $STH->fetch();
 	}
 
+	public function getProductCategory(){
+		$SQL = 'SELECT * FROM product JOIN category ON product.category_id = category.category_id';
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute();
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Product');
+		return $STH->fetchAll();		
+	}
+
 }
