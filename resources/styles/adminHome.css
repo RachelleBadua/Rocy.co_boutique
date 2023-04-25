@@ -8,16 +8,26 @@
 
 /* image size */
 .content {
-	display: flex;
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+}
+
+.sidenav {
+  order: 1;
 }
 
 .main {
+  background-color: #ffffff;
 	order: 2;
-	flex-grow: 1;
-	width: 100%;
+  flex-grow: 1;
+	text-align: center;
 }
 
 .flowerlogo {
-  /*width: 100%;
-  height: 100%;*/
+  display: block;
+  margin-right: auto;
+  margin-left: auto;   
+  height: 100%;
 }

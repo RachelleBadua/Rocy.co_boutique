@@ -44,7 +44,7 @@
 	<div class="main">
 		<img class="flowerlogo" src="/resources/images/flowerLogo.png">
 	</div>
-	</div>
+</div>
 
 </body>
 

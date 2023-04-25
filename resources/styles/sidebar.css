@@ -1,10 +1,8 @@
 /* Fixed sidenav, full height */
 .sidenav {
-  order: 1;
-  /*flex-grow: 1;*/
   height: 100%;
   width: 300px;
-  position: fixed;
+  /* position: ; */
   z-index: 1;
   top: 0;
   left: 0;
@@ -21,7 +19,7 @@
   font-size: 20px;
   color: #000000; /*#818181;*/
   display: block;
-  /*border-top: 1px solid black;*/
+  border-top: 1px solid black;
   background-color: #FFFFFF;
   background: none;
   width:100%;
@@ -46,10 +44,10 @@
 }
 
 /* Main content */
-.main {
+/* .main {
 /*  margin-left: 300px;  Same as the width of the sidenav */
-  font-size: 20px;  /* Increased text to enable scrolling */
-}
+  /* font-size: 20px;  Increased text to enable scrolling
+} */
 
 /* Add an active class to the active dropdown button */
 .active {
