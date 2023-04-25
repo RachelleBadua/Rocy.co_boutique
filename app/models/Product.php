@@ -79,7 +79,7 @@ class Product extends \app\core\Model{
 	}
 
 	public function getAllOrderByCategory(){
-		$SQL = 'SELECT * FROM product ORDER BY category_id';
+		$SQL = 'SELECT * FROM product JOIN category ON product.category_id = category.category_id ORDER BY product.category_id';
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute();
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Product');
