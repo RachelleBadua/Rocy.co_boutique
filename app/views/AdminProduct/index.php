@@ -26,9 +26,9 @@
 
 					<td>
 						<!-- TODO: make function to delete product-->
-						<a href='/AdminProduct/delete/<?=$service->service_id?>'><?= _('delete') ?></a> | 
+						<a href='/AdminProduct/delete/<?=$product->product_id?>'><?= _('delete') ?></a> | 
 						<!-- TODO: make function to edit product -->
-						<a href='/Service/edit/<?=$service->service_id?>'><?= _('edit') ?></a>
+						<a href='/AdminProduct/edit/<?=$product->product_id?>'><?= _('edit') ?></a>
 					</td>
 				</tr>
 				<?php

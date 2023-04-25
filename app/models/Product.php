@@ -49,6 +49,7 @@ class Product extends \app\core\Model{
 		$STH = self::$connection->prepare($SQL);
 		$data = ['product_id'=>$product_id];
 		$STH->execute($data);
+		return $STH->rowCount();
 	}
 
 
@@ -69,7 +70,7 @@ class Product extends \app\core\Model{
 	}
 
 	public function getProductCategory(){
-		$SQL = 'SELECT * FROM product JOIN category ON product.category_id = category.category_id';
+		$SQL = 'SELECT * FROM product JOIN category ON product.category_id = category.category_id ORDER BY product.product_id';
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute();
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Product');

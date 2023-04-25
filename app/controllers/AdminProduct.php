@@ -85,7 +85,6 @@ echo "Second IF";
             }
 
         }else{
-echo "string";
             $uploadedFile["upload_message"] = "Image not specified or not uploaded successfully.";
 
             $uploadedFile["target_file"] = null;
@@ -93,4 +92,42 @@ echo "string";
 
         return $uploadedFile;
     }
+
+    public function edit($product_id){
+		// modify a client record
+		$prodcut = new \app\models\Product();
+		$product = $product->get($product_id);
+	
+		// form is submitted
+		if(isset($_POST['action'])){
+			// TODO: save the data
+			$service->description = $_POST['description'];
+			$service->datetime = $_POST['datetime'];
+			$service->branch_id = $_POST['branch_id'];
+			// we do not change key values
+
+			// save the changes to the database
+			$service->update();
+			$client_id = $service->client_id;
+			header('location:/Service/index/'.$client_id);
+		}else {
+			$branch = new \app\models\Branch();
+			$branches = $branch->getAll();
+			$this->view('Service/edit', ['service'=>$service, 'branches'=>$branches]);
+		}
+	}
+
+	public function delete($product_id){ // PK value
+		$product = new \app\models\Product();
+
+		$success = $product->delete($product_id); // deletes
+			// proceed with deletion
+		if($success) {
+			header('location:/AdminProduct/index' );
+		
+		} else {
+			// echo "string";
+			header('location:/AdminProduct/index?error=There was an error deleting product ID:' . $product_id );
+		}
+	}
 }
