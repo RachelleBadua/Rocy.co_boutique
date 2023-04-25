@@ -78,4 +78,12 @@ class Product extends \app\core\Model{
 		return $STH->fetchAll();		
 	}
 
+	public function getAllOrderByCategory(){
+		$SQL = 'SELECT * FROM product ORDER BY category_id';
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute();
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Product');
+		return $STH->fetchAll();
+	}
+
 }
