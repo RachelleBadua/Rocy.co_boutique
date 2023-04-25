@@ -61,10 +61,11 @@ class Product extends \app\core\Model{
 		return $STH->fetchAll();
 	}
 
-	public function get($product_id){
+	public function getProduct($product_id){
 		$SQL = 'SELECT * FROM product WHERE product_id=:product_id';
 		$STH = self::$connection->prepare($SQL);
 		$data = ['product_id'=>$product_id];
+		$STH->execute($data);
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Product');
 		return $STH->fetch();
 	}

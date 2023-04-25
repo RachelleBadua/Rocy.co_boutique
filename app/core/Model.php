@@ -34,48 +34,48 @@ class Model{
 		}
 	}
 
-	public function isValid() : bool{
-		//the goal of this function is to validate the data
-		$reflection = new ReflectionClass($this);
-		$properties = $reflection->getProperties();
-		foreach ($properties as $property) {
-			$attributes = $property->getAttributes(
-				\app\core\Validator::class,
-				\ReflectionAttribute::IS_INSTANCEOF
-			);
-			$data = $property->getValue($this);
-			foreach ($attributes as $attribute) {
-				//create an object of that validator class
-				$validator = $attribute->newInstance();
-				//run the validation method on the data in the property
-				if(!$validator->isValid($data))
-					return false;//return false on bad data
-			}
-		}
-		return true;//return true if all the data is valid
-	}
+	// public function isValid() : bool{
+	// 	//the goal of this function is to validate the data
+	// 	$reflection = new ReflectionClass($this);
+	// 	$properties = $reflection->getProperties();
+	// 	foreach ($properties as $property) {
+	// 		$attributes = $property->getAttributes(
+	// 			\app\core\Validator::class,
+	// 			\ReflectionAttribute::IS_INSTANCEOF
+	// 		);
+	// 		$data = $property->getValue($this);
+	// 		foreach ($attributes as $attribute) {
+	// 			//create an object of that validator class
+	// 			$validator = $attribute->newInstance();
+	// 			//run the validation method on the data in the property
+	// 			if(!$validator->isValid($data))
+	// 				return false;//return false on bad data
+	// 		}
+	// 	}
+	// 	return true;//return true if all the data is valid
+	// }
 
-	public function __call($method, $arguments){
-		if($this->isValid()){
-			call_user_func_array([$this, $method], $arguments);
-			//$this->$method(...$arguments);
-			//$this->$method($arguments[0], $arguments[1],...);
-		}
-	}
+	// public function __call($method, $arguments){
+	// 	if($this->isValid()){
+	// 		call_user_func_array([$this, $method], $arguments);
+	// 		//$this->$method(...$arguments);
+	// 		//$this->$method($arguments[0], $arguments[1],...);
+	// 	}
+	// }
 
-	public function __set($name, $value){
-		$method = "set$name";
-		if(method_exists($this, $method))
-			$this->$method($value);
-		else
-			$this->$name = $value;
-	}
+	// public function __set($name, $value){
+	// 	$method = "set$name";
+	// 	if(method_exists($this, $method))
+	// 		$this->$method($value);
+	// 	else
+	// 		$this->$name = $value;
+	// }
 
-	public function __get($name){
-		if(isset($this->$name))
-			return $this->$name;
-		else
-			return '';
-	}
+	// public function __get($name){
+	// 	if(isset($this->$name))
+	// 		return $this->$name;
+	// 	else
+	// 		return '';
+	// }
 
 }

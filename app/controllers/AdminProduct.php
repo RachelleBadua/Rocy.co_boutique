@@ -95,25 +95,34 @@ echo "Second IF";
 
     public function edit($product_id){
 		// modify a client record
-		$prodcut = new \app\models\Product();
-		$product = $product->get($product_id);
-	
+		$product = new \app\models\Product();
+		$product = $product->getProduct($product_id);
 		// form is submitted
 		if(isset($_POST['action'])){
 			// TODO: save the data
-			$service->description = $_POST['description'];
-			$service->datetime = $_POST['datetime'];
-			$service->branch_id = $_POST['branch_id'];
-			// we do not change key values
+			$product->product_name = $_POST['product_name'];
+			$product->category_id = $_POST['category_id'];
+			$product->sellingPrice = $_POST['sellingPrice'];
+			$product->quantity = $_POST['quantity'];
+			$product->description = $_POST['description'];
+			$uploadedPicture = $this->uploadPicture();
 
-			// save the changes to the database
-			$service->update();
-			$client_id = $service->client_id;
-			header('location:/Service/index/'.$client_id);
-		}else {
-			$branch = new \app\models\Branch();
-			$branches = $branch->getAll();
-			$this->view('Service/edit', ['service'=>$service, 'branches'=>$branches]);
+            if(isset($uploadedPicture['target_file']))
+                $product->image = $uploadedPicture["target_file"];
+
+            $uploadMessage = $uploadedPicture["upload_message"] == 'success' ? '' : '&error=Something went wrong '.$uploadedPicture["upload_message"];
+
+			$success = $product->update();
+			if($success) {
+				header('location:/AdminProduct/index' );
+			} else {
+				header('location:/AdminProduct/index?error=There was an error deleting product ID:' . $product_id );
+			}
+		} else {
+			$category = new \app\models\Category();
+			$categories = $category->getAll();
+			$data = ['categories'=>$categories, 'product'=>$product];
+			$this->view('AdminProduct/edit', $data);
 		}
 	}
 
