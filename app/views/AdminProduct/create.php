@@ -1,5 +1,5 @@
 <!-- <link rel="stylesheet" type="text/css" href="/resources/styles/adminMainContent.css"> -->
-<link rel="stylesheet" type="text/css" href="/resources/styles/adminProductList.css">
+<link rel="stylesheet" type="text/css" href="/resources/styles/adminAddProduct.css">
 
 <?php $this->view('shared/header', _('Add Product')); ?>
 <?php $this->view('shared/sideBar'); ?>
@@ -8,10 +8,10 @@
 		<h2>Add Product</h2>
 
 		<!-- TODO: add image here-->
-		<!-- <div style="position: relative; border: 1px solid red; width: 50px; height: 30px; line-height: 30px; text-align: center;" > 
+		<div class="addImage"> 
 		Image
-    		<input type="file" style="opacity: 0.0; position: absolute; top:0; left: 0; bottom: 0; right:0; width: 100%; height:100%;" />
-		</div> -->
+    		<input type="file" name="image"/>
+		</div>
 
 		<form method ="post" action="">
 			<div class="insertProdInfo">

@@ -21,5 +21,4 @@ class Category extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Category');
 		return $STH->fetchAll(); // gets the branches from database with an array
 	}
-
 }
