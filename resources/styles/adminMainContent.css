@@ -11,14 +11,7 @@
 
 .main {
   background-color: #ffffff;
-  order: 2;
+	order: 2;
   flex-grow: 1;
-  text-align: center;
-}
-
-.flowerlogo {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;   
-  height: 100%;
+	text-align: center;
 }

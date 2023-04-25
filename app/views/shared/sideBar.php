@@ -12,7 +12,7 @@
 			</button>
 				<div class="dropdown-container">
 				<a href="/AdminProduct/index">Product List</a>
-				<a href="#">Add product</a>
+				<a href="/AdminProduct/create">Add product</a>
 				<a href="#">Category</a>
 				</div>
 			<button class="dropdown-btn">Orders 
