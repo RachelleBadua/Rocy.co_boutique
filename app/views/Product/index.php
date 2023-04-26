@@ -9,7 +9,20 @@ $cur_cat = 0;
 <h1>Catalog</h1>
 	<div class="catalog">
         <div class="sideBar">
-            <p>sideBar</p>
+            <div class='search-tool'>
+                <input class="search-value">
+                <a href=""><img src="/resources/images/searchIcon.png"></a>
+            </div>
+            <div class="hl"></div>
+            <h4>Category:</h4>
+            <?php foreach($data as $product) {
+                if ($product->category_id != $cur_cat) {
+                    $cur_cat = $product->category_id;
+                    echo "<h6><a href=''>" . ucwords($product->category) . "</a></h6>";
+                }
+                }
+                $cur_cat = 0;
+            ?>
         </div>
         <div class="vl"></div>
         <div class="products">
@@ -28,11 +41,9 @@ $cur_cat = 0;
                     ?>
                 </div>
             <?php } ?>
-            
+            </div>
         </div>
     </div>
 </body>
     
-<?php 
-
-?>
+<?php $this->view('shared/footer'); ?>
