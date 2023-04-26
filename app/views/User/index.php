@@ -2,15 +2,13 @@
 
 <?php $this->view('shared/header','Login'); ?>
 
-<body>
+<!-- <body> -->
 	<?php $this->view('shared/navBar'); ?>
 	<div class="main" style="">
 		
 		<div class="inputLogin">
 
-			
-
-			<form class="formLogin " style=" width: 600;
+			<form class="formLogin" method="post" style=" width: 600;
 			/*display: flex;*/
 			/*justify-content: center;
 		  	align-content: center;
@@ -32,7 +30,7 @@
 				<input type="submit" name="action" value="Login"><br>
 				<br>
 
-				<div class="">Don't have an account? <a href="/User/register">Create</a></div>
+				<div class="">Don't have an account? <a href="/User/create">Create</a></div>
 			</form>
 
 			
@@ -40,5 +38,5 @@
 		</div>
 
 	</div>
-</body>
+<!-- </body> -->
 

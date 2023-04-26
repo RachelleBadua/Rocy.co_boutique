@@ -12,3 +12,12 @@
 	<!-- <link rel="stylesheet" href="/resources/styles/home.css"> -->
 </head>
 	
+<body>
+	<?php
+		if(isset($_GET['success'])){
+			echo '<div class="alert alert-success">'.$_GET['success'].'</div>';
+		}
+		if(isset($_GET['error'])){
+			echo '<div class="alert alert-danger">'.$_GET['error'].'</div>';
+		}
+		?>

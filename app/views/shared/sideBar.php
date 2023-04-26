@@ -1,7 +1,10 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/sidebar.css">
 
 
-<body>
+<!-- <body> -->
+
+	
+
 	<div class="content">
 		<div class="sidenav">
 			<div class="image">
@@ -35,7 +38,7 @@
 				<a href="#">Edit About Us</a>
 				</div>
 			<div class="signout">
-				<a href="#signOut">Sign out</a>
+				<a href="/User/logout">Sign out</a>
 			</div>
 		</div>
 

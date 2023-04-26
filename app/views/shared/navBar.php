@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/navBar.css">
 <!-- <link rel="stylesheet" href="/resources/styles/bootstrap.css">
 <link rel="stylesheet" href="/resources/styles/home.css"> -->
-
+<!-- <body> -->
 <div class="bar">
     <div class="i1">
         <a href="">EN</a> <!-- This going to be drop downlist for internationalization -->

@@ -2,7 +2,7 @@
 
 <?php $this->view('shared/header','Main Index'); ?>
 
-<body>
+<<!-- body -->>
 <?php $this->view('shared/navBar'); 
 $cur_cat = 0;
 ?>
@@ -46,6 +46,6 @@ $cur_cat = 0;
             </div>
         </div>
     </div>
-</body>
+<!-- </body> -->
     
 <?php $this->view('shared/footer'); ?>
