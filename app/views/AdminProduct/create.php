@@ -1,4 +1,3 @@
-<!-- <link rel="stylesheet" type="text/css" href="/resources/styles/adminMainContent.css"> -->
 <link rel="stylesheet" type="text/css" href="/resources/styles/adminAddProduct.css">
 <script type="text/javascript" src="/resources/scripts/displayImage.js"></script>
 

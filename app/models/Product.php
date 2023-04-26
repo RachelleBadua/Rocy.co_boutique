@@ -70,7 +70,7 @@ class Product extends \app\core\Model{
 		return $STH->fetch();
 	}
 
-	public function getProductCategory(){
+	public function getAllOrderByProduct(){
 		$SQL = 'SELECT * FROM product JOIN category ON product.category_id = category.category_id ORDER BY product.product_id';
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute();
@@ -84,6 +84,15 @@ class Product extends \app\core\Model{
 		$STH->execute();
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Product');
 		return $STH->fetchAll();
+	}
+
+	public function getProductCategory($product_id){
+		$SQL = 'SELECT * FROM product JOIN category ON product.category_id = category.category_id WHERE product_id=:product_id';
+		$STH = self::$connection->prepare($SQL);
+		$data = ['product_id'=>$product_id];
+		$STH->execute($data);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Product');
+		return $STH->fetch();		
 	}
 
 }

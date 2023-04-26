@@ -18,7 +18,8 @@
 			</tr>
 				<?php foreach ($data as $product) { ?>
 				<tr>
-					<td><?= htmlentities($product->product_id) ?></td>
+					<!-- <td>< htmlentities($product->product_id) ?></td> -->
+					<td><a href='/AdminProduct/productDetails/<?=$product->product_id?>'><?= htmlentities($product->product_id) ?></a></td>
 					<td><?= htmlentities($product->product_name) ?></td>
 					<td><?= htmlentities($product->category) ?></td>
 					<td><?= htmlentities($product->sellingPrice) ?></td>

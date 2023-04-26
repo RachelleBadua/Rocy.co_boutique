@@ -5,7 +5,7 @@ class AdminProduct extends \app\core\Controller{
 
 	public function index(){
 		$product = new \app\models\Product();
-		$products = $product->getProductCategory();
+		$products = $product->getAllOrderByProduct();
 
 		// $category = new \app\models\Category();
 		// $categories = $category->getAll();
@@ -138,5 +138,11 @@ echo "Second IF";
 			// echo "string";
 			header('location:/AdminProduct/index?error=There was an error deleting product ID:' . $product_id );
 		}
+	}
+
+	public function productDetails($product_id){
+		$product = new \app\models\Product();
+		$product = $product->getProductCategory($product_id);
+		$this->view('AdminProduct/productDetails', $product);
 	}
 }
