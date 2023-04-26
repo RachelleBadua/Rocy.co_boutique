@@ -95,4 +95,11 @@ class Product extends \app\core\Model{
 		return $STH->fetch();		
 	}
 
+	public function getAllMatchName($product_name){
+		$SQL = "SELECT * FROM product JOIN category ON product.category_id = category.category_id HAVING product_name LIKE '%$product_name%' ORDER BY product.category_id";
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute();
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Product');
+		return $STH->fetchAll();
+	}
 }

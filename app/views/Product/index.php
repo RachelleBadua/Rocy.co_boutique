@@ -10,15 +10,17 @@ $cur_cat = 0;
 	<div class="catalog">
         <div class="sideBar">
             <div class='search-tool'>
-                <input class="search-value">
-                <a href=""><img src="/resources/images/searchIcon.png"></a>
+                <form action="/Product/index" method='GET'>
+                    <input type="text" class="search-value" placeholder="Search product name" name="search" value=""/>
+                    <button type="submit"><img src="/resources/images/searchIcon.png"></button>
+                </form>
             </div>
             <div class="hl"></div>
             <h4>Category:</h4>
             <?php foreach($data as $product) {
                 if ($product->category_id != $cur_cat) {
                     $cur_cat = $product->category_id;
-                    echo "<h6><a href='/Product/index/#$product->category'>" . ucwords($product->category) . "</a></h6>";
+                    echo "<h6><a href='#$product->category'>" . ucwords($product->category) . "</a></h6>";
                 }
                 }
                 $cur_cat = 0;
