@@ -17,16 +17,16 @@ class AdminProduct extends \app\core\Controller{
 			$product = new \app\models\Product();
 
 			// $product->category_id = $_POST['image'];
-			$product->product_name = $_POST['product_name'];
-			$product->category_id = $_POST['category_id'];
-			$product->sellingPrice = $_POST['sellingPrice'];
-			$product->quantity = $_POST['quantity'];
-			$product->description = $_POST['description'];
+			$product->product_name = htmlentities($_POST['product_name']);
+			$product->category_id = htmlentities($_POST['category_id']);
+			$product->sellingPrice = htmlentities($_POST['sellingPrice']);
+			$product->quantity = htmlentities($_POST['quantity']);
+			$product->description = htmlentities($_POST['description']);
 
 			$uploadedPicture = $this->uploadPicture();
 
 			if(isset($uploadedPicture['target_file']))
-                $product->image = $uploadedPicture["target_file"];
+                $product->image = htmlentities($uploadedPicture["target_file"]);
 
             $uploadMessage = $uploadedPicture["upload_message"] == 'success' ? '' : '&error=Something went wrong '.$uploadedPicture["upload_message"];
 
@@ -100,15 +100,15 @@ echo "Second IF";
 		// form is submitted
 		if(isset($_POST['action'])){
 			// TODO: save the data
-			$product->product_name = $_POST['product_name'];
-			$product->category_id = $_POST['category_id'];
-			$product->sellingPrice = $_POST['sellingPrice'];
-			$product->quantity = $_POST['quantity'];
-			$product->description = $_POST['description'];
+			$product->product_name = htmlentities($_POST['product_name']);
+			$product->category_id = htmlentities($_POST['category_id']);
+			$product->sellingPrice = htmlentities($_POST['sellingPrice']);
+			$product->quantity = htmlentities($_POST['quantity']);
+			$product->description = htmlentities($_POST['description']);
 			$uploadedPicture = $this->uploadPicture();
 
             if(isset($uploadedPicture['target_file']))
-                $product->image = $uploadedPicture["target_file"];
+                $product->image = htmlentities($uploadedPicture["target_file"]);
 
             $uploadMessage = $uploadedPicture["upload_message"] == 'success' ? '' : '&error=Something went wrong '.$uploadedPicture["upload_message"];
 

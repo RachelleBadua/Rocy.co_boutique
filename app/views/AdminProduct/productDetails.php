@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="/resources/styles/adminAddProduct.css">
+<link rel="stylesheet" type="text/css" href="/resources/styles/adminProductDetails.css">
 <script type="text/javascript" src="/resources/scripts/displayImage.js"></script>
 
 <?php $this->view('shared/header', _('Product Details')); ?>

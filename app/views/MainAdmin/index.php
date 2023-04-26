@@ -1,4 +1,3 @@
-<!-- <link rel="stylesheet" type="text/css" href="/resources/styles/adminMainContent.css"> -->
 <link rel="stylesheet" type="text/css" href="/resources/styles/adminHome.css">
 
 <?php $this->view('shared/header','Main Index Admin'); ?>

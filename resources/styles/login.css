@@ -1,0 +1,39 @@
+.main {
+	/*border: 1px solid black;*/
+	text-align: center;
+  	padding: 55px;
+
+}
+
+.inputLogin {
+	/*border: 1px solid black;*/
+	text-align: center;
+	background: white;
+
+	/*width: 600px;*/
+	height: 76%;
+	/*padding: 50px;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-login {
+  display: flex;
+  /*margin-top: 20px;*/
+
+}
+
+.btn-label {
+  flex: 20%;
+  /*border: 1px solid black;*/
+  margin-left: 50px;
+  text-align: left;
+}
+
+.btn-input {
+  flex: 80%;
+  margin-right: 50px;
+  /*border: 1px solid black;*/
+  /*text-align: left;*/
+}

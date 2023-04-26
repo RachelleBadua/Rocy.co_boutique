@@ -18,7 +18,7 @@ $cur_cat = 0;
             <?php foreach($data as $product) {
                 if ($product->category_id != $cur_cat) {
                     $cur_cat = $product->category_id;
-                    echo "<h6><a href=''>" . ucwords($product->category) . "</a></h6>";
+                    echo "<h6><a href='/Product/index/#$product->category'>" . ucwords($product->category) . "</a></h6>";
                 }
                 }
                 $cur_cat = 0;
@@ -30,7 +30,7 @@ $cur_cat = 0;
                 if ($product->category_id != $cur_cat) {
                     if ($cur_cat > 0) echo "</div>";
                     $cur_cat = $product->category_id;
-                    echo "<h2>" . ucwords($product->category) . "</h2>";
+                    echo "<h2 id='$product->category'>" . ucwords($product->category) . "</h2>";
                     echo "<div class='grid-container'>";
                 }
             ?>
