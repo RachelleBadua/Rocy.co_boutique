@@ -7,7 +7,7 @@
 			<div class="image">
 				<a href="/MainAdmin/index"><img class="sidebarlogo" src="/resources/images/rocylogoTransBG.png"></a>
 			</div>
-			<button class="dropdown-btn">Products 
+			<button class="dropdown-btn" name="">Product 
 			<i class="fa fa-caret-down"></i>
 			</button>
 				<div class="dropdown-container">

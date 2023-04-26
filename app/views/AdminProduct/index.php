@@ -1,7 +1,7 @@
 <!-- <link rel="stylesheet" type="text/css" href="/resources/styles/adminMainContent.css"> -->
 <link rel="stylesheet" type="text/css" href="/resources/styles/adminProductList.css">
 
-<?php $this->view('shared/header', _('Product list')); ?>
+<?php $this->view('shared/header', _('Product List')); ?>
 <?php $this->view('shared/sideBar'); ?>
 
 	<div class="main">

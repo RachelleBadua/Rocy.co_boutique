@@ -28,34 +28,26 @@ class AcceptanceTester extends \Codeception\Actor
      */
 
     /**
-     * @Given I am logged in as Admin
+     * @Given I am on :arg1 page
      */
-     public function iAmLoggedInAsAdmin()
+     public function iAmOnPage($arg1)
      {
-         throw new \PHPUnit\Framework\IncompleteTestError("Step `I am logged in as Admin` is not defined");
+        $this->amOnPage($arg1);
      }
 
     /**
-     * @Given I am on the home page
+     * @Given I click :arg1
      */
-     public function iAmOnTheHomePage()
+     public function iClick($arg1)
      {
-         throw new \PHPUnit\Framework\IncompleteTestError("Step `I am on the home page` is not defined");
+        $this->click($arg1);
      }
-
-    /**
-     * @When I click on :arg1
-     */
-     public function iClickOn($arg1)
-     {
-         throw new \PHPUnit\Framework\IncompleteTestError("Step `I click on :arg1` is not defined");
-     }
-
-    /**
+      /**
      * @Then I see :arg1
      */
      public function iSee($arg1)
      {
-         throw new \PHPUnit\Framework\IncompleteTestError("Step `I see :arg1` is not defined");
+        $this->see($arg1);
      }
+
 }

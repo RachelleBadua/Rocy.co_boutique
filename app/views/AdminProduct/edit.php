@@ -14,12 +14,12 @@
 		<form method ="post" action="" enctype="multipart/form-data">	
 		<!-- TODO: add image here-->
 			<div class="addImage"> 
-				<img src="/resources/productImages/<?= $product->image?>">
+				<img src="/resources/productImages/<?= $product->image?>" width="250">
 	    		<input type="file" name="image"/>
 			</div>
 		
 			<div class="insertProdInfo">
-				<label><?= _('ID:') ?></label><input type="text" name="product_id" value='<?= $product->product_id ?>'><br>
+				<label><?= _('ID:') ?></label><input type="text" name="product_id" value='<?= $product->product_id ?>' disabled><br>
 				<br>
 				<label><?= _('Name:') ?></label><input type="text" name="product_name" value='<?= $product->product_name ?>'><br>
 				<br>
