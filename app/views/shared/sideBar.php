@@ -16,7 +16,7 @@
 				<div class="dropdown-container">
 				<a href="/AdminProduct/index">Product List</a>
 				<a href="/AdminProduct/create">Add product</a>
-				<a href="#">Category</a>
+				<a href="/AdminCategory/index">Category</a>
 				</div>
 			<button class="dropdown-btn">Orders 
 			<i class="fa fa-caret-down"></i>

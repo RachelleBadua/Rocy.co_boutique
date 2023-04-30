@@ -1,0 +1,67 @@
+.content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+}
+
+.sidenav {
+  order: 1;
+}
+
+.main {
+  background-color: #FFF9FB;
+  order: 2;
+  flex-grow: 1;
+  padding: 35px;
+  text-align: center;
+  /*text-align: center;*/
+  /*display: flex;
+  align-items: center;
+  justify-content: center;*/
+}
+
+.categoryList {
+  border: 1px solid black;
+}
+
+.attributes {
+  border-bottom: 3px solid black;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  /*border: 1px solid black;*/
+}
+
+td, th {
+  /*border: 1px solid #dddddd;*/
+  text-align: left;
+  padding: 8px;
+  padding-left: 20px;
+
+}
+
+tr:nth-child(even) {
+  background-color: #F2F1F4;
+}
+
+.addEdit {
+  display: flex;
+}
+
+.addCategory {
+  order: 1;
+  flex: 50%;
+  border: 1px solid black;
+}
+
+.editCategory {
+  order: 2;
+  flex: 50%;
+  border: 1px solid black;
+
+}
+
