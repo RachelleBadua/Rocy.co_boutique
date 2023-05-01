@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="text/css" href="/resources/styles/product_page.css">
+
+<?php $this->view('shared/header','Main Index'); ?>
+
+<!-- body -->
+<?php $this->view('shared/navBar');?>
+
+<div class='content'>
+    <a href="/Product/index">Back</a>
+    <div class='product_img'>
+        <img src="/resources/productImages/<?= $data->image ?>">
+    </div>
+    <div class='information_tools'>
+        <div class='information'>
+            <h3 class='product_name'><?= ucwords($data->product_name) ?></h2>
+            <h6 class='price'><?= $data->sellingPrice ?></h4>
+            <p class='product_desc'><?= $data->description ?></p>
+        </div>
+        <div class='tools'>
+            <a href=""><button>Add to cart</button></a>
+        </div>
+    </div>
+
+</div>
+    
+<?php $this->view('shared/footer'); ?>
