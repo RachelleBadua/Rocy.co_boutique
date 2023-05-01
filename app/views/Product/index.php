@@ -2,7 +2,7 @@
 
 <?php $this->view('shared/header','Main Index'); ?>
 
-<<!-- body -->>
+<!-- body -->
 <?php $this->view('shared/navBar'); 
 $cur_cat = 0;
 ?>
@@ -38,7 +38,7 @@ $cur_cat = 0;
             ?>
                 <div class="grid-item">
                     <?php 
-                        echo "<a href=''><img src='/resources/productImages/$product->image'>";
+                        echo "<a href='/Product/productDetail/$product->product_id'><img src='/resources/productImages/$product->image'>";
                         echo "<h3>".ucwords($product->product_name)."</h3></a>";
                     ?>
                 </div>

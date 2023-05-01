@@ -19,4 +19,11 @@ class Product extends \app\core\Controller{
 //		return $products;
 		$this->view('Product/index', $products);
 	}
+
+	function productDetail($product_id) {
+		$products = new \app\models\Product();
+		$products = $products->getProduct($product_id);
+
+		$this->view('Product/product_detail', $products);
+	}
 }

@@ -15,6 +15,7 @@ a {
 .i1 {
     order: 1;
     width: 30%;
+    min-width: 400px;
     /* border: 1px solid black; */
     
     font-family: 'Be Vietnam';
@@ -26,6 +27,7 @@ a {
 
 .i2 {
     width: 30%;
+    /* min-width: 300px; */
     order: 2;
     /* border: 1px solid black; */
 }
@@ -39,6 +41,7 @@ a {
 
 .i3 {
     width: 30%;
+    min-width: 200px;
     order: 3;
     /* border: 1px solid black; */
     text-align: right;
