@@ -29,4 +29,25 @@ class Category extends \app\core\Model{
 		$STH->execute($data);
 		return $STH->rowCount();
 	}
+
+	public function update($category_id){
+		$SQL = "UPDATE category 
+                SET category=:category
+                WHERE category_id=:category_id";
+		$STH = self::$connection->prepare($SQL);
+		$data = [
+            'category'=>$category_id,
+            ];
+		$STH->execute($data);
+		return $STH->rowCount();
+	}
+
+	public function getCategory($category_id){
+		$SQL = 'SELECT * FROM category WHERE category_id=:category_id';
+		$STH = self::$connection->prepare($SQL);
+		$data = ['category_id'=>$category_id];
+		$STH->execute($data);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Category');
+		return $STH->fetch();
+	}
 }

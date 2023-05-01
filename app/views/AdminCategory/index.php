@@ -3,7 +3,16 @@
 <?php $this->view('shared/header', _('Category')); ?>
 <?php $this->view('shared/sideBar'); ?>
 
+<?php
+	$categories = $data['categories'];
+	$editCategory = $data['editCategory'];
+?>
+
 	<div class="main">
+		<?php 
+		var_dump($categories); 
+		var_dump($editCategory); 
+		?>
 		<div class="categoryList">
 			<h2>Category</h2>
 			<table>
@@ -15,10 +24,11 @@
 						<!-- </div> -->
 					</tr>
 				
-					<?php foreach ($data as $category) { ?>
+					<?php foreach ($data['categories'] as $category) { ?>
 					<tr>
+						<?php var_dump($category->category_id)?>
 
-						<td><a><?= htmlentities($category->category_id) ?></a></td>
+						<td><a href='/AdminCategory/edit/<?=$category->category_id?>'><?= htmlentities($category->category_id) ?></a></td>
 						<td><?= htmlentities($category->category) ?></td>
 						<td>
 							<!-- TODO: make function to delete product-->
@@ -44,7 +54,7 @@
 				<h4>Edit Category</h4>
 				<form class="form-editCategory" method="post" enctype="multipart/form-data" action="">
 					<div class="btn-editCategory">
-						<select class="btn-input">
+						<!-- <select class="btn-input">
 							<?php
 								foreach($data as $category){
 									echo "<option value='$category->category_id'>$category->category_id</option>\n";
@@ -52,8 +62,9 @@
 
 							?>
 							
-						</select>
-						<input class="btn-input" type="text" name="category" value="<?= $category->category?>">
+						</select> -->
+						<input type="text" name="category_id" style="" disabled="" value="<?= $data['editCategory']->category_id?>">
+						<input class="btn-input" type="text" name="category" value="<?= $data['editCategory']->category?>">
 						<input type="submit" name="editAction" value="Edit">
 					</div>
 				</form>

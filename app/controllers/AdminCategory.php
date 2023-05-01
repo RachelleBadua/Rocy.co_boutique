@@ -12,7 +12,11 @@ class AdminCategory extends \app\core\Controller{
 		} else {
 			$category = new \app\models\Category();
 			$categories = $category->getAll();
-			$this->view('AdminCategory/index', $categories);
+
+			$category2 = new \app\models\Category();
+			$category2->getCategory(1);
+			$data = ['categories'=>$categories, 'editCategory'=>$category2];
+			$this->view('AdminCategory/index', $data);
 		}
 	} 
 
@@ -24,5 +28,16 @@ class AdminCategory extends \app\core\Controller{
 		} else {
 			header('location:/AdminCategory/index?error=Something went wrong');
 		}
+	}
+
+	public function edit($category_id){
+		$category = new \app\models\Category();
+		$categories = $category->getAll();
+
+		$category2 = new \app\models\Category();
+		$category2->getCategory($category_id);
+		$data = ['categories'=>$categories, 'editCategory'=>$category2];
+		$this->view('AdminCategory/index', $data);
+
 	}
 }
