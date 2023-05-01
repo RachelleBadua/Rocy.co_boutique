@@ -21,4 +21,12 @@ class Category extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Category');
 		return $STH->fetchAll(); // gets the branches from database with an array
 	}
+
+	public function delete($category_id){
+		$SQL = "DELETE FROM category WHERE category_id=:category_id";
+		$STH = self::$connection->prepare($SQL);
+		$data = ['category_id'=>$category_id];
+		$STH->execute($data);
+		return $STH->rowCount();
+	}
 }

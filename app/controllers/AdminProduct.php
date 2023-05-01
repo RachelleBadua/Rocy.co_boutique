@@ -32,7 +32,7 @@ class AdminProduct extends \app\core\Controller{
 
 			$success = $product->insert();
 			if($success)
-				header('location:/AdminProduct/index?success=Profile modified.');
+				header('location:/AdminProduct/index?success=Product added.');
 			else
 				header('location:/AdminProduct/index?error=Something went wrong.');
 

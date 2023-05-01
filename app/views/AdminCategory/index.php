@@ -18,8 +18,7 @@
 					<?php foreach ($data as $category) { ?>
 					<tr>
 
-						<!-- <?= htmlentities($category->category_id) ?></a></td>  -->
-						<td><?= htmlentities($category->category_id) ?></td>
+						<td><a><?= htmlentities($category->category_id) ?></a></td>
 						<td><?= htmlentities($category->category) ?></td>
 						<td>
 							<!-- TODO: make function to delete product-->

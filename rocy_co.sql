@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2023 at 04:59 AM
+-- Generation Time: May 01, 2023 at 04:47 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -29,6 +29,7 @@ USE `rocy_co`;
 -- Table structure for table `category`
 --
 
+DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
   `category_id` int(2) NOT NULL,
   `category` varchar(50) NOT NULL
@@ -41,7 +42,11 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`category_id`, `category`) VALUES
 (1, 'scrunchy'),
 (2, 'bracelet'),
-(3, 'keychain');
+(3, 'keychain'),
+(4, 'tote bag'),
+(5, 'test'),
+(7, 'test'),
+(8, 'test');
 
 -- --------------------------------------------------------
 
@@ -49,6 +54,7 @@ INSERT INTO `category` (`category_id`, `category`) VALUES
 -- Table structure for table `detail`
 --
 
+DROP TABLE IF EXISTS `detail`;
 CREATE TABLE `detail` (
   `detail_id` int(5) NOT NULL,
   `order_id` int(5) NOT NULL,
@@ -63,6 +69,7 @@ CREATE TABLE `detail` (
 -- Table structure for table `order`
 --
 
+DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
   `order_id` int(5) NOT NULL,
   `user_id` int(4) NOT NULL,
@@ -77,6 +84,7 @@ CREATE TABLE `order` (
 -- Table structure for table `product`
 --
 
+DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `product_id` int(5) NOT NULL,
   `category_id` int(2) NOT NULL,
@@ -92,8 +100,11 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `category_id`, `product_name`, `image`, `sellingPrice`, `description`, `quantity`) VALUES
-(1, 1, 'dark red fabric scrunchy', 'dark_red_fabric_scrunchy.jpg', 5.99, 'Made out of dark red handpicked fabric, sure to give wearer a nice look with low price', 5),
-(2, 3, 'pink Rojin keychain', 'pink_rojin_keychain.jpg', 3.99, 'for test', 3);
+(1, 1, 'dark red fabric scrunchy', 'dark_red_fabric_scrunchy.jpg', 5.99, ' Made out of dark red handpicked fabric, sure to give wearer a nice look with low price ', 7),
+(2, 3, 'pink Rojin keychain', '644842a3e269a.png', 3.99, '              for test              ', 3),
+(3, 1, 'TestProduct', '6447e2446ce77.png', 7.99, '       This is a test product.       ', 4),
+(10, 3, 'ProductTest', '6448b77922ca6.png', 5.99, '   hehehehhe         ', 5),
+(11, 1, 'Purple scrunchy', '6448680577893.png', 5.99, ' This is a test. ', 4);
 
 -- --------------------------------------------------------
 
@@ -101,6 +112,7 @@ INSERT INTO `product` (`product_id`, `category_id`, `product_name`, `image`, `se
 -- Table structure for table `profile`
 --
 
+DROP TABLE IF EXISTS `profile`;
 CREATE TABLE `profile` (
   `user_id` int(4) NOT NULL,
   `subscription` tinyint(1) NOT NULL,
@@ -112,18 +124,35 @@ CREATE TABLE `profile` (
   `postal` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `profile`
+--
+
+INSERT INTO `profile` (`user_id`, `subscription`, `name`, `phoneNo`, `address`, `city`, `province`, `postal`) VALUES
+(9, 0, 'Jojo', '524-324-32', '123 haha avenue', 'Montreal', 'Quebec', 'T6J 7W3');
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_id` int(4) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(72) NOT NULL,
   `roleType` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `email`, `password`, `roleType`) VALUES
+(1, 'TestUser', '$2y$10$cA44WNtp7qhpgt2OsPuz/eGZlT.ketAfmu5cPBoZOVfupqH1/P1G.', 'customer'),
+(6, 'TestUser2', '$2y$10$litEQ/Cl5hIZPyAWFAc/DOXUOuiAB53LlpFrD63VtLX7CCwrN6unK', 'customer'),
+(9, 'TestUser4', '$2y$10$8tEuaTguZitcslQwBkaVDus8nrMq921J4kdD7YKl.8BgsW2xbnKGy', 'customer');
 
 --
 -- Indexes for dumped tables
@@ -176,7 +205,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `category_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `detail`
@@ -194,13 +223,13 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `product_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
