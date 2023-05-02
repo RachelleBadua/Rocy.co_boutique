@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2023 at 04:47 PM
+-- Generation Time: May 02, 2023 at 07:29 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `rocy_co`
 --
-CREATE DATABASE IF NOT EXISTS `rocy_co` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `rocy_co`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,6 @@ USE `rocy_co`;
 -- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
   `category_id` int(2) NOT NULL,
   `category` varchar(50) NOT NULL
@@ -54,7 +51,6 @@ INSERT INTO `category` (`category_id`, `category`) VALUES
 -- Table structure for table `detail`
 --
 
-DROP TABLE IF EXISTS `detail`;
 CREATE TABLE `detail` (
   `detail_id` int(5) NOT NULL,
   `order_id` int(5) NOT NULL,
@@ -69,12 +65,11 @@ CREATE TABLE `detail` (
 -- Table structure for table `order`
 --
 
-DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
   `order_id` int(5) NOT NULL,
   `user_id` int(4) NOT NULL,
   `order_date` date NOT NULL DEFAULT current_timestamp(),
-  `status` varchar(20) NOT NULL,
+  `status` enum('cart','ordered','finished') DEFAULT NULL,
   `total_price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -84,7 +79,6 @@ CREATE TABLE `order` (
 -- Table structure for table `product`
 --
 
-DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `product_id` int(5) NOT NULL,
   `category_id` int(2) NOT NULL,
@@ -112,7 +106,6 @@ INSERT INTO `product` (`product_id`, `category_id`, `product_name`, `image`, `se
 -- Table structure for table `profile`
 --
 
-DROP TABLE IF EXISTS `profile`;
 CREATE TABLE `profile` (
   `user_id` int(4) NOT NULL,
   `subscription` tinyint(1) NOT NULL,
@@ -137,7 +130,6 @@ INSERT INTO `profile` (`user_id`, `subscription`, `name`, `phoneNo`, `address`, 
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_id` int(4) NOT NULL,
   `email` varchar(50) NOT NULL,
