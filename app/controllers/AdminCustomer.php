@@ -11,7 +11,7 @@ class AdminCustomer extends \app\core\Controller{
 
 	public function customerDetails($user_id){
 		$customer = new \app\models\Profile();
-		$customer = $customer->getAllByUserId();
+		$customer = $customer->getAllByUserId($user_id);
 		$this->view('AdminCustomer/customerDetails', $customer);
 	}
 }

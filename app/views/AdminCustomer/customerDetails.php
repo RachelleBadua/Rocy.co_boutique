@@ -4,11 +4,13 @@
 <?php $this->view('shared/sideBar'); ?>
 
 	<div class="main">
-		<div class="top">
-			<a href='/AdminCustomer/index/'><?= _('back') ?></a>
-			<h2>Customer Details</h2>
-		</div>
-		<form method ="post" action="" enctype="multipart/form-data">	
+		<div class="allDetails" align="center">
+			<div class="top">
+				<div class="backButton">
+					<a class="btn btn-secondary" href='/AdminCustomer/index/'><?= _('back') ?></a>
+				</div>
+				<h2 class="title">Customer Details</h2>
+			</div>
 			<div class="infoCustomer">
 				<div class="btn-customerInfo">
 					<label class="btn-label"><?= _('ID:') ?></label>
@@ -23,28 +25,33 @@
 				</div>
 				<br>
 				<div class="btn-customerInfo">
-					<label class="btn-label"><?= _('Category:') ?></label>
+					<label class="btn-label"><?= _('Email:') ?></label>
 					<div class="btn-input"><?= $data->email ?></div>
 				</div>
 				<br>
 				<div class="btn-customerInfo">
-					<label class="btn-label"><?= _('Price:') ?></label>
+					<label class="btn-label"><?= _('Phone Number:') ?></label>
 					<div class="btn-input"><?= $data->phoneNo ?></div>	
 					<br>
 				</div>
 				<br>		
 				<div class="btn-customerInfo">
-					<label class="btn-label"><?= _('Quantity:') ?></label>
-					<div class="btn-input"><?= $data->subscription ?></div>
+					<label class="btn-label"><?= _('Subscription:') ?></label>
+					<div class="btn-input">
+						<?php
+							echo ($data->subscription == 0 ? "True" :  "False"); 
+						?>
+					</div>
 					<br>
 				</div>
 				<br>
 				<div class="btn-customerInfo">
-					<label class="btn-label"><?= _('Description:') ?></label>
+					<label class="btn-label"><?= _('City:') ?></label>
 					<div class="btn-input"><?= $data->city ?></div>
 					<br>
 				</div>
 				<br>
 			</div >
-			</form>
+		</div>
 	</div>
+</div>

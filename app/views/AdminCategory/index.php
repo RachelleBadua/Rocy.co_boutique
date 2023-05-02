@@ -9,10 +9,10 @@
 ?>
 
 	<div class="main">
-		<?php 
+		<!-- <?php 
 		var_dump($categories); 
 		var_dump($editCategory); 
-		?>
+		?> -->
 		<div class="categoryList">
 			<h2>Category</h2>
 			<table>
@@ -26,14 +26,12 @@
 				
 					<?php foreach ($data['categories'] as $category) { ?>
 					<tr>
-						<?php var_dump($category->category_id)?>
-
 						<td><a href='/AdminCategory/edit/<?=$category->category_id?>'><?= htmlentities($category->category_id) ?></a></td>
 						<td><?= htmlentities($category->category) ?></td>
-						<td>
-							<!-- TODO: make function to delete product-->
-							<a href='/AdminCategory/delete/<?=$category->category_id?>'><?= _('remove') ?></a> 
-						</td>
+						 <td>
+							<!-- TODO: make function to delete product
+ -->							<a href='/AdminCategory/delete/<?=$category->category_id?>'><?= _('remove') ?></a> 
+						</td> 
 					</tr>
 					<?php
 					}

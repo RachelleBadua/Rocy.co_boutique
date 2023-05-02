@@ -15,33 +15,54 @@
   flex-grow: 1;
   padding: 35px;
 	/*text-align: center;*/
+  /*align-content: center;*/
   /*display: flex;
   align-items: center;
   justify-content: center;*/
 }
 
+.top {
+  /*border: 2px solid black;*/
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.backButton {
+  flex: 30%;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.title {
+  flex: 70%;
+  margin-left: 250px; 
+  text-align: left;
+  
+}
+
 .infoCustomer {
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 20px;
   padding-top: 30px;
-  width: 500px; 
-  height: 370px; 
+  width: 800px; 
+  height: 330px; 
 }
+
 .btn-customerInfo {
   display: flex;
 }
 
 .btn-label {
-  flex: 20%;
+  flex: 30%;
   /*border: 1px solid black;*/
   margin-left: 50px;
   text-align: left;
 }
 
 .btn-input {
-  flex: 80%;
-  margin-right: 50px;
-  text-align: center;
+  flex: 70%;
+  margin-right: 100px;
+  text-align: left;
 
   /*border: 1px solid black;*/
   /*text-align: left;*/
