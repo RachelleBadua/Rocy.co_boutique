@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="/resources/styles/product_page.css">
+<link rel="stylesheet" type="text/css" href="/resources/styles/pageContent.css">
 
 <?php $this->view('shared/header','Main Index'); ?>
 

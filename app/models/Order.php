@@ -44,6 +44,9 @@ class Order extends \app\core\Model{
 		return $STH->rowCount();
 	}
 
+	public function updateStatus() {
+		
+	}
 
 	public function getAll(){
 		$SQL = "SELECT * FROM order";

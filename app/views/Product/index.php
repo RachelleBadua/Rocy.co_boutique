@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/resources/styles/pageContent.css">
 <link rel="stylesheet" type="text/css" href="/resources/styles/product_page.css">
 
 <?php $this->view('shared/header','Main Index'); ?>
@@ -7,7 +8,7 @@
 $cur_cat = 0;
 ?>
 <h1>Catalog</h1>
-	<div class="catalog">
+	<div class="content">
         <div class="sideBar">
             <div class='search-tool'>
                 <form action="/Product/index" method='GET'>

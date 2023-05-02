@@ -3,9 +3,8 @@ namespace app\controllers;
 
 class Product extends \app\core\Controller{
     function index(){
-		if (isset($_GET['search'])) {
+		if (isset($_GET['search']) && $_GET['search'] != null) {
 			header('location:/Product/search/' . $_GET['search']);
-//			$this->view('Product/index', $this->search($_GET['search']));
 		} else {
 			$products = new \app\models\Product();
 			$products = $products->getAllOrderByCategory();
@@ -15,8 +14,7 @@ class Product extends \app\core\Controller{
 
 	function search($product_name) {
 		$products = new \app\models\Product();
-		$products = $products->getAllMatchName($product_name);
-//		return $products;
+		$products = $products->getAllMatchName($product_name == '\'' ? "\\$product_name" : $product_name);
 		$this->view('Product/index', $products);
 	}
 
