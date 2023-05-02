@@ -1,0 +1,48 @@
+.content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+}
+
+.sidenav {
+  order: 1;
+}
+
+.main {
+  background-color: #FFF9FB;
+	order: 2;
+  flex-grow: 1;
+  padding: 35px;
+	/*text-align: center;*/
+  /*display: flex;
+  align-items: center;
+  justify-content: center;*/
+}
+
+.infoCustomer {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding-top: 30px;
+  width: 500px; 
+  height: 370px; 
+}
+.btn-customerInfo {
+  display: flex;
+}
+
+.btn-label {
+  flex: 20%;
+  /*border: 1px solid black;*/
+  margin-left: 50px;
+  text-align: left;
+}
+
+.btn-input {
+  flex: 80%;
+  margin-right: 50px;
+  text-align: center;
+
+  /*border: 1px solid black;*/
+  /*text-align: left;*/
+}

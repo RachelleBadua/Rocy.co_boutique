@@ -28,8 +28,8 @@
 			<i class="fa fa-caret-down"></i>
 			</button>
 				<div class="dropdown-container">
-				<a href="#"> Customer List</a>
-				<a href="#">Send Promotions</a>
+				<a href="/AdminCustomer/index"> Customer List</a>
+				<a href="/AdminCustomer/sendPromotions">Send Promotions</a>
 				</div>
 			<button class="dropdown-btn">About Us 
 			<i class="fa fa-caret-down"></i>

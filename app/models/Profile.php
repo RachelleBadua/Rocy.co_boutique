@@ -52,4 +52,20 @@ class Profile extends \app\core\Model{
 		$STH->execute($data);
 		return $STH->rowCount();
 	}
+
+	public function getAll(){
+		$SQL = "SELECT * FROM profile JOIN user ON profile.user_id = user.user_id ORDER BY user.user_id";
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute();
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Profile');
+		return $STH->fetchAll();
+	}
+
+	public function getAllByUserId($user_id){
+		$SQL = 'SELECT * FROM profile JOIN user ON profile.user_id = user.user_id WHERE user_id = :user_id';
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute(['user_id'=>$user_id]);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Profile');
+		return $STH->fetch();
+	}
 }
