@@ -11,7 +11,7 @@ class Category extends \app\core\Model{
 		$STH = self::$connection->prepare($SQL);
 		$data = ['category'=>$this->category];
 		$STH->execute($data);
-		$this->client_id = self::$connection->lastInsertId();
+		// $this->client_id = self::$connection->lastInsertId();
 	}
 
 	public function getAll(){

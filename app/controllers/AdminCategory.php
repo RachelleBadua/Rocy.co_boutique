@@ -13,9 +13,10 @@ class AdminCategory extends \app\core\Controller{
 			$category = new \app\models\Category();
 			$categories = $category->getAll();
 
-			$category2 = new \app\models\Category();
-			$category2->getCategory(1);
-			$data = ['categories'=>$categories, 'editCategory'=>$category2];
+			// $default = 2;
+			$editCategory = new \app\models\Category();
+			$editCategory->getCategory(1);
+			$data = ['categories'=>$categories, 'editCategory'=>$editCategory];
 			$this->view('AdminCategory/index', $data);
 		}
 	} 
@@ -34,10 +35,11 @@ class AdminCategory extends \app\core\Controller{
 		$category = new \app\models\Category();
 		$categories = $category->getAll();
 
-		$category2 = new \app\models\Category();
-		$category2->getCategory($category_id);
-		$data = ['categories'=>$categories, 'editCategory'=>$category2];
+		$editCategory = new \app\models\Category();
+		$editCategory->getCategory($category_id);
+		$data = ['categories'=>$categories, 'editCategory'=>$editCategory];
 		$this->view('AdminCategory/index', $data);
+		// header('location:/AdminCategory/index');
 
 	}
 }

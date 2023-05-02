@@ -23,7 +23,7 @@ class Product extends \app\core\Model{
                 'quantity'=>$this->quantity
                 ];
 		$STH->execute($data);
-		$this->client_id = self::$connection->lastInsertId();
+		// $this->client_id = self::$connection->lastInsertId();
 	}
 
 	public function update(){

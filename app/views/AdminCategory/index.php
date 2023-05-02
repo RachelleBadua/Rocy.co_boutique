@@ -63,8 +63,8 @@
 							?>
 							
 						</select> -->
-						<input type="text" name="category_id" style="" disabled="" value="<?= $data['editCategory']->category_id?>">
-						<input class="btn-input" type="text" name="category" value="<?= $data['editCategory']->category?>">
+						<input type="text" name="category_id" style="" disabled="" value="<?= $data['editCategory']->category_id ?>">
+						<input class="btn-input" type="text" name="category" value="<?= $data['editCategory']->category ?>">
 						<input type="submit" name="editAction" value="Edit">
 					</div>
 				</form>
