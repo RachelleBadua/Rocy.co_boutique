@@ -50,4 +50,6 @@ class Category extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Category');
 		return $STH->fetch();
 	}
+
+	
 }

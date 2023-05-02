@@ -102,4 +102,13 @@ class Product extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Product');
 		return $STH->fetchAll();
 	}
+
+	public function getProductsByCategory($category_id) {
+		$SQL = 'SELECT * FROM product WHERE category_id=:category_id';
+		$STH = self::$connection->prepare($SQL);
+		$data = ['category_id'=>$category_id];
+		$STH->execute($data);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Product');
+		return $STH->fetchAll();
+	}
 }

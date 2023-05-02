@@ -22,12 +22,18 @@ class AdminCategory extends \app\core\Controller{
 	} 
 
 	public function delete($category_id){
-		$category = new \app\models\Category();
-		$success = $category->delete($category_id);
-		if ($success){
-			header('location:/AdminCategory/index?success=Category deleted');
+		$product = new \app\models\Product();
+		$products = $product->getProductsByCategory($category_id);
+		if (empty($products)){
+			$category = new \app\models\Category();
+			$success = $category->delete($category_id);
+			if ($success){
+				header('location:/AdminCategory/index?success=Category deleted');
+			} else {
+				header('location:/AdminCategory/index?error=Something went wrong');
+			}
 		} else {
-			header('location:/AdminCategory/index?error=Something went wrong');
+			header('location:/AdminCategory/index?error=There are products with this category');
 		}
 	}
 
