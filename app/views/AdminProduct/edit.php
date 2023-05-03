@@ -27,7 +27,7 @@
 				<div class="insertProdInfo">
 					<div class="btn-addProduct">
 						<label class="btn-label"><?= _('ID:') ?></label>
-						<input class="btn-input" type="text" name="product_id" value='<?= $product->product_id ?>' disabled><br>
+						<input class="btn-input" type="text" name="product_id" value='<?= $product->product_id ?>' readonly><br>
 					</div>
 					<br>
 					<div class="btn-addProduct">

@@ -8,7 +8,7 @@ class Cart extends \app\core\Controller{
 
     function addToCart($product_id) {
 		$order = new \app\models\Order();
-		$user_id = 1;
+		$user_id = $_SESSION['user_id'];
 		if (!$order->isCurrentOrderExist($user_id)){
 			$order->user_id = $user_id;
 			$order->insert();
@@ -21,8 +21,7 @@ class Cart extends \app\core\Controller{
 		$detail->order_id = $order->getOrderId($user_id);
 		$detail->product = $product;
 
-		$detail->insert();
-		$this->view('Cart/index', $product);
+		return $detail->insert();
 	}
 
 	

@@ -50,15 +50,6 @@
 				<h4>Edit Category</h4>
 				<form class="form-editCategory" method="post" enctype="multipart/form-data" action="/AdminCategory/edit/">
 					<div class="btn-editCategory">
-						<!-- <select class="btn-input">
-							<?php
-								foreach($data as $category){
-									echo "<option value='$category->category_id'>$category->category_id</option>\n";
-								}
-
-							?>
-							
-						</select> -->
 						<input type="text" name="categoryId" style="" readonly value="">
 						<input class="btn-input" type="text" name="categoryName" value="">
 						<input type="submit" name="editAction" value="Edit">
@@ -74,7 +65,7 @@
 				// document.getElementsByName('categoryName')[0].values = name;
 				return true;
 			}
-		</script>>
+		</script>
 	</div>
 </div>
 

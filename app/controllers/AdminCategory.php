@@ -4,11 +4,15 @@ namespace app\controllers;
 class AdminCategory extends \app\core\Controller{
 	public function index(){
 		if(isset($_POST['addAction'])){
-			$category = new \app\models\Category();
+			if($_POST['category'] != '' && $_POST['category'] != null) {
+				$category = new \app\models\Category();
 
-			$category->category = htmlentities($_POST['category']);
-			$success = $category->insert();
-			header('location:/AdminCategory/index');
+				$category->category = htmlentities($_POST['category']);
+				$success = $category->insert();
+				header('location:/AdminCategory/index');
+			} else {
+				header('location:/AdminCategory/index?error=Fill up the criteria');
+			}
 		} else {
 			$category = new \app\models\Category();
 			$categories = $category->getAll();
@@ -38,7 +42,7 @@ class AdminCategory extends \app\core\Controller{
 	}
 
 	public function edit(){
-		// if(isset($_POST['editAction'])){
+		if($_POST['categoryName'] != '' && $_POST['categoryName'] != null) {
 			$category = new \app\models\Category();
 			$category->category_id = htmlentities($_POST['categoryId']);
 			$category->category = htmlentities($_POST['categoryName']);
@@ -47,12 +51,10 @@ class AdminCategory extends \app\core\Controller{
 			if ($success) {
 				header('location:/AdminCategory/index?success=Succesfully updated');
 			} else {
-				header('location:/AdminCategory/index?success=Something went wrong');
+				header('location:/AdminCategory/index?error=Something went wrong');
 			}
-
-			
-		// } 
-		
-
+		} else {
+			header('location:/AdminCategory/index?error=Enter criteria');
+		}
 	}
 }

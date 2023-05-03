@@ -18,10 +18,20 @@
             <p class='product_desc'><?= $data->description ?></p>
         </div>
         <div class='tools'>
-            <a href="/Cart/addToCart/<?= $data->product_id ?>"><button>Add to cart</button></a>
+            <button onclick="addToCart()">Add to Cart</button>
         </div>
     </div>
 
 </div>
-    
+
+<script type='text/javascript'>
+    const url = '/Cart/addToCart/<?= $data->product_id ?>'
+    function addToCart() {
+        $.post(url, () => {})
+        .done(() => alert("Product added to cart!"))
+        .fail(() => alert('Something went wrong'))
+
+    }
+</script>
+
 <?php $this->view('shared/footer'); ?>

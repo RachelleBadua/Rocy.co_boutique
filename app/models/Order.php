@@ -88,9 +88,9 @@ class Order extends \app\core\Model{
 				ON o.user_id = u.user_id
 				JOIN profile p
 				ON u.user_id = p.user_id
-				WHERE user_id=:user_id";
+				WHERE order_id=:order_id";
 		$STH = self::$connection->prepare($SQL);
-		$STH->execute(['user_id'=>$user_id]);
+		$STH->execute(['user_id'=>$user_id, 'order_id'=>$order_id]);
 		$STH->setFetchMode(\PDO::FETCH_OBJ);
 		return $STH->fetchAll();
 	}
@@ -104,6 +104,10 @@ class Order extends \app\core\Model{
 		$STH->execute();
 		$STH->setFetchMode(\PDO::FETCH_OBJ);
 		return $STH->fetchAll();
+	}
+
+	public function getUserByOrderId($order_id){
+		$SQL = "SELECT * FROM `order` WHERE order_id=:order_id"
 	}
 
 }

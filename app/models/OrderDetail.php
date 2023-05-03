@@ -69,5 +69,12 @@ class OrderDetail extends \app\core\Model{
 
     }
 
-
+    public function getProductsByOrderId($order_id){
+        $SQL = "SELECT * FROM detail WHERE order_id=:order_id";
+        $STH = self::$connection->prepare($SQL);
+        $data = ['order_id'=>$order_id];
+        $STH->execute($data);
+        $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\OrderDetail');
+        return $STH->fetchAll();
+    }
 }

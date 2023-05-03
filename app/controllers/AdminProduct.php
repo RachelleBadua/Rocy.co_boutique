@@ -14,28 +14,45 @@ class AdminProduct extends \app\core\Controller{
 
 	public function create(){
 		if(isset($_POST['action'])){
-			$product = new \app\models\Product();
+			if($_POST['product_name'] != '' 
+				&& $_POST['product_name'] != null
+				&& $_POST['category_id'] != ''
+				&& $_POST['category_id'] != null
+				&& $_POST['sellingPrice'] != ''
+				&& $_POST['sellingPrice'] != null
+				&& $_POST['quantity'] != ''
+				&& $_POST['quantity'] != null
+				&& $_POST['description'] != ''
+				&& $_POST['description'] != null)
+			{
+			
 
-			// $product->category_id = $_POST['image'];
-			$product->product_name = htmlentities($_POST['product_name']);
-			$product->category_id = htmlentities($_POST['category_id']);
-			$product->sellingPrice = htmlentities($_POST['sellingPrice']);
-			$product->quantity = htmlentities($_POST['quantity']);
-			$product->description = htmlentities($_POST['description']);
+				$product = new \app\models\Product();
 
-			$uploadedPicture = $this->uploadPicture();
+				// $product->category_id = $_POST['image'];
+				$product->product_name = htmlentities($_POST['product_name']);
+				$product->category_id = htmlentities($_POST['category_id']);
+				$product->sellingPrice = htmlentities($_POST['sellingPrice']);
+				$product->quantity = htmlentities($_POST['quantity']);
+				$product->description = htmlentities($_POST['description']);
 
-			if(isset($uploadedPicture['target_file']))
-                $product->image = htmlentities($uploadedPicture["target_file"]);
+				$uploadedPicture = $this->uploadPicture();
 
-            $uploadMessage = $uploadedPicture["upload_message"] == 'success' ? '' : '&error=Something went wrong '.$uploadedPicture["upload_message"];
+				if(isset($uploadedPicture['target_file']))
+	                $product->image = htmlentities($uploadedPicture["target_file"]);
 
-			$success = $product->insert();
-			if($success)
-				header('location:/AdminProduct/index?success=Product added.');
-			else
-				header('location:/AdminProduct/index?error=Something went wrong.');
+	            $uploadMessage = $uploadedPicture["upload_message"] == 'success' ? '' : '&error=Something went wrong '.$uploadedPicture["upload_message"];
 
+				$success = $product->insert();
+				if($success) {
+					header('location:/AdminProduct/index?success=Product added.');
+				}
+				else {
+					header('location:/AdminProduct/index?error=Something went wrong.');
+				}
+			} else {
+				header('location:/AdminProduct/create?error=Fill up all criterias');
+			}
 		} else {
 			$category = new \app\models\Category();
 			$categories = $category->getAll();
@@ -94,29 +111,43 @@ echo "Second IF";
     }
 
     public function edit($product_id){
-		// modify a client record
 		$product = new \app\models\Product();
 		$product = $product->getProduct($product_id);
-		// form is submitted
 		if(isset($_POST['action'])){
-			// TODO: save the data
-			$product->product_name = htmlentities($_POST['product_name']);
-			$product->category_id = htmlentities($_POST['category_id']);
-			$product->sellingPrice = htmlentities($_POST['sellingPrice']);
-			$product->quantity = htmlentities($_POST['quantity']);
-			$product->description = htmlentities($_POST['description']);
-			$uploadedPicture = $this->uploadPicture();
+			if($_POST['product_name'] != '' 
+				&& $_POST['product_name'] != null
+				&& $_POST['category_id'] != ''
+				&& $_POST['category_id'] != null
+				&& $_POST['sellingPrice'] != ''
+				&& $_POST['sellingPrice'] != null
+				&& $_POST['quantity'] != ''
+				&& $_POST['quantity'] != null
+				&& $_POST['description'] != ''
+				&& $_POST['description'] != null)
+			{
+				// $product = new \app\models\Product();
+				// $product = $product->getProduct($product_id);
 
-            if(isset($uploadedPicture['target_file']))
-                $product->image = htmlentities($uploadedPicture["target_file"]);
+				$product->product_name = htmlentities($_POST['product_name']);
+				$product->category_id = htmlentities($_POST['category_id']);
+				$product->sellingPrice = htmlentities($_POST['sellingPrice']);
+				$product->quantity = htmlentities($_POST['quantity']);
+				$product->description = htmlentities($_POST['description']);
+				$uploadedPicture = $this->uploadPicture();
 
-            $uploadMessage = $uploadedPicture["upload_message"] == 'success' ? '' : '&error=Something went wrong '.$uploadedPicture["upload_message"];
+	            if(isset($uploadedPicture['target_file']))
+	                $product->image = htmlentities($uploadedPicture["target_file"]);
 
-			$success = $product->update();
-			if($success) {
-				header('location:/AdminProduct/index' );
+	            $uploadMessage = $uploadedPicture["upload_message"] == 'success' ? '' : '&error=Something went wrong '.$uploadedPicture["upload_message"];
+
+				$success = $product->update();
+				if($success) {
+					header('location:/AdminProduct/index' );
+				} else {
+					header('location:/AdminProduct/index?error=There was an error updating product ID:' . $product_id );
+				}
 			} else {
-				header('location:/AdminProduct/index?error=There was an error deleting product ID:' . $product_id );
+				header('location:/AdminProduct/edit/'.$product_id.'?error=Fill up all criterias');
 			}
 		} else {
 			$category = new \app\models\Category();

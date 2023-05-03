@@ -23,13 +23,8 @@
 					<td><?= htmlentities($order->email) ?></td>
 					<td><?= htmlentities($order->order_date) ?></td>
 					<td><?= htmlentities($order->status) ?></td>
-					<td><?= htmlentities($order->total_price) ?></td>
-
 					<td>
-						<!-- TODO: make function to delete product-->
-						<!-- <a href='/AdminProduct/delete/<?=$product->product_id?>'><?= _('delete') ?></a> |  -->
-						<!-- TODO: make function to edit product -->
-						<a href='/AdminOrder/edit/<?=$order->order_id?>'><?= _('edit') ?></a>
+						<a href='/AdminOrder/edit/<?=$order->order_id?>'><?= _('undone') ?></a>
 					</td>
 				</tr>
 				<?php
