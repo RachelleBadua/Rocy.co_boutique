@@ -70,4 +70,17 @@ class Order extends \app\core\Model{
 		$STH->execute(['user_id'=>$user_id, 'status'=>'cart']);
 		return $STH->fetch(PDO::FETCH_COLUMN);
 	}
+
+	public function getOrderByUser($user_id){
+		$SQL = "SELECT * FROM `order` o JOIN user u 
+				ON o.user_id = u.user_id
+				JOIN profile p
+				ON u.user_id = p.user_id
+				WHERE user_id=:user_id";
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute(['user_id'=>$user_id]);
+		$STH->setFetchMode(\PDO::FETCH_OBssJ);
+		return $STH->fetchAll();
+	}
+
 }

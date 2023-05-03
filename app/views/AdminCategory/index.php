@@ -26,7 +26,7 @@
 				
 					<?php foreach ($data['categories'] as $category) { ?>
 					<tr>
-						<td><a href='/AdminCategory/edit/<?=$category->category_id?>'><?= htmlentities($category->category_id) ?></a></td>
+						<td><a name='editProductId' onclick="setSelectedId()" href=''><?= htmlentities($category->category_id) ?></a></td>
 						<td><?= htmlentities($category->category) ?></td>
 						 <td>
 							<!-- TODO: make function to delete product
@@ -61,7 +61,7 @@
 							?>
 							
 						</select> -->
-						<input type="text" name="category_id" style="" disabled="" value="<?= $data['editCategory']->category_id ?>">
+						<input type="text" name="selectedCategoryId" style="" disabled="" value="<?= $data['editCategory']->category_id ?>">
 						<input class="btn-input" type="text" name="category" value="<?= $data['editCategory']->category ?>">
 						<input type="submit" name="editAction" value="Edit">
 					</div>
@@ -72,3 +72,14 @@
 </div>
 
 </body>
+
+<?php
+function setSelectedId($category_id) {?>
+	<script type="text/javascript">
+		console.log(<?= $category_id ?>);
+		var e = document.getElementByName('selectedCategoryId').text(<?= $category_id ?>);
+	</script>>
+	return;
+<?php
+}
+?>

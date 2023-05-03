@@ -39,7 +39,7 @@
 					<label class="btn-label"><?= _('Subscription:') ?></label>
 					<div class="btn-input">
 						<?php
-							echo ($data->subscription == 0 ? "True" :  "False"); 
+							echo ($data->subscription == 0 ? "Yes" :  "No"); 
 						?>
 					</div>
 					<br>

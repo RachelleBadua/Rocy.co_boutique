@@ -38,6 +38,7 @@
 					<div class="btn-addProduct" style="">
 						<label class="btn-label"><?= _('Category:') ?></label>
 						<select class="btn-input" name="category_id">
+							<option selected disabled="">Select a Category</option>
 
 					<?php
 						foreach($data as $category){

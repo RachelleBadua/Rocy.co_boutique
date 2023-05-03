@@ -6,4 +6,12 @@ class AdminOrder extends \app\core\Controller{
 	public function index(){
 		$this->view('AdminOrder/index');
 	}
+
+	public function orderDetails(){
+		
+	}
+
+	public function edit(){
+
+	}
 }
