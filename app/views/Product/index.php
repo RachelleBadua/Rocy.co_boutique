@@ -7,7 +7,7 @@
 <?php $this->view('shared/navBar'); 
 $cur_cat = 0;
 ?>
-<h1>Catalog</h1>
+<h1 class='pageTitle'>Catalog</h1>
 	<div class="content">
         <div class="sideBar">
             <div class='search-tool'>

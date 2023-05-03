@@ -5,6 +5,7 @@
 <!-- body -->
 <?php $this->view('shared/navBar');?>
 
+<h1 class='pageTitle'></h1>
 <div class='content'>
     <a href="/Product/index">Back</a>
     <div class='product_img'>
@@ -17,7 +18,7 @@
             <p class='product_desc'><?= $data->description ?></p>
         </div>
         <div class='tools'>
-            <a href=""><button>Add to cart</button></a>
+            <a href="/Product/addToCart/<?= $data->product_id ?>"><button>Add to cart</button></a>
         </div>
     </div>
 

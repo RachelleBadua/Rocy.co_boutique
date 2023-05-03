@@ -22,6 +22,6 @@
         </a>
          <!-- not yet created -->
         <span></span>
-        <a href="">Cart<img class="cartIcon"></a> <!-- not yet created -->
+        <a href="/Cart/index">Cart<img class="cartIcon"></a> <!-- not yet created -->
     </div>
 </div>

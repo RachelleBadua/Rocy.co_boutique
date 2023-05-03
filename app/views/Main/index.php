@@ -1,10 +1,14 @@
+<link rel="stylesheet" type="text/css" href="/resources/styles/pageContent.css">
+
 <?php $this->view('shared/header','Main Index'); ?>
 
 <!-- <body> -->
 
 <?php $this->view('shared/navBar'); ?>
 
-<!-- <div class="carouselSize">
+<h1 class='pageTitle'></h1>
+<div class='content'>
+<div class="carouselSize">
   <div class="container text-center my-3">
   <h2 id="headerText">Featured Bunnies</h2>
     <div class="row mx-auto my-auto justify-content-center">
@@ -80,8 +84,9 @@
         </div>
     </div>
 </div>
-</div> -->
+</div>
+</div>
 <!-- </body> -->
 
-<!-- <script src="/resources/scripts/carousel.js"></script> 
-<script src="/resources/scripts/bootstrap.js"></script> -->
+<script src="/resources/scripts/carousel.js"></script> 
+<script src="/resources/scripts/bootstrap.js"></script>

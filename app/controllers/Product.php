@@ -24,4 +24,10 @@ class Product extends \app\core\Controller{
 
 		$this->view('Product/product_detail', $products);
 	}
+
+	function addToCart($product_id) {
+		// $order = new \app\models\Order();
+		// $order = $order->getAll();
+		// $this->view('Cart/index', $order);
+	}
 }
