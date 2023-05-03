@@ -95,4 +95,15 @@ class Order extends \app\core\Model{
 		return $STH->fetchAll();
 	}
 
+	public function getAllAdminOrders(){
+		$SQL = "SELECT * FROM `order` o JOIN user u 
+				ON o.user_id = u.user_id
+				JOIN profile p
+				ON u.user_id = p.user_id";
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute();
+		$STH->setFetchMode(\PDO::FETCH_OBJ);
+		return $STH->fetchAll();
+	}
+
 }

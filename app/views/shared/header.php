@@ -15,9 +15,9 @@
 <body>
 	<?php
 		if(isset($_GET['success'])){
-			echo '<div class="alert alert-success"><button data-bs-dismiss="alert">close</button>'. $_GET['success'].'</div>';
+			echo '<div class="alert alert-success"><button class="btn-close" data-bs-dismiss="alert"></button>'. $_GET['success'].'</div>';
 		}
 		if(isset($_GET['error'])){
-			echo '<div class="alert alert-danger">'.$_GET['error'].'</div>';
+			echo '<div class="alert alert-danger"><button class="btn-close" data-bs-dismiss="alert"></button>'.$_GET['error'].'</div>';
 		}
 		?>
