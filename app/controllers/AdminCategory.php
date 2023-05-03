@@ -48,4 +48,6 @@ class AdminCategory extends \app\core\Controller{
 		// header('location:/AdminCategory/index');
 
 	}
+
+	
 }
