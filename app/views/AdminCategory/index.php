@@ -2,17 +2,15 @@
 
 <?php $this->view('shared/header', _('Category')); ?>
 <?php $this->view('shared/sideBar'); ?>
-
+<!-- 
 <?php
 	$categories = $data['categories'];
 	$editCategory = $data['editCategory'];
 ?>
 
-	<div class="main">
-		<!-- <?php 
-		var_dump($categories); 
-		var_dump($editCategory); 
-		?> -->
+ -->	<div class="main">
+		<?php 
+		?> 
 		<div class="categoryList">
 			<h2>Category</h2>
 			<table>
@@ -26,7 +24,7 @@
 				
 					<?php foreach ($data['categories'] as $category) { ?>
 					<tr>
-						<td><a name='editProductId' onclick="setSelectedId()" href=''><?= htmlentities($category->category_id) ?></a></td>
+						<td><a onclick="setSelectedId(<?=$category->category_id?>, '<?=$category->category?>')" href='#'><?= htmlentities($category->category_id) ?></a></td>
 						<td><?= htmlentities($category->category) ?></td>
 						 <td>
 							<!-- TODO: make function to delete product
@@ -50,7 +48,7 @@
 			</div>
 			<div class="editCategory">
 				<h4>Edit Category</h4>
-				<form class="form-editCategory" method="post" enctype="multipart/form-data" action="">
+				<form class="form-editCategory" method="post" enctype="multipart/form-data" action="/AdminCategory/edit/">
 					<div class="btn-editCategory">
 						<!-- <select class="btn-input">
 							<?php
@@ -61,25 +59,24 @@
 							?>
 							
 						</select> -->
-						<input type="text" name="selectedCategoryId" style="" disabled="" value="<?= $data['editCategory']->category_id ?>">
-						<input class="btn-input" type="text" name="category" value="<?= $data['editCategory']->category ?>">
+						<input type="text" name="categoryId" style="" readonly value="">
+						<input class="btn-input" type="text" name="categoryName" value="">
 						<input type="submit" name="editAction" value="Edit">
 					</div>
 				</form>
 			</div>
 		</div>
+		<script type="text/javascript">
+			function setSelectedId(id, name) {
+				document.getElementsByName('categoryId')[0].setAttribute('value', id);
+				// document.getElementsByName('categoryId')[0].value = id;
+				document.getElementsByName('categoryName')[0].setAttribute('value', name);
+				// document.getElementsByName('categoryName')[0].values = name;
+				return true;
+			}
+		</script>>
 	</div>
 </div>
 
 </body>
 
-<?php
-function setSelectedId($category_id) {?>
-	<script type="text/javascript">
-		console.log(<?= $category_id ?>);
-		var e = document.getElementByName('selectedCategoryId').text(<?= $category_id ?>);
-	</script>>
-	return;
-<?php
-}
-?>

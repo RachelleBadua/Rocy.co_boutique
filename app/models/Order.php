@@ -71,6 +71,18 @@ class Order extends \app\core\Model{
 		return $STH->fetch(PDO::FETCH_COLUMN);
 	}
 
+	public function getAllOrders($user_id){
+		$SQL = "SELECT * FROM `order` o JOIN user u 
+				ON o.user_id = u.user_id
+				JOIN profile p
+				ON u.user_id = p.user_id
+				WHERE user_id=:user_id";
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute(['user_id'=>$user_id]);
+		$STH->setFetchMode(\PDO::FETCH_OBJ);
+		return $STH->fetchAll();
+	}
+
 	public function getOrderByUser($user_id){
 		$SQL = "SELECT * FROM `order` o JOIN user u 
 				ON o.user_id = u.user_id
@@ -79,7 +91,7 @@ class Order extends \app\core\Model{
 				WHERE user_id=:user_id";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute(['user_id'=>$user_id]);
-		$STH->setFetchMode(\PDO::FETCH_OBssJ);
+		$STH->setFetchMode(\PDO::FETCH_OBJ);
 		return $STH->fetchAll();
 	}
 

@@ -9,19 +9,16 @@
 		<table>
 			
 				<tr>
-					<!-- <div class="attributes"> -->
 					<th class="attributes">ID</th>
 					<th class="attributes">Client Email</th>
 					<th class="attributes">Order Date</th>
 					<th class="attributes">Status</th>
 					<th class="attributes">Actions</th>
-					<!-- </div> -->
 				</tr>
 			
 				<?php foreach ($data as $order) { ?>
 				<tr>
 
-					<!-- <td>< htmlentities($product->product_id) ?></td> -->
 					<td><a href='/AdminOrder/orderDetails/<?=$order->order_id?>'><?= htmlentities($order->order_id) ?></a></td>
 					<td><?= htmlentities($order->email) ?></td>
 					<td><?= htmlentities($order->order_date) ?></td>

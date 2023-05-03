@@ -37,17 +37,22 @@ class AdminCategory extends \app\core\Controller{
 		}
 	}
 
-	public function edit($category_id){
-		$category = new \app\models\Category();
-		$categories = $category->getAll();
+	public function edit(){
+		// if(isset($_POST['editAction'])){
+			$category = new \app\models\Category();
+			$category->category_id = htmlentities($_POST['categoryId']);
+			$category->category = htmlentities($_POST['categoryName']);
 
-		$editCategory = new \app\models\Category();
-		$editCategory->getCategory($category_id);
-		$data = ['categories'=>$categories, 'editCategory'=>$editCategory];
-		$this->view('AdminCategory/index', $data);
-		// header('location:/AdminCategory/index');
+			$success = $category->update();
+			if ($success) {
+				header('location:/AdminCategory/index?success=Succesfully updated');
+			} else {
+				header('location:/AdminCategory/index?success=Something went wrong');
+			}
+
+			
+		// } 
+		
 
 	}
-
-	
 }

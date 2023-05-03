@@ -4,9 +4,13 @@ namespace app\models;
 use PDO;
 
 class OrderDetail extends \app\core\Model{
+    // public $order_id;
+    // public $product;
+    public $deatil_id;
     public $order_id;
-    public $product;
-
+    public $product_id;
+    public $unit_price;
+    public $quantity;
 
     public function insert(){
         if ($this->isProductInCart()) {

@@ -30,13 +30,14 @@ class Category extends \app\core\Model{
 		return $STH->rowCount();
 	}
 
-	public function update($category_id){
+	public function update(){
 		$SQL = "UPDATE category 
                 SET category=:category
                 WHERE category_id=:category_id";
 		$STH = self::$connection->prepare($SQL);
 		$data = [
-            'category'=>$category_id,
+			'category'=>$this->category,
+            'category_id'=>$this->category_id
             ];
 		$STH->execute($data);
 		return $STH->rowCount();
