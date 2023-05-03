@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2023 at 07:29 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: May 03, 2023 at 05:36 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `category` (
   `category_id` int(2) NOT NULL,
   `category` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `category`
@@ -57,7 +57,16 @@ CREATE TABLE `detail` (
   `product_id` int(5) NOT NULL,
   `unit_price` float NOT NULL,
   `quantity` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `detail`
+--
+
+INSERT INTO `detail` (`detail_id`, `order_id`, `product_id`, `unit_price`, `quantity`) VALUES
+(1, 1, 10, 5.99, 2),
+(2, 1, 3, 7.99, 1),
+(3, 3, 3, 7.99, 1);
 
 -- --------------------------------------------------------
 
@@ -71,7 +80,15 @@ CREATE TABLE `order` (
   `order_date` date NOT NULL DEFAULT current_timestamp(),
   `status` enum('cart','ordered','finished') DEFAULT NULL,
   `total_price` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`order_id`, `user_id`, `order_date`, `status`, `total_price`) VALUES
+(1, 1, '2023-05-03', 'ordered', 0),
+(3, 1, '2023-05-03', 'cart', 0);
 
 -- --------------------------------------------------------
 
@@ -87,7 +104,7 @@ CREATE TABLE `product` (
   `sellingPrice` float NOT NULL,
   `description` varchar(128) NOT NULL,
   `quantity` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `product`
@@ -115,7 +132,7 @@ CREATE TABLE `profile` (
   `city` varchar(50) NOT NULL,
   `province` varchar(50) NOT NULL,
   `postal` varchar(7) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `profile`
@@ -135,7 +152,7 @@ CREATE TABLE `user` (
   `email` varchar(50) NOT NULL,
   `password` varchar(72) NOT NULL,
   `roleType` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
@@ -203,13 +220,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `detail`
 --
 ALTER TABLE `detail`
-  MODIFY `detail_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `detail_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product`

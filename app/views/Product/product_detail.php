@@ -18,7 +18,7 @@
             <p class='product_desc'><?= $data->description ?></p>
         </div>
         <div class='tools'>
-            <a href="/Product/addToCart/<?= $data->product_id ?>"><button>Add to cart</button></a>
+            <a href="/Cart/addToCart/<?= $data->product_id ?>"><button>Add to cart</button></a>
         </div>
     </div>
 
