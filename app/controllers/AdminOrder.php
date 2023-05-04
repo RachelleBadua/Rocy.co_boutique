@@ -10,14 +10,17 @@ class AdminOrder extends \app\core\Controller{
 	}
 
 	public function orderDetails($order_id){
-		// $order = new \app\models\Order();
-		// $order = $order->getOrderByUser($user_id);
-		// 
+		$order = new \app\models\Order();
+		$order = $order->getUserByOrderId($order_id);
+		$user_id = $order->user_id;
+
+		$clientInfo = new \app\models\Order();
+		$clientInfo = $clientInfo->getOrderByUser($user_id, $order_id);
 
 		$detail = new \app\models\OrderDetail();
 		$details = $detail->getProductsByOrderId($order_id); 
 
-		$data = ['order'=>$order, 'products'=>$details];
+		$data = ['clientInfo'=>$clientInfo, 'products'=>$details];
 		$this->view('AdminOrder/orderDetails', $data);
 	}
 

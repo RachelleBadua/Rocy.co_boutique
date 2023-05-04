@@ -1,19 +1,24 @@
 .content {
-  display: flex;
+  /*display: bl;*/
   height: 100%;
   width: 100%;
-
 }
 
 .sidenav {
-  order: 1;
+  /*order: 1;*/
+  /*flex-grow: 1;*/
+  display: inline-block;
+
 }
 
 .main {
+  display: inline-block;
   background-color: #ffffff;
-  order: 2;
-  flex-grow: 1;
+  /*order: 2;*/
+  width: calc(100% - 300px);
+  float: right;
   text-align: center;
+  /*flex-wrap: wrap;*/
 }
 
 .flowerlogo {

@@ -25,12 +25,13 @@
 </div>
 
 <script type='text/javascript'>
-    const url = '/Cart/addToCart/<?= $data->product_id ?>'
+    const url = '/Cart/addToCart/<?= $data->product_id ?>';
+    const pUrl = '/Product/productDetail/<?= $data->product_id ?>';
     function addToCart() {
         $.post(url, () => {})
-        .done(() => alert("Product added to cart!"))
-        .fail(() => alert('Something went wrong'))
-
+        .done(() => {
+            window.location.replace(pUrl.concat('?success=Product added to cart'))
+        })
     }
 </script>
 

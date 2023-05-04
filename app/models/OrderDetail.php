@@ -6,7 +6,7 @@ use PDO;
 class OrderDetail extends \app\core\Model{
     // public $order_id;
     // public $product;
-    public $deatil_id;
+    public $detail_id;
     public $order_id;
     public $product_id;
     public $unit_price;
@@ -70,7 +70,10 @@ class OrderDetail extends \app\core\Model{
     }
 
     public function getProductsByOrderId($order_id){
-        $SQL = "SELECT * FROM detail WHERE order_id=:order_id";
+        $SQL = "SELECT d.*, p.product_name, p.sellingPrice
+                FROM detail d JOIN product p 
+                ON d.product_id = p.product_id
+                WHERE order_id=:order_id";
         $STH = self::$connection->prepare($SQL);
         $data = ['order_id'=>$order_id];
         $STH->execute($data);

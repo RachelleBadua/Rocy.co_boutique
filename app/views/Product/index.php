@@ -11,8 +11,8 @@ $cur_cat = 0;
 	<div class="content">
         <div class="sideBar">
             <div class='search-tool'>
-                <form action="/Product/index" method='GET'>
-                    <input type="text" class="search-value" placeholder="Search product name" name="search" value=""/>
+                <form action="/Product/search" method='GET'>
+                    <input type="text" class="search-value" placeholder="Search product name" name="value" value=""/>
                     <button type="submit"><img src="/resources/images/searchIcon.png"></button>
                 </form>
             </div>

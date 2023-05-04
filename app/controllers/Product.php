@@ -12,7 +12,8 @@ class Product extends \app\core\Controller{
 		}
 	}
 
-	function search($product_name) {
+	function search() {
+		$product_name = $_GET['value'];
 		$products = new \app\models\Product();
 		$products = $products->getAllMatchName($product_name == '\'' ? "\\$product_name" : $product_name);
 		$this->view('Product/index', $products);

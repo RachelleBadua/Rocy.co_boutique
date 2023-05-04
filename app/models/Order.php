@@ -83,12 +83,12 @@ class Order extends \app\core\Model{
 		return $STH->fetchAll();
 	}
 
-	public function getOrderByUser($user_id){
+	public function getOrderByUser($user_id, $order_id){
 		$SQL = "SELECT * FROM `order` o JOIN user u 
 				ON o.user_id = u.user_id
 				JOIN profile p
 				ON u.user_id = p.user_id
-				WHERE order_id=:order_id";
+				WHERE o.user_id=:user_id AND o.order_id=:order_id";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute(['user_id'=>$user_id, 'order_id'=>$order_id]);
 		$STH->setFetchMode(\PDO::FETCH_OBJ);
@@ -107,7 +107,12 @@ class Order extends \app\core\Model{
 	}
 
 	public function getUserByOrderId($order_id){
-		$SQL = "SELECT * FROM `order` WHERE order_id=:order_id"
+		$SQL = "SELECT * FROM `order` WHERE order_id=:order_id";
+		$STH = self::$connection->prepare($SQL);
+		$data = ['order_id'=>$order_id];
+		$STH->execute($data);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Order');
+		return $STH->fetch();
 	}
 
 }
