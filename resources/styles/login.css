@@ -27,11 +27,25 @@
   /*border: 1px solid black;*/
   margin-left: 50px;
   text-align: left;
+} 
+
+.btn-label-checkbox {
+  flex: 60%;
+  /*border: 1px solid black;*/
+  margin-left: 5px;
+  text-align: left;
 }
 
 .btn-input {
   flex: 80%;
   margin-right: 50px;
+  /*border: 1px solid black;*/
+  text-align: left;
+}
+
+.btn-input-checkbox {
+  flex: 40%;
+  /*margin-right: 50px;*/
   /*border: 1px solid black;*/
   /*text-align: left;*/
 }
@@ -39,9 +53,10 @@
 .main {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 100px;
     min-width: 1000px;
     width: 90%;
-    height: auto;
+    height: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
     overflow: auto;

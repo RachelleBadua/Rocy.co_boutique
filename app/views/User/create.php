@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/login.css">
 
+
 <?php $this->view('shared/header','Create Account'); ?>
 
 <!-- <body> -->
@@ -8,9 +9,6 @@
 	<div class="main" style="">
 		
 		<div class="inputLogin">
-
-			
-
 			<form class="formLogin " method="post" style=" width: 600;
 			/*display: flex;*/
 			/*justify-content: center;
@@ -20,7 +18,7 @@
 		  	margin: 2em auto;
 			  
 			  ">
-			  <h1 class="" style="margin-bottom: 50px;">Create Account</h1>
+			  <h1 class="" style="margin-top: 60px; margin-bottom: 20px;">Create Account</h1>
 				<div class="btn-login ">
 					<label class="btn-label"><?= _('Email:') ?></label>
 					<input class="btn-input" type="text" name="email"><br>
@@ -31,16 +29,12 @@
 					<input class="btn-input" type="text" name="password"><br>
 				</div>
 				<br>
-				<div class="btn-login ">
-					<label class="btn-label"><?= _('Subscription:') ?></label>
-					<!-- <div class="box"> -->
-						<input class="btn-input" type="checkbox" name="subscription" value="0">
-						<label for="subscription"><?= _('Yes') ?></label>
-					<!-- </div> -->
-					<!-- <div class="box" style=""> -->
-						<input class="btn-input" type="checkbox" name="subscription" value="1">
-						<label for="subscription"><?= _('No') ?></label>
-					<!-- </div> -->
+				<div class="btn-login" >
+					<label class="btn-label" ><?= _('Subscription:') ?></label>
+						<input class="btn-input-checkbox" type="checkbox" name="subscription" value="0" >
+						<label class="btn-label-checkbox" for="subscription"><?= _('Yes') ?></label>
+						<input class="btn-input-checkbox" type="checkbox" name="subscription" value="1" >
+						<label class="btn-label-checkbox" for="subscription"><?= _('No') ?></label>
 				</div>
 				<br>
 				<div class="btn-login ">
@@ -85,4 +79,6 @@
 		</div>
 
 	</div>
+
+	<script type="text/javascript" src="/resources/scripts/checkboxes.js"></script>
 <!-- </body> -->
