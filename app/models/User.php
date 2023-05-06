@@ -39,4 +39,16 @@ class User extends \app\core\Model{
 		$STH->execute($data);
 		return $STH->rowCount();
 	}
+
+	public function getUsersWithSubcription() {
+		$SQL = 'SELECT * FROM user u 
+				JOIN profile p 
+				On u.user_id = p.user_id
+				WHERE subscription=:subscription';
+		$STH = self::$connection->prepare($SQL);
+		$subscription = 0;
+		$STH->execute(['subscription'=>$subscription]);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\User');
+		return $STH->fetchAll();
+	}
 }
