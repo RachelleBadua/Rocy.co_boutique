@@ -55,19 +55,17 @@ class Order extends \app\core\Model{
 		return $STH->fetchAll();
 	}
 
-	public function isCurrentOrderExist($user_id)  {
-		//user_id should be $_SESSION['user_id'], however, for now, testing so set to 1
+	public function isCurrentOrderExist()  {
 		$SQL = "SELECT * FROM `order` WHERE user_id=:user_id AND status=:status";
 		$STH = self::$connection->prepare($SQL);
-		$STH->execute(['user_id'=>$user_id, 'status'=>'cart']);
+		$STH->execute(['user_id'=>$this->user_id, 'status'=>'cart']);
 		return $STH->rowCount() > 0;
 	}
 
-	public function getOrderId($user_id) {
-		//user_id should be $_SESSION['user_id'], however, for now, testing so set to 1
+	public function getOrderId() {
 		$SQL = "SELECT * FROM `order` WHERE user_id=:user_id AND status=:status";
 		$STH = self::$connection->prepare($SQL);
-		$STH->execute(['user_id'=>$user_id, 'status'=>'cart']);
+		$STH->execute(['user_id'=>$this->user_id, 'status'=>'cart']);
 		return $STH->fetch(PDO::FETCH_COLUMN);
 	}
 
@@ -110,6 +108,15 @@ class Order extends \app\core\Model{
 		$SQL = "SELECT * FROM `order` WHERE order_id=:order_id";
 		$STH = self::$connection->prepare($SQL);
 		$data = ['order_id'=>$order_id];
+		$STH->execute($data);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Order');
+		return $STH->fetch();
+	}
+
+	public function getCartByUser() {
+		$SQL = "SELECT * FROM `order` WHERE user_id=:user_id AND status = 'cart'";
+		$STH = self::$connection->prepare($SQL);
+		$data = ['user_id'=>$this->user_id];
 		$STH->execute($data);
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Order');
 		return $STH->fetch();

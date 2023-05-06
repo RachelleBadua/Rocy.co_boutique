@@ -17,7 +17,7 @@
     </div>
     <div class="i3">
         <div></div>
-        <a href="">My Account
+        <a href="/MyAccount/index">My Account
             <img class="accIcon">
         </a>
          <!-- not yet created -->

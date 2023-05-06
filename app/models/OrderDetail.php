@@ -4,8 +4,6 @@ namespace app\models;
 use PDO;
 
 class OrderDetail extends \app\core\Model{
-    // public $order_id;
-    // public $product;
     public $detail_id;
     public $order_id;
     public $product_id;

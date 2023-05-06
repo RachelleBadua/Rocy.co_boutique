@@ -4,6 +4,7 @@
 
 <!-- <body> -->
 	<?php $this->view('shared/navBar'); ?>
+	<h1 class='pageTitle'></h1>
 	<div class="main" style="">
 		
 		<div class="inputLogin">

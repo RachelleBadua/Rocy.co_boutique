@@ -1,9 +1,7 @@
-.main {
-	/*border: 1px solid black;*/
+/* .main {
+	border: 1px solid black;
 	text-align: center;
-  	padding: 55px;
-
-}
+} */
 
 .inputLogin {
 	/*border: 1px solid black;*/
@@ -36,4 +34,28 @@
   margin-right: 50px;
   /*border: 1px solid black;*/
   /*text-align: left;*/
+}
+
+.main {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 1000px;
+    width: 90%;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: auto;
+    background-color: white;
+    /* display: flex; */
+    justify-content: space-between;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.pageTitle {
+    padding-top: 25px;
+    padding-bottom: 70px;
+    height: 50px;
+    text-align: center;
+    font-size: 40px;
 }

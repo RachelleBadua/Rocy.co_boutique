@@ -68,4 +68,13 @@ class Profile extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Profile');
 		return $STH->fetch();
 	}
+
+	public function getAddress() {
+		$SQL = 'SELECT `address`, city, province, postal FROM profile WHERE user_id = :user_id';
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute(['user_id'=>$this->user_id]);
+		// $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Profile');
+		$STH->setFetchMode(\PDO::FETCH_OBJ);
+		return $STH->fetch();
+	}
 }
