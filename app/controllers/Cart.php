@@ -3,6 +3,8 @@ namespace app\controllers;
 
 class Cart extends \app\core\Controller{
     function index(){
+		$this->checkCartExist();
+
 		$cart = new \app\models\Order();
 		$cart->user_id = $_SESSION['user_id'];
 		$cart = $cart->getCartByUser();
@@ -12,20 +14,28 @@ class Cart extends \app\core\Controller{
 
 		$address = new \app\models\Profile();
 		$address->user_id = $_SESSION['user_id'];
-		$address = $address->getAddress();
+		$address = $address->getShippingInfo();
 
 		$data = ['cart'=>$cart, 'detail'=>$detail, 'address'=>$address];
 
 		$this->view('Cart/index', $data);
 	}
 
-    function addToCart($product_id) {
+	function checkCartExist() {
 		$order = new \app\models\Order();
 		$order->user_id = $_SESSION['user_id'];
 
 		if (!$order->isCurrentOrderExist()){
 			$order->insert();
 		}
+	}
+
+    function addToCart($product_id) {
+		$this->checkCartExist();
+
+		$order = new \app\models\Order();
+		$order->user_id = $_SESSION['user_id'];
+
 		$product = new \app\models\Product();
 		$product = $product->getProduct($product_id);
 
@@ -36,5 +46,11 @@ class Cart extends \app\core\Controller{
 		return $detail->insert();
 	}
 
-	
+	function placeOrder() {
+		$order = new \app\models\Order();
+		$order->order_id = $_GET['order_id'];
+		$order->isDelivery = (bool)$_GET['isDelivery'];
+
+		$order->placeOrder();
+	}
 }
