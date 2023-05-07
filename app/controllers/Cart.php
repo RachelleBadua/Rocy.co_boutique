@@ -35,15 +35,33 @@ class Cart extends \app\core\Controller{
 
 		$order = new \app\models\Order();
 		$order->user_id = $_SESSION['user_id'];
+		$order_id = $order->getOrderId($user_id);
 
 		$product = new \app\models\Product();
 		$product = $product->getProduct($product_id);
 
 		$detail = new \app\models\OrderDetail();
-		$detail->order_id = $order->getOrderId($user_id);
+		$detail->order_id = $order_id;
 		$detail->product = $product;
 
-		return $detail->insert();
+		$detail->insert();
+		$order->order_id = $order_id;
+		$order->updateTotalPrice();
+	}
+
+	function delete($product_id) {
+		$order = new \app\models\Order();
+		$order->user_id = $_SESSION['user_id'];
+		$order_id = $order->getOrderId();
+
+		$detail = new \app\models\OrderDetail();
+		$detail->order_id = $order_id;
+		$detail->delete($product_id);
+
+		$order->order_id = $order_id;
+		$order->updateTotalPrice();
+
+		header('location:/Cart/index?error=Items Removed');
 	}
 
 	function placeOrder() {

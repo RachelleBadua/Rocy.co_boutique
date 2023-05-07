@@ -21,6 +21,7 @@
                             <th><h5>Name</h5></th>
                             <th><h5>Unit Price</h5></th>
                             <th><h5>Quantity</h5></th>
+                            <th><h5 style="width: 100%; text-allign:center">Action</h5></th>
                         </tr>
                         <?php
                             foreach ($detail as $product) {
@@ -29,6 +30,9 @@
                                         <th>$product->product_name</th>
                                         <th>$product->sellingPrice</th>
                                         <th>$product->quantity</th>
+                                        <th>
+                                            <a href='/Cart/delete/$product->product_id'>Delete</a>
+                                        </th>
                                     </tr>
                                 ";
                             }

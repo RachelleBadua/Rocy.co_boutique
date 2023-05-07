@@ -64,7 +64,16 @@ class OrderDetail extends \app\core\Model{
     }
 
     public function delete($product_id) {
-
+        $SQL = "DELETE FROM detail 
+                WHERE product_id=:product_id 
+                AND order_id=:order_id";
+        $data = [
+            'order_id'=>$this->order_id,
+            'product_id'=>$product_id,
+        ];
+        $STH = self::$connection->prepare($SQL);
+        $STH->execute($data);
+        return $STH->rowCount() > 0;
     }
 
     public function getProductsByOrderId($order_id){

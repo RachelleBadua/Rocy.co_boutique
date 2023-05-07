@@ -134,4 +134,17 @@ class Order extends \app\core\Model{
 		return $STH->fetch();
 	}
 
+	public function updateTotalPrice() {
+		$SQL = "UPDATE `order`
+				SET total_price = 
+					(SELECT FORMAT(SUM(quantity*unit_price), 2) 
+					FROM detail
+					WHERE order_id=:order_id)
+				WHERE order_id=:order_id1";
+		$STH = self::$connection->prepare($SQL);
+		$data = ['order_id'=>$this->order_id,
+				'order_id1'=>$this->order_id
+			];
+		return $STH->execute($data);
+	}
 }
