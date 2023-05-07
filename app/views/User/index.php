@@ -21,11 +21,11 @@
 			  <h1 class="" style="margin-bottom: 50px;">Log In</h1>
 				<div class="btn-login ">
 					<label class="btn-label"><?= _('Email:') ?></label>
-					<input class="btn-input" type="text" name="email"><br>
+					<input class="btn-input" type="email" name="email"><br>
 				</div>
 				<br>
 				<div class="btn-login ">
-					<label class="btn-label"><?= _('Password:') ?></label><input class="btn-input" type="text" name="password"><br>
+					<label class="btn-label"><?= _('Password:') ?></label><input class="btn-input" type="password" name="password"><br>
 				</div>
 				<br>
 				<input type="submit" name="action" value="Login"><br>

@@ -19,7 +19,7 @@
 				<td><a href='/adminCustomer/customerDetails/<?=$customer->user_id?>'><?= htmlentities($customer->user_id) ?></a></td>
 				<td><?= htmlentities($customer->name) ?></td>
 				<td><?= htmlentities($customer->email) ?></td>
-				<td><?= htmlentities($customer->subscription) ?></td>
+				<td><?= htmlentities($customer->subscription == 0 ? "Yes" :  "No") ?></td>
 			</tr>
 			<?php
 			}
