@@ -82,10 +82,10 @@ class Order extends \app\core\Model{
 	}
 
 	public function getAllOrdersByUser($user_id){
-		$SQL = "SELECT * FROM `order` WHERE user_id=:user_id";
+		$SQL = "SELECT * FROM `order` WHERE user_id=10 AND status IN('ordered','finished')";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute(['user_id'=>$user_id]);
-		$STH->setFetchMode(\PDO::FETCH_OBJ);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Order');
 		return $STH->fetchAll();
 	}
 
@@ -143,5 +143,31 @@ class Order extends \app\core\Model{
 				'order_id1'=>$this->order_id
 			];
 		return $STH->execute($data);
+	}
+
+	public function updateOrderedToFinished(){
+		$SQL = "UPDATE `order`
+                SET status=:status 
+                WHERE order_id=:order_id";
+		$STH = self::$connection->prepare($SQL);
+		$data = [
+                'status'=>'finished',
+                'order_id'=>$this->order_id
+            	];
+		$STH->execute($data);
+		return $STH->rowCount();
+	}
+
+	public function updateFinishedToOrdered(){
+		$SQL = "UPDATE `order`
+                SET status=:status 
+                WHERE order_id=:order_id";
+		$STH = self::$connection->prepare($SQL);
+		$data = [
+                'status'=>'ordered',
+                'order_id'=>$this->order_id
+            	];
+		$STH->execute($data);
+		return $STH->rowCount() ? true : false;
 	}
 }

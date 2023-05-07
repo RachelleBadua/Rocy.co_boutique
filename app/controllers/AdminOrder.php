@@ -24,9 +24,23 @@ class AdminOrder extends \app\core\Controller{
 		$this->view('AdminOrder/orderDetails', $data);
 	}
 
-	// public function edit($order_id){
-	// 	$order = new \app\models\Order();
-	// 	$order = $order->getUserByOrderId($order_id);
-	// 	$order
-	// }
+	public function edit($order_id){
+		$order = new \app\models\Order();
+		$order = $order->getUserByOrderId($order_id);
+		if($order->status=='ordered'){
+			$success = $order->updateOrderedToFinished();
+			if(!$succes) {
+				header('location:/AdminOrder/index?success=Succesfully updated to Finished');
+			}else {
+				header('location:/AdminOrder/index?success=Something went wrong');
+			}
+		}else {
+			$success = $order->updateFinishedToOrdered();
+			if(!$succes) {
+				header('location:/AdminOrder/index?success=Succesfully updated to Ordered');
+			}else {
+				header('location:/AdminOrder/index?success=Something went wrong to O');
+			}
+		}
+	}
 }
