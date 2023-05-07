@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/pageContent.css">
 
-<?php $this->view('shared/header','Main Index'); $_SESSION['user_id'] = 1;?>
+<?php $this->view('shared/header','Main Index');?>
 
 <!-- <body> -->
 

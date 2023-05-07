@@ -8,6 +8,7 @@ class Order extends \app\core\Model{
 	public $user_id;
 	public $status;
 	public $total_price;
+	public $isDelivery;
 
 	public function insert(){
 		$SQL = "INSERT INTO `order` (user_id, status, total_price) 
@@ -43,8 +44,19 @@ class Order extends \app\core\Model{
 		return $STH->rowCount();
 	}
 
-	public function updateStatus() {
-		
+	public function placeOrder() {
+		$SQL = "UPDATE `order` 
+				SET status=:status, 
+					order_date=CURRENT_TIMESTAMP(),
+					isDelivery=:isDelivery
+				WHERE order_id=:order_id";
+		$STH = self::$connection->prepare($SQL);
+		$data=['status'=>'ordered',
+				'isDelivery'=>$this->isDelivery,
+				'order_id'=>$this->order_id
+		];
+		$STH->execute($data);
+		return $STH->rowCount() > 0;
 	}
 
 	public function getAll(){
@@ -122,4 +134,17 @@ class Order extends \app\core\Model{
 		return $STH->fetch();
 	}
 
+	public function updateTotalPrice() {
+		$SQL = "UPDATE `order`
+				SET total_price = 
+					(SELECT FORMAT(SUM(quantity*unit_price), 2) 
+					FROM detail
+					WHERE order_id=:order_id)
+				WHERE order_id=:order_id1";
+		$STH = self::$connection->prepare($SQL);
+		$data = ['order_id'=>$this->order_id,
+				'order_id1'=>$this->order_id
+			];
+		return $STH->execute($data);
+	}
 }
