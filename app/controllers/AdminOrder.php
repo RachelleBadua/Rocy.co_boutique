@@ -11,7 +11,7 @@ class AdminOrder extends \app\core\Controller{
 
 	public function orderDetails($order_id){
 		$order = new \app\models\Order();
-		$order = $order->getUserByOrderId($order_id);
+		$order = $order->getByOrderId($order_id);
 		$user_id = $order->user_id;
 
 		$clientInfo = new \app\models\Order();
@@ -26,7 +26,7 @@ class AdminOrder extends \app\core\Controller{
 
 	public function edit($order_id){
 		$order = new \app\models\Order();
-		$order = $order->getUserByOrderId($order_id);
+		$order = $order->getByOrderId($order_id);
 		if($order->status=='ordered'){
 			$success = $order->updateOrderedToFinished();
 			if(!$succes) {
