@@ -24,7 +24,9 @@ class AdminOrder extends \app\core\Controller{
 		$this->view('AdminOrder/orderDetails', $data);
 	}
 
-	public function edit(){
-
-	}
+	// public function edit($order_id){
+	// 	$order = new \app\models\Order();
+	// 	$order = $order->getUserByOrderId($order_id);
+	// 	$order
+	// }
 }

@@ -1,0 +1,102 @@
+.content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+}
+
+.sidenav {
+  order: 1;
+}
+
+.main {
+  background-color: #FFF9FB;
+	order: 2;
+  flex-grow: 1;
+  padding: 35px;
+	/*text-align: center;*/
+  /*align-content: center;*/
+  /*display: flex;
+  align-items: center;
+  justify-content: center;*/
+}
+
+.top {
+  /*border: 2px solid black;*/
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.backButton {
+  flex: 30%;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.title {
+  flex: 70%;
+  margin-left: 100px; 
+  text-align: left;
+  
+}
+
+.infoCustomer {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding-top: 30px;
+  width: 800px; 
+  height: 80%; 
+}
+
+.btn-orderInfo {
+  display: flex;
+  /*border: 1px solid black;*/
+
+}
+
+.btn-label {
+  flex: 30%;
+  /*border: 1px solid black;*/
+  margin-left: 50px;
+  text-align: left;
+}
+
+.btn-input {
+  flex: 70%;
+  margin-right: 100px;
+  text-align: left;
+
+  /*border: 1px solid black;*/
+  /*text-align: left;*/
+}
+
+.btn-productsQty {
+  /*border: 1px solid black;*/
+  flex: 70%;
+}
+
+th {
+  padding-bottom: 5px;
+  /*border-bottom: 1px black solid;*/
+}
+
+td {
+  padding-bottom: 5px;
+  /*border: 1px black solid;*/
+}
+
+tr {
+  /*border: 10px red solid;*/
+}
+
+table {
+  /*border: 1px black solid;*/
+}
+
+.btn-labelProducts {
+  /*border: 1px solid black;*/  
+  flex: 30%;
+  /*margin-left: 50px;*/
+  text-align: left;
+  padding-left: 50px;
+}

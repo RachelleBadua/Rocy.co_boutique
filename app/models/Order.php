@@ -81,12 +81,8 @@ class Order extends \app\core\Model{
 		return $STH->fetch(PDO::FETCH_COLUMN);
 	}
 
-	public function getAllOrders($user_id){
-		$SQL = "SELECT * FROM `order` o JOIN user u 
-				ON o.user_id = u.user_id
-				JOIN profile p
-				ON u.user_id = p.user_id
-				WHERE user_id=:user_id";
+	public function getAllOrdersByUser($user_id){
+		$SQL = "SELECT * FROM `order` WHERE user_id=:user_id";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute(['user_id'=>$user_id]);
 		$STH->setFetchMode(\PDO::FETCH_OBJ);
@@ -109,9 +105,10 @@ class Order extends \app\core\Model{
 		$SQL = "SELECT * FROM `order` o JOIN user u 
 				ON o.user_id = u.user_id
 				JOIN profile p
-				ON u.user_id = p.user_id";
+				ON u.user_id = p.user_id
+				WHERE o.status=:status1 OR o.status=:status2";
 		$STH = self::$connection->prepare($SQL);
-		$STH->execute();
+		$STH->execute(['status1'=>'ordered', 'status2'=>'finished']);
 		$STH->setFetchMode(\PDO::FETCH_OBJ);
 		return $STH->fetchAll();
 	}
