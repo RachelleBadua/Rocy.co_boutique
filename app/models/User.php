@@ -16,6 +16,15 @@ class User extends \app\core\Model{
 		return $STH->fetch();
 	}
 
+	public function getByUserId() {
+		$SQL = 'SELECT * FROM User WHERE user_id=:user_id';
+		$STH = self::$connection->prepare($SQL);
+
+		$STH->execute(['user_id'=>$this->user_id]);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\User');
+		return $STH->fetch();
+	}
+
 	public function insert(){
 		$SQL = "INSERT INTO user (email, password, roleType) VALUE (:email, :password, :roleType)";
 		$STH = self::$connection->prepare($SQL);
@@ -35,6 +44,16 @@ class User extends \app\core\Model{
 		$data=['email'=>$this->email,
 				'password'=>$this->password,
 				'roleType'=>$this->roleType
+		];
+		$STH->execute($data);
+		return $STH->rowCount();
+	}
+
+	public function updatePassword() {
+		$SQL = "UPDATE user SET password=:password WHERE user_id=:user_id";
+		$STH = self::$connection->prepare($SQL);
+		$data=['password'=>$this->password,
+				'user_id'=>$this->user_id
 		];
 		$STH->execute($data);
 		return $STH->rowCount();

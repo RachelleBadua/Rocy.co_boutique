@@ -106,7 +106,7 @@ class Order extends \app\core\Model{
 				ON o.user_id = u.user_id
 				JOIN profile p
 				ON u.user_id = p.user_id
-				WHERE o.status IN('ordered', 'finished')";
+				WHERE o.status IN('ordered','finished')";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute();
 		$STH->setFetchMode(\PDO::FETCH_OBJ);

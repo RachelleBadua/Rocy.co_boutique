@@ -76,4 +76,30 @@ class Profile extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_OBJ);
 		return $STH->fetch();
 	}
+
+	public function updateName() {
+		$SQL = "UPDATE profile
+				SET name=:name
+				WHERE user_id=:user_id";
+		$STH = self::$connection->prepare($SQL);
+		$data =[
+			'name'=>$this->name,
+			'user_id'=>$this->user_id,
+		];
+		$STH->execute($data);
+		return $STH->rowCount();
+	}
+
+	public function updatePhone() {
+		$SQL = "UPDATE profile
+				SET phoneNo=:phoneNo
+				WHERE user_id=:user_id";
+		$STH = self::$connection->prepare($SQL);
+		$data =[
+			'phoneNo'=>$this->phoneNo,
+			'user_id'=>$this->user_id,
+		];
+		$STH->execute($data);
+		return $STH->rowCount();
+	}
 }
