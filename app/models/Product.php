@@ -112,4 +112,12 @@ class Product extends \app\core\Model{
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Product');
 		return $STH->fetchAll();
 	}
+
+	public function getAllDesc() {
+		$SQL = 'SELECT * FROM `product` ORDER BY product_id DESC';
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute();
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Product');
+		return $STH->fetchAll();
+	}
 }

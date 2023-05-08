@@ -3,7 +3,9 @@ namespace app\controllers;
 
 class Main extends \app\core\Controller{
 	function index(){
-		$this->view('Main/index');
+		$products = new \app\models\Product();
+		$products = $products->getAllDesc();
+		$this->view('Main/index', $products);
 	}
 
 	function about_us(){
