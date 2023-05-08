@@ -66,9 +66,16 @@ class Cart extends \app\core\Controller{
 
 	function placeOrder() {
 		$order = new \app\models\Order();
-		$order->order_id = htmlentities($_GET['order_id']);
-		$order->isDelivery = (bool)htmlentities($_GET['isDelivery']);
+		$detail = new \app\models\OrderDetail();
+		$detail = $detail->getProductsByOrderId($_POST['order_id']);
 
-		$order->placeOrder();
+		if ($detail){
+			$order->order_id = htmlentities($_POST['order_id']);
+			$order->isDelivery = (bool)htmlentities($_POST['isDelivery']);
+
+			echo $order->placeOrder();
+			return;
+		}
+		echo 0;
 	}
 }

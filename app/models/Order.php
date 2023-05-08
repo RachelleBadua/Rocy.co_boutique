@@ -56,7 +56,7 @@ class Order extends \app\core\Model{
 				'order_id'=>$this->order_id
 		];
 		$STH->execute($data);
-		return $STH->rowCount() > 0;
+		return $STH->rowCount();
 	}
 
 	public function getAll(){

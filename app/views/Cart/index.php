@@ -127,11 +127,18 @@
         });
 
         function placeOrder() {
-            url = "/Cart/placeOrder?order_id=<?=$cart->order_id?>&isDelivery=";
-            url = url.concat(isDelivery());
-            $.post(url, () => {})
-            .done(() => {
-                window.location.replace('/Cart/index?success=Order Placed');
+            // url = "/Cart/placeOrder?order_id=&isDelivery=";
+            // url = url.concat(isDelivery());
+            const url = "/Cart/placeOrder";
+            const data = {
+                order_id: <?=$cart->order_id?>,
+                isDelivery: isDelivery()
+            };
+            $.post(url, data, function (op) {
+                if (op == 0)
+                    window.location.replace('/Cart/index?error=Cart is empty');
+                else 
+                    window.location.replace('/Cart/index?success=Order Placed');
             })
         }
 

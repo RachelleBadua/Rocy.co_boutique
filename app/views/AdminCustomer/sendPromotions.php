@@ -5,6 +5,11 @@
 <?php $this->view('shared/sideBar'); ?>
 
 	<div class="main">
+		<style>
+			.content {
+				height: 100%;
+			}
+		</style>
 		<div align="center" style="">
 			<!-- <a href='/AdminProduct/index/'><?= _('back') ?></a> -->
 			<h2>Send Promotions</h2>

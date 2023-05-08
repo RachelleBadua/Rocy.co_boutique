@@ -9,7 +9,9 @@ class Main extends \app\core\Controller{
 	}
 
 	function about_us(){
-		$this->view('Main/about_us');
+		$aboutUsObj = new \app\models\AboutUs();
+		$aboutUsObj = $aboutUsObj->getAboutUs();
+		$this->view('Main/about_us', $aboutUsObj);
 	}
 
 }

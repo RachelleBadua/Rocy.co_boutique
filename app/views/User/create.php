@@ -5,7 +5,7 @@
 
 <!-- <body> -->
 	<?php $this->view('shared/navBar'); ?>
-	<h1 class='pageTitle'></h1>
+	<h1 class='pageTitle'>Create Account</h1>
 	<div class="main" style="">
 		
 		<div class="inputLogin">
@@ -18,7 +18,7 @@
 		  	margin: 2em auto;
 			  
 			  ">
-			  <h1 class="" style="margin-top: 60px; margin-bottom: 20px;">Create Account</h1>
+			  <h1 class="" style="margin-top: 60px; margin-bottom: 20px;"></h1>
 				<div class="btn-login ">
 					<label class="btn-label"><?= _('Email:') ?></label>
 					<input class="btn-input" type="email" name="email" required><br>
