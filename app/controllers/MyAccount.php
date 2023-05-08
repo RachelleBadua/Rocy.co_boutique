@@ -24,7 +24,31 @@ class MyAccount extends \app\core\Controller{
 	}
 
 	function shipAddress() {
-		$this->view('MyAccount/shipping_address');
+		$address = new \app\models\Profile();
+		$address->user_id = $_SESSION['user_id'];
+		$address = $address->getShippingInfo();
+		$this->view('MyAccount/shipping_address', $address);
+	}
+
+	function updateAddress() {
+		$address = new \app\models\Profile();
+		$address->getByUserId($_SESSION['user_id']);
+		$address->user_id = $_SESSION['user_id'];
+
+		if (!empty($_POST['address'])) {
+			$address->address = htmlentities($_POST['address']);
+		}
+		if (!empty($_POST['city'])) {
+			$address->city = htmlentities($_POST['city']);
+		}
+		if (!empty($_POST['province'])) {
+			$address->province = htmlentities($_POST['province']);
+		}
+		if (!empty($_POST['postal'])) {
+			$address->postal = htmlentities($_POST['postal']);
+		}
+
+		$address->updateAddress();
 	}
 
 	function orderDetail($order_id) {

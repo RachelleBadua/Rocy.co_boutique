@@ -102,4 +102,23 @@ class Profile extends \app\core\Model{
 		$STH->execute($data);
 		return $STH->rowCount();
 	}
+
+	public function updateAddress() {
+		$SQL = "UPDATE profile
+				SET `address`=:address,
+					city=:city,
+					province=:province,
+					postal=:postal
+				WHERE user_id=:user_id";
+		$STH = self::$connection->prepare($SQL);
+		$data =[
+			'address'=>$this->address,
+			'city'=>$this->city,
+			'province'=>$this->province,
+			'postal'=>$this->postal,
+			'user_id'=>$this->user_id,
+		];
+		$STH->execute($data);
+		return $STH->rowCount();
+	}
 }
