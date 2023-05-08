@@ -150,3 +150,4 @@
 </div>
 <!-- </body> -->
 
+<?php $this->view('shared/footer'); ?>

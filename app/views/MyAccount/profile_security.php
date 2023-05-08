@@ -15,18 +15,23 @@ $profile = $data['profile'];
         <table>
             <tr>
                 <td><?=_('Name')?>:</td>
-                <td><input id='name' disabled type="text" value="<?=$profile->name?>"></td>
+                <td class='input'><input id='name' disabled type="text" value="<?=$profile->name?>"></td>
             </tr>
             <tr>
                 <td><?=_('Phone Number')?>:</td>
-                <td><input id='phoneNo' disabled type="text" value="<?=$profile->phoneNo?>"></td>
+                <td class='input'><input id='phoneNo' disabled type="text" value="<?=$profile->phoneNo?>"></td>
             </tr>
             <tr>
                 <td><?=_('New Password')?>:</td>
-                <td><input id='password' disabled type="password" value=""></td>
-                <td hidden id='showPswdRow'><input type="checkbox" id='showPswd'>Show Password</td>
+                <td class='input'><input id='password' disabled type="password" value=""></td>
             </tr>
         </table>
+        <div id='space'>
+            <div hidden id='showPswdRow'>
+                <input type="checkbox" id='showPswd'>
+                Show Password
+            </div>
+        </div>
         <a id="backButton" class="btn btn-secondary" href="/MyAccount/index">Back</a>
         <a id="editButton" class="btn btn-success"><?=_('Edit')?></a>
     </div>
@@ -61,3 +66,5 @@ $profile = $data['profile'];
     </script>
 </div>
 <!-- </body> -->
+
+<?php $this->view('shared/footer'); ?>
