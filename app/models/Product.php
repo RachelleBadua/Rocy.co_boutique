@@ -24,6 +24,7 @@ class Product extends \app\core\Model{
                 ];
 		$STH->execute($data);
 		// $this->client_id = self::$connection->lastInsertId();
+		return $STH->rowCount();
 	}
 
 	public function update(){

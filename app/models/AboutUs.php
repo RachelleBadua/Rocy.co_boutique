@@ -24,17 +24,17 @@ class AboutUs extends \app\core\Model{
 		$data = [
 			'image'=>$this->image,
             'aboutUsText'=>$this->text,
-            'about_us_Id'=>1,
+            'about_us_Id'=>$this->about_us_Id
             ];
 		$STH->execute($data);
 		return $STH->rowCount();
 	}
 
 	public function getAboutUs(){
-		$SQL = "SELECT * FROM about_us WHERE about_us_Id=1";
+		$SQL = "SELECT * FROM about_us WHERE about_us_Id=:about_us_Id";
 		$STH = self::$connection->prepare($SQL);
-		$STH->execute();
-		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Category');
+		$STH->execute(['about_us_Id'=>1]);
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\AboutUs');
 		return $STH->fetch(); // gets the branches from database with an array
 	}
 }

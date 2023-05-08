@@ -45,7 +45,7 @@ class AdminProduct extends \app\core\Controller{
 
 				$success = $product->insert();
 				if($success) {
-					header('location:/AdminProduct/index?success=Product added.');
+					header('location:/AdminProduct/index?success=Product added');
 				}
 				else {
 					header('location:/AdminProduct/index?error=Something went wrong.');
@@ -142,7 +142,7 @@ echo "Second IF";
 
 				$success = $product->update();
 				if($success) {
-					header('location:/AdminProduct/index' );
+					header('location:/AdminProduct/index?success=Product updated' );
 				} else {
 					header('location:/AdminProduct/index?error=There was an error updating product ID:' . $product_id );
 				}
@@ -163,7 +163,7 @@ echo "Second IF";
 		$success = $product->delete($product_id); // deletes
 			// proceed with deletion
 		if($success) {
-			header('location:/AdminProduct/index' );
+			header('location:/AdminProduct/index?success=Product deleted' );
 		
 		} else {
 			// echo "string";

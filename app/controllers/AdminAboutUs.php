@@ -4,39 +4,64 @@ namespace app\controllers;
 class AdminAboutUs extends \app\core\Controller{
 
 	public function index() {
-		$aboutUs = new \app\models\AboutUs();
-		$aboutUs = $aboutUs->getAboutUs();
-		$this->view('AdminAboutUs/index', $aboutUs);
-	}
+		$aboutUsObj = new \app\models\aboutUs();
+		$aboutUsObj = $aboutUsObj->getAboutUs();
+		if(isset($_POST['action'])){
+			if($_POST['text'] != '' 
+				&& $_POST['text'] != null){
+				$aboutUsObj->text = htmlentities($_POST['text']);
+				$uploadedPicture = $this->uploadPicture();
+				if(isset($uploadedPicture['target_file']))
+	                $aboutUsObj->image = htmlentities($uploadedPicture["target_file"]);
 
-	public function edit(){
-		$aboutUs = new \app\models\AboutUs();
-		$aboutUs = $aboutUs->getAboutUs();
-		if ($_POST['text'] != '' 
-				&& $_POST['text'] != null) {
-			// $aboutUs->image = $_POST['image'];
-			$aboutUs->text = $_POST['text'];
+	            $uploadMessage = $uploadedPicture["upload_message"] == 'success' ? '' : '&error=Something went wrong '.$uploadedPicture["upload_message"];
 
-			$uploadedPicture = $this->uploadPicture();
-
-			if(isset($uploadedPicture['target_file'])) 
-                $aboutUs->image = htmlentities($uploadedPicture["target_file"]);
-			// } else {
-			// 	$aboutUs->image = $_POST['image'];
-			// }
-
-            $uploadMessage = $uploadedPicture["upload_message"] == 'success' ? '' : '&error=Something went wrong '.$uploadedPicture["upload_message"];
-
-			$success = $aboutUs->update();
-			if($success) {
-				header('location:/AdminAboutUs/index?success=Successfully updated');
-			} else {
-				header('location:/AdminAboutUs/index?error=There was an error');
+				$success = $aboutUsObj->update();
+				if($success) {
+					header('location:/AdminAboutUs/index?success=successfully updated' );
+				} else {
+					header('location:/AdminAboutUs/index?error=There was an error updating');
+				}
+			}else{
+				header('location:/AdminAboutUs/index?error=Fill up all criterias');
 			}
-		} else {
-			header('location:/AdminAboutUs/index?error=Fill up criteria');
+		}else {
+			// $aboutUs = new \app\models\AboutUs();
+		// $aboutUs = $aboutUs->getAboutUs();
+		$this->view('AdminAboutUs/index', $aboutUsObj);
 		}
 	}
+
+	// public function edit(){
+	// 	$aboutUs = new \app\models\AboutUs();
+	// 	$aboutUs = $aboutUs->getAboutUs();
+	// 	if ($_POST['text'] != '' 
+	// 			&& $_POST['text'] != null) {
+	// 			// && $_POST['image'] != '' 
+	// 			// && $_POST['image'] != null
+	// 		// $aboutUs->image = $_POST['image'];
+	// 		$aboutUs->text = $_POST['text'];
+
+	// 		$uploadedPicture = $this->uploadPicture();
+
+	// 		if(isset($uploadedPicture['target_file'])) 
+ //                $aboutUs->image = htmlentities($uploadedPicture["target_file"]);
+	// 		// } else {
+	// 		// 	$aboutUs->image = $_POST['image'];
+	// 		// }
+
+ //            $uploadMessage = $uploadedPicture["upload_message"] == 'success' ? '' : '&error=Something went wrong '.$uploadedPicture["upload_message"];
+
+	// 		$success = $aboutUs->update();
+	// 		if($success) {
+	// 			header('location:/AdminAboutUs/index?success=Successfully updated');
+	// 		} else {
+	// 			header('location:/AdminAboutUs/index?error=There was an error');
+	// 		}
+	// 	} else {
+	// 		header('location:/AdminAboutUs/index?error=Fill up criteria');
+	// 	}
+	// }
 
 	public function uploadPicture(){
 		// echo "add picture";
@@ -66,7 +91,7 @@ echo "Second IF";
                 // Save the image in the images folder
                 $path = 'resources'. DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR;
 
-                $targetFileName = $_POST['image'].'.'.$fileType;
+                $targetFileName = uniqid().'.'.$fileType;
 
                 move_uploaded_file($_FILES["image"]["tmp_name"], $path.$targetFileName);
 

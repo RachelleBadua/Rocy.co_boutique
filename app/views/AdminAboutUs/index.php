@@ -8,20 +8,21 @@
 		<div align="center" style="">
 			<!-- <a href='/AdminProduct/index/'><?= _('back') ?></a> -->
 			<h2>Edit About Us</h2>
-			<form method ="post" action="/AdminAboutUs/edit" enctype="multipart/form-data">	
-				<div>
+			<form method ="post" action="" enctype="multipart/form-data">	
+				
+				<div class="insertProdInfo">
+				<!-- <div> -->
 					<div class="addImage"> 
 						<label><?= _('Image:') ?></label>
-			    		<input type="file" name="image" onchange="loadFile(event)"/>
+			    		<input class="chooseImage" type="file" name="image" onchange="loadFile(event)" />
 		    			<div>
-							<img id="output" src="/resources/images/<?= $data->image?>" width="250">
+							<img class="theImage"id="output" src="/resources/images/<?= $data->image ?>" >
 						</div>
 					</div>
-				</div>
-				<div class="insertProdInfo">
+				<!-- </div> -->
 					<br>		
-					<div class="btn-addProduct">
-						<label class="btn-label"><?= _('Text:') ?></label>
+					<div class="editText">
+						<!-- <label class="btn-label"><?= _('Text:') ?></label> -->
 						<textarea class="btn-input" name="text"><?= $data->text ?></textarea><br>
 					</div>
 					<br>
