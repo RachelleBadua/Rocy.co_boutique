@@ -56,7 +56,7 @@ class Cart extends \app\core\Controller{
 
 		$detail = new \app\models\OrderDetail();
 		$detail->order_id = $order_id;
-		$detail->delete($product_id);
+		$detail->delete(htmlentities($product_id));
 
 		$order->order_id = $order_id;
 		$order->updateTotalPrice();
@@ -66,8 +66,8 @@ class Cart extends \app\core\Controller{
 
 	function placeOrder() {
 		$order = new \app\models\Order();
-		$order->order_id = $_GET['order_id'];
-		$order->isDelivery = (bool)$_GET['isDelivery'];
+		$order->order_id = htmlentities($_GET['order_id']);
+		$order->isDelivery = (bool)htmlentities($_GET['isDelivery']);
 
 		$order->placeOrder();
 	}

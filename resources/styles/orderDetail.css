@@ -1,0 +1,53 @@
+.content a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+}
+
+.content a {
+    font-size: 20px;
+    height: 45px
+}
+
+.detail {
+    /* margin-top: 20px; */
+    margin: 30px;
+}
+table {
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 30px;
+
+    max-width: 550px;
+    min-width: 550px;
+    font-size: 23px;
+    /* border: 1px solid black; */
+    /* text-align: center; */
+}
+
+.left {
+    /* width: 70%; */
+    min-width: 430px;
+    max-width: 430px;
+    /* border: 1px solid black; */
+}
+
+.right {
+    /* width: 25%; */
+    min-width: 130px;
+    max-width: 130px;
+    /* border: 1px solid black; */
+}
+
+table tr {
+    height: 40px;
+    /* border: 1px solid black; */
+    margin: 10px;
+}
+
+label {
+    /* border: 1px solid black; */
+    margin-top: 10px;
+}

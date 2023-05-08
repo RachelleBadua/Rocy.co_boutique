@@ -15,7 +15,7 @@
 
     <?php foreach ($data as $order) { ?>
         <tr>
-            <td><a href='/MyAccount/orderDetail'><?= htmlentities($order->order_id) ?></a></td>
+            <td><a href='/MyAccount/orderDetail/<?=$order->order_id?>'><?= htmlentities($order->order_id) ?></a></td>
             <td><?= htmlentities($order->order_date) ?></td>
             <td><?= htmlentities($order->status) ?></td>
         </tr>

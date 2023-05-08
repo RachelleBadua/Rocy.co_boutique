@@ -82,7 +82,7 @@ class Order extends \app\core\Model{
 	}
 
 	public function getAllOrdersByUser($user_id){
-		$SQL = "SELECT * FROM `order` WHERE user_id=10 AND status IN('ordered','finished')";
+		$SQL = "SELECT * FROM `order` WHERE user_id=:user_id AND status IN('ordered','finished')";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute(['user_id'=>$user_id]);
 		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Order');
@@ -106,14 +106,14 @@ class Order extends \app\core\Model{
 				ON o.user_id = u.user_id
 				JOIN profile p
 				ON u.user_id = p.user_id
-				WHERE o.status IN('ordered', 'finished')";
+				WHERE o.status IN('ordered','finished')";
 		$STH = self::$connection->prepare($SQL);
 		$STH->execute();
 		$STH->setFetchMode(\PDO::FETCH_OBJ);
 		return $STH->fetchAll();
 	}
 
-	public function getUserByOrderId($order_id){
+	public function getByOrderId($order_id){
 		$SQL = "SELECT * FROM `order` WHERE order_id=:order_id";
 		$STH = self::$connection->prepare($SQL);
 		$data = ['order_id'=>$order_id];
