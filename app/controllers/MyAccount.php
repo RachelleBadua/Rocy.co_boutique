@@ -78,7 +78,7 @@ class MyAccount extends \app\core\Controller{
 		if (!empty($_POST['password'])) {
 			$user = new \app\models\User();
 			$user->user_id = $_SESSION['user_id'];
-			$user->password = htmlentities($_POST['password']);
+			$user->password = password_hash(htmlentities($_POST['password']), PASSWORD_DEFAULT);
 			$user->updatePassword();
 		}
 	}
