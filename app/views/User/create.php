@@ -1,10 +1,9 @@
-<link rel="stylesheet" type="text/css" href="/resources/styles/login.css">
+<link rel="stylesheet" type="text/css" href="/resources/styles/register.css">
 
 
 <?php $this->view('shared/header','Create Account'); ?>
 
 <!-- <body> -->
-	<?php $this->view('shared/navBar'); ?>
 	<h1 class='pageTitle'>Create Account</h1>
 	<div class="main" style="">
 		
