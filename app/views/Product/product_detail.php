@@ -1,27 +1,29 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/pageContent.css">
+<link rel="stylesheet" type="text/css" href="/resources/styles/product_detail.css">
 
-<?php $this->view('shared/header','Main Index'); ?>
+<?php $this->view('shared/header','Product Detail'); ?>
 
 <!-- body -->
 <?php $this->view('shared/navBar');?>
 
 <h1 class='pageTitle'></h1>
 <div class='content'>
-    <a href="/Product/index">Back</a>
-    <div class='product_img'>
-        <img src="/resources/productImages/<?= $data->image ?>">
-    </div>
-    <div class='information_tools'>
-        <div class='information'>
-            <h3 class='product_name'><?= ucwords($data->product_name) ?></h2>
-            <h6 class='price'><?= $data->sellingPrice ?></h4>
-            <p class='product_desc'><?= $data->description ?></p>
+    <div class ='main'>
+        <div class='img'>
+            <img src="/resources/productImages/<?= $data->image ?>">
         </div>
-        <div class='tools'>
-            <button onclick="addToCart()">Add to Cart</button>
+        <div class='vl'></div>
+        <div class='left'>
+            <div class='information'>
+                <h3 class='product_name'><?= ucwords($data->product_name) ?></h2>
+                <h6 class='price'>$<?= $data->sellingPrice ?></h4>
+                <p class='product_desc'><?= $data->description ?></p>
+            </div>
+            <div class='button'>
+                <button class='btn btn-success' onclick="addToCart()"><?=_('Add to Cart')?></button>
+            </div>
         </div>
     </div>
-
 </div>
 
 <script type='text/javascript'>
