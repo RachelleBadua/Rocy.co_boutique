@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2023 at 06:44 AM
+-- Generation Time: May 07, 2023 at 09:40 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -26,6 +26,18 @@ USE `rocy_co`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `about_us`
+--
+
+DROP TABLE IF EXISTS `about_us`;
+CREATE TABLE IF NOT EXISTS `about_us` (
+  `image` varchar(72) NOT NULL,
+  `text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `category`
 --
 
@@ -44,10 +56,7 @@ INSERT INTO `category` (`category_id`, `category`) VALUES
 (1, 'scrunchy'),
 (2, 'bracelet'),
 (3, 'keychain'),
-(4, 'tote bag'),
-(5, 'test'),
-(7, 'test'),
-(8, 'test');
+(4, 'tote bag');
 
 -- --------------------------------------------------------
 
@@ -65,17 +74,13 @@ CREATE TABLE IF NOT EXISTS `detail` (
   PRIMARY KEY (`detail_id`),
   KEY `order_id_detail_to_order` (`order_id`),
   KEY `product_id_detail_to_product` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `detail`
 --
 
 INSERT INTO `detail` (`detail_id`, `order_id`, `product_id`, `unit_price`, `quantity`) VALUES
-(1, 1, 10, 5.99, 2),
-(2, 1, 3, 7.99, 1),
-(3, 3, 3, 7.99, 1),
-(4, 3, 1, 5.99, 12),
 (5, 5, 1, 5.99, 2),
 (6, 5, 3, 7.99, 1),
 (9, 9, 1, 5.99, 1),
@@ -83,7 +88,8 @@ INSERT INTO `detail` (`detail_id`, `order_id`, `product_id`, `unit_price`, `quan
 (11, 11, 1, 5.99, 1),
 (12, 12, 1, 5.99, 1),
 (16, 13, 2, 3.99, 1),
-(17, 13, 3, 7.99, 1);
+(17, 13, 3, 7.99, 1),
+(19, 15, 1, 5.99, 1);
 
 -- --------------------------------------------------------
 
@@ -100,21 +106,22 @@ CREATE TABLE IF NOT EXISTS `order` (
   `total_price` float NOT NULL,
   `isDelivery` tinyint(1) NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `order`
 --
 
 INSERT INTO `order` (`order_id`, `user_id`, `order_date`, `status`, `total_price`, `isDelivery`) VALUES
-(1, 1, '2023-05-03', 'ordered', 0, 0),
-(3, 1, '2023-05-03', 'cart', 0, 0),
 (5, 10, '2023-05-05', 'ordered', 5.5, 0),
 (9, 10, '2023-05-06', 'ordered', 0, 0),
 (10, 10, '2023-05-06', 'ordered', 0, 0),
 (11, 10, '2023-05-06', 'ordered', 1, 0),
 (12, 10, '2023-05-06', 'ordered', 2, 1),
-(13, 10, '2023-05-06', 'cart', 11.98, 0);
+(13, 10, '2023-05-07', 'ordered', 11.98, 1),
+(14, 10, '2023-05-07', 'cart', 0, 0),
+(15, 11, '2023-05-07', 'ordered', 5.99, 1),
+(16, 11, '2023-05-07', 'cart', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -171,7 +178,8 @@ CREATE TABLE IF NOT EXISTS `profile` (
 
 INSERT INTO `profile` (`user_id`, `subscription`, `name`, `phoneNo`, `address`, `city`, `province`, `postal`) VALUES
 (9, 0, 'Jojo', '524-324-32', '123 haha avenue', 'Montreal', 'Quebec', 'T6J 7W3'),
-(10, 0, 'abc', '1029384756', '123 fakeStreet', 'Montreal', 'Quebec', 'a1a 2b2');
+(10, 0, 'abc', '1029384756', '123 fakeStreet', 'Montreal', 'Quebec', 'a1a 2b2'),
+(11, 0, 'eto', '1029384756', '123 fakeStreet', 'Montreal', 'Quebec', 'a1a 2b2');
 
 -- --------------------------------------------------------
 
@@ -186,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(72) NOT NULL,
   `roleType` varchar(10) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
@@ -196,7 +204,8 @@ INSERT INTO `user` (`user_id`, `email`, `password`, `roleType`) VALUES
 (1, 'TestUser', '$2y$10$cA44WNtp7qhpgt2OsPuz/eGZlT.ketAfmu5cPBoZOVfupqH1/P1G.', 'customer'),
 (6, 'TestUser2', '$2y$10$litEQ/Cl5hIZPyAWFAc/DOXUOuiAB53LlpFrD63VtLX7CCwrN6unK', 'customer'),
 (9, 'TestUser4', '$2y$10$8tEuaTguZitcslQwBkaVDus8nrMq921J4kdD7YKl.8BgsW2xbnKGy', 'customer'),
-(10, 'abc@abc.com', '$2y$10$kBfo8N.XaTnCdQsGJIEcxuecaLl54tzYxQFo5cj/.GkqLrp1qrDky', 'customer');
+(10, 'abc@abc.com', '$2y$10$kBfo8N.XaTnCdQsGJIEcxuecaLl54tzYxQFo5cj/.GkqLrp1qrDky', 'customer'),
+(11, 'eto@eto.com', '$2y$10$DCLqcAKIsJGM.aml1f33Ue7cIZy3m9xNNXuGsYxg8jgJyZrMFfbUK', 'customer');
 
 --
 -- Constraints for dumped tables

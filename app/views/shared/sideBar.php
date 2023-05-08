@@ -35,7 +35,7 @@
 			<i class="fa fa-caret-down"></i>
 			</button>
 				<div class="dropdown-container">
-				<a href="#">Edit About Us</a>
+				<a href="/AdminAboutUs/index">Edit About Us</a>
 				</div>
 			<div class="signout">
 				<a href="/User/logout">Sign out</a>
