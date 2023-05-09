@@ -16,7 +16,7 @@
         <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <?php
-                    for ($i = 0; $i < 6; $i++) {
+                    for ($i = 0; $i < 6 && $i < count($data); $i++) {
                         $p = $data[$i];
                 ?>
                     <a href='/Product/productDetail/<?=$p->product_id?>'><div class="carousel-item <?php if ($i == 1)  echo'active';?>">
