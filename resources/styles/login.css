@@ -3,7 +3,7 @@
 	text-align: center;
 	background: white;
 	/*width: 600px;*/
-	height: 76%;
+	height: 45%;
 	/*padding: 50px;*/
 	justify-content: center;
 	align-items: center;
@@ -47,8 +47,8 @@
     margin-right: auto;
     margin-bottom: 100px;
     width: 50%;
-    height: 100%;
-    padding-top: 50px;
+    height: 70%;
+    padding-top: 100px;
     padding-bottom: 50px;
     overflow: auto;
     background-color: white;
@@ -57,6 +57,8 @@
     overflow-x: hidden;
     border-radius: 5px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+   /*padding-top: 40px;*/
+
 }
 
 .pageTitle {

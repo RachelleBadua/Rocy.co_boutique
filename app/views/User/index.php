@@ -5,7 +5,7 @@
 <!-- <body> -->
 	<h1 class='pageTitle'>Log In</h1>
 	<div class="main" style="">
-	<img class="logoImage" src="../resources/images/rocylogoTransBG.png" alt="">
+	<a href="/Main/index"><img class="logoImage" src="../resources/images/rocylogoTransBG.png" alt=""></a>
 
 		<div class="inputLogin">
 			<form class="formLogin" method="post" style=" width: 600;

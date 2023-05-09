@@ -1,1 +1,1 @@
-\xampp\php\php.exe %*
+\xampp_\php\php.exe %*
