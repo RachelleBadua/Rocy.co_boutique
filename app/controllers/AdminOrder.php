@@ -2,13 +2,16 @@
 namespace app\controllers;
 
 class AdminOrder extends \app\core\Controller{
-
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function index(){
 		$order = new \app\models\Order();
 		$orders = $order->getAllAdminOrders();
 		$this->view('AdminOrder/index', $orders);
 	}
-
+	
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function orderDetails($order_id){
 		$order = new \app\models\Order();
 		$order = $order->getByOrderId($order_id);
@@ -24,6 +27,8 @@ class AdminOrder extends \app\core\Controller{
 		$this->view('AdminOrder/orderDetails', $data);
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function edit($order_id){
 		$order = new \app\models\Order();
 		$order = $order->getByOrderId($order_id);

@@ -20,6 +20,7 @@ class User extends \app\core\Controller{
 						// user can login
 						$_SESSION['user_id'] = $user->user_id;
 						$_SESSION['email'] = $user->email;
+						$_SESSION['roleType'] = $user->roleType;
 						// $_SESSION['secret_key'] = $user->secret_key;
 						// $this->view('location:/User/setup2fa');
 
@@ -28,16 +29,19 @@ class User extends \app\core\Controller{
 						// } else {
 							// header('location:/User/profile');
 						// }
-						header('location:/Main/index?success=Logged in');
+						if ($_SESSION['roleType'] == 'admin')
+							header('location:/MainAdmin/index?success=Logged in');
+						else if ($_SESSION['roleType'] == 'customer')
+							header('location:/Main/index?success=Logged in');
 					}else{
 						// the user is no correct
 						// echo "string2";
-						header('location:/User/index?error=Bad2 username/password combination');
+						header('location:/User/index?error=Bad username/password combination');
 					}
 				}else{
 					// no such user so redirect
 					// echo "string1";
-					header('location:/User/index?error=Bad1 username/password combination');
+					header('location:/User/index?error=Bad username/password combination');
 				}
 			}else{
 				// echo "string";
@@ -48,10 +52,15 @@ class User extends \app\core\Controller{
 		}
 	}
 
+	
 	function create(){
 		$defaultRoleType = 'customer';
-    	if(isset($_POST['action'])){
-    		// echo "string";
+		if(isset($_SESSION['user_id'])){
+			header('location:/Main/index?error=You must log out first to create an account');
+			return;
+		}
+		if(isset($_POST['action'])){
+			// echo "string";
 			$user = new \app\models\User();
 			$checkUser = $user->getByEmail($_POST['email']);
 
@@ -82,11 +91,12 @@ class User extends \app\core\Controller{
 				header('location:/User/index?error=User already exists');
 			}
 
-    	} else {
+		} else {
 			$this->view('User/create');
-    	}
+		}
 	}
 
+	#[\app\filters\Login]
 	public function logout(){
 		session_destroy();
 		header('location:/User/index?success=Signed out');

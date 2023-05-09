@@ -2,6 +2,8 @@
 namespace app\controllers;
 
 class AdminCategory extends \app\core\Controller{
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function index(){
 		if(isset($_POST['addAction'])){
 			if($_POST['category'] != '' && $_POST['category'] != null) {
@@ -24,7 +26,9 @@ class AdminCategory extends \app\core\Controller{
 			$this->view('AdminCategory/index', $data);
 		}
 	} 
-
+	
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function delete($category_id){
 		$product = new \app\models\Product();
 		$products = $product->getProductsByCategory($category_id);
@@ -41,6 +45,8 @@ class AdminCategory extends \app\core\Controller{
 		}
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function edit(){
 		if($_POST['categoryName'] != '' && $_POST['categoryName'] != null) {
 			$category = new \app\models\Category();

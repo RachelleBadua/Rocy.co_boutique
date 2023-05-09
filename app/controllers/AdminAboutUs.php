@@ -2,7 +2,8 @@
 namespace app\controllers;
 
 class AdminAboutUs extends \app\core\Controller{
-
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function index() {
 		$aboutUsObj = new \app\models\aboutUs();
 		$aboutUsObj = $aboutUsObj->getAboutUs();
@@ -63,12 +64,14 @@ class AdminAboutUs extends \app\core\Controller{
 	// 	}
 	// }
 
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function uploadPicture(){
 		// echo "add picture";
 		$uploadedFile = array();
 
 		if(isset($_FILES['image']) && ($_FILES['image']['error'] == UPLOAD_ERR_OK)){
-echo "first IF";
+			echo "first IF";
 			$info = getimagesize($_FILES['image']['tmp_name']);
 
 			$allowedTypes = ["jpg", "png", "gif"];
@@ -78,7 +81,7 @@ echo "first IF";
             $fileType = strtolower(pathinfo($fileName,PATHINFO_EXTENSION));
 
 			if($info == false){
-echo "Second IF";
+				echo "Second IF";
                 $uploadedFile["upload_message"] = "Bad image file format!";
                 $uploadedFile["target_file"] = null;
 

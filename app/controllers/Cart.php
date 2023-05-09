@@ -2,6 +2,8 @@
 namespace app\controllers;
 
 class Cart extends \app\core\Controller{
+	#[\app\filters\Login]
+	#[\app\filters\Customer]
     function index(){
 		$this->checkCartExist();
 
@@ -21,6 +23,8 @@ class Cart extends \app\core\Controller{
 		$this->view('Cart/index', $data);
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Customer]
 	function checkCartExist() {
 		$order = new \app\models\Order();
 		$order->user_id = $_SESSION['user_id'];
@@ -30,6 +34,8 @@ class Cart extends \app\core\Controller{
 		}
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Customer]
     function addToCart($product_id) {
 		$this->checkCartExist();
 
@@ -49,6 +55,8 @@ class Cart extends \app\core\Controller{
 		$order->updateTotalPrice();
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Customer]
 	function delete($product_id) {
 		$order = new \app\models\Order();
 		$order->user_id = $_SESSION['user_id'];
@@ -64,6 +72,8 @@ class Cart extends \app\core\Controller{
 		header('location:/Cart/index?error=Items Removed');
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Customer]
 	function placeOrder() {
 		$order = new \app\models\Order();
 		$detail = new \app\models\OrderDetail();

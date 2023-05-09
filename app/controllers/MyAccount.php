@@ -2,16 +2,22 @@
 namespace app\controllers;
 
 class MyAccount extends \app\core\Controller{
+	#[\app\filters\Login]
+	#[\app\filters\Customer]
     function index(){
 		$this->view('MyAccount/index');
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Customer]
 	function myOrders() {
 		$order = new \app\models\Order();
 		$order = $order->getAllOrdersByUser($_SESSION['user_id']);
 		$this->view('MyAccount/my_order', $order);
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Customer]
 	function profileSecurity() {
 		$user = new \app\models\User();
 		$user->user_id = $_SESSION['user_id'];
@@ -23,6 +29,8 @@ class MyAccount extends \app\core\Controller{
 		$this->view('MyAccount/profile_security', ['user'=>$user,'profile'=>$profile]);
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Customer]
 	function shipAddress() {
 		$address = new \app\models\Profile();
 		$address->user_id = $_SESSION['user_id'];
@@ -30,6 +38,8 @@ class MyAccount extends \app\core\Controller{
 		$this->view('MyAccount/shipping_address', $address);
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Customer]
 	function updateAddress() {
 		$address = new \app\models\Profile();
 		$address->getByUserId($_SESSION['user_id']);
@@ -51,6 +61,8 @@ class MyAccount extends \app\core\Controller{
 		$address->updateAddress();
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Customer]
 	function orderDetail($order_id) {
 		$order = new \app\models\Order();
 		$order = $order->getByOrderId($order_id);
@@ -61,6 +73,8 @@ class MyAccount extends \app\core\Controller{
 		$this->view('MyAccount/orderDetail', ['order'=>$order, 'detail'=>$detail]);
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Customer]
 	function updateAccount() {
 		$profile = new \app\models\Profile();
 		$profile->user_id = $_SESSION['user_id'];

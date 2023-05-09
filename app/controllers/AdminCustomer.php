@@ -7,18 +7,24 @@ use PHPMailer\PHPMailer\SMTP;
 
 class AdminCustomer extends \app\core\Controller{
 
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function index(){
 		$customer = new \app\models\Profile();
 		$customers = $customer->getAll();
 		$this->view('AdminCustomer/index', $customers);
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function customerDetails($user_id){
 		$customer = new \app\models\Profile();
 		$customer = $customer->getAllByUserId($user_id);
 		$this->view('AdminCustomer/customerDetails', $customer);
 	}
-
+	
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function sendPromotions(){
 		if (isset($_POST['action'])){
 			$mail = new PHPMailer(true);

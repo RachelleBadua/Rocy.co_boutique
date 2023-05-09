@@ -2,7 +2,8 @@
 namespace app\controllers;
 
 class AdminProduct extends \app\core\Controller{
-
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function index(){
 		$product = new \app\models\Product();
 		$products = $product->getAllOrderByProduct();
@@ -12,6 +13,8 @@ class AdminProduct extends \app\core\Controller{
 		$this->view('AdminProduct/index', $products);
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function create(){
 		if(isset($_POST['action'])){
 			if($_POST['product_name'] != '' 
@@ -61,12 +64,14 @@ class AdminProduct extends \app\core\Controller{
 		}
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function uploadPicture(){
 		// echo "add picture";
 		$uploadedFile = array();
 
 		if(isset($_FILES['image']) && ($_FILES['image']['error'] == UPLOAD_ERR_OK)){
-echo "first IF";
+			echo "first IF";
 			$info = getimagesize($_FILES['image']['tmp_name']);
 
 			$allowedTypes = ["jpg", "png", "gif"];
@@ -76,7 +81,7 @@ echo "first IF";
             $fileType = strtolower(pathinfo($fileName,PATHINFO_EXTENSION));
 
 			if($info == false){
-echo "Second IF";
+				echo "Second IF";
                 $uploadedFile["upload_message"] = "Bad image file format!";
                 $uploadedFile["target_file"] = null;
 
@@ -110,6 +115,8 @@ echo "Second IF";
         return $uploadedFile;
     }
 
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
     public function edit($product_id){
 		$product = new \app\models\Product();
 		$product = $product->getProduct($product_id);
@@ -157,6 +164,8 @@ echo "Second IF";
 		}
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function delete($product_id){ // PK value
 		$product = new \app\models\Product();
 
@@ -171,6 +180,8 @@ echo "Second IF";
 		}
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\Admin]
 	public function productDetails($product_id){
 		$product = new \app\models\Product();
 		$product = $product->getProductCategory($product_id);
