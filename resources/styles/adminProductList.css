@@ -13,8 +13,8 @@
   order: 2;
   flex-grow: 1;
   text-align: center;
-}*/
-
+}
+*/
 .content {
   display: flex;
   height: 100%;
@@ -24,6 +24,7 @@
 
 .sidenav {
   order: 1;
+  aligh-self:strecth;
 }
 
 .main {

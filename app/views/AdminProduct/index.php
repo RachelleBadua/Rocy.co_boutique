@@ -4,10 +4,8 @@
 <?php $this->view('shared/sideBar'); ?>
 
 	<div class="main">
-		
 		<h2>Product List</h2>
 		<table>
-			
 				<tr>
 					<!-- <div class="attributes"> -->
 					<th class="attributes">ID</th>
