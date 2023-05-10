@@ -41,7 +41,6 @@
             </form>
         </div>
     </div>
-    </div>
-    <!-- 
-$this->view('shared/footer');
- -->
+</div>
+    
+<?php  $this->view('shared/footer'); ?>
