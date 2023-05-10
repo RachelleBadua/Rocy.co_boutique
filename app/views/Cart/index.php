@@ -88,7 +88,7 @@
             </div>
         </div>
         <div id='submitBdiv'>
-            <button id='submitB' onclick='placeOrder()'>Place Button</button>
+            <button id='submitB' onclick='placeOrder()'>Place Order</button>
         </div>
     </div>
 </div>
