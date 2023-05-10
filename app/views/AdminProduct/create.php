@@ -6,7 +6,7 @@
 
 	<div class="main" style="">
 		<div align="center" style="">
-			<h2>Add Product</h2>
+			<h2><?= _('Add Product')?></h2>
 
 			<form class="form-addProduct" method ="post" action="" enctype="multipart/form-data" style="" >	
 				<!-- TODO: add image here-->
@@ -42,7 +42,7 @@
 
 					<?php
 						foreach($data as $category){
-							echo "<option value='$category->category_id'>$category->category</option>\n";
+							echo "<option id='category'value='$category->category_id'>$category->category</option>\n";
 						}
 
 					?>

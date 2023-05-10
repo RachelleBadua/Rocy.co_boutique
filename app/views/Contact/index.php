@@ -6,7 +6,7 @@
 <!-- <body> -->
 <?php $this->view('shared/navBar'); ?>
 
-<h1 class="pageTitle" >Contact Us</h1>
+<h1 class="pageTitle" ><?= _('Contact Us')?></h1>
 <div class='outside'>
     <div class="main" style="">
         

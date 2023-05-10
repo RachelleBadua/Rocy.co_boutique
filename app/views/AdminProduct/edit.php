@@ -11,7 +11,7 @@
 	<div class="main">
 		<div align="center" style="">
 			<a href='/AdminProduct/index/'><?= _('back') ?></a>
-			<h2>Edit Product</h2>
+			<h2><?= _('Edit Product') ?></h2>
 
 			<form method ="post" action="" enctype="multipart/form-data">	
 			<!-- TODO: add image here-->

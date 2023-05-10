@@ -50,7 +50,7 @@ class Contact extends \app\core\Controller{
 			    echo 'Email not sent an error was encountered: ' . $mail->ErrorInfo;
 			    // header('location:/AdminCustomer/sendPromotions?error=There is an error');
 			} else {
-			    header('location:/Contact/index?success=Email has been sent');
+			    header('location:/Contact/index?success=Message sent!');
 			}
 
 			$mail->smtpClose();

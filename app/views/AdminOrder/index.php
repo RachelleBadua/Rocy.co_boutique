@@ -5,14 +5,14 @@
 
 	<div class="main">
 		
-		<h2 class="title">Order List</h2>
+		<h2 class="title"><?= _('Order List') ?></h2>
 		<table>
 			<tr>
-				<th class="attributes">ID</th>
-				<th class="attributes">Client Email</th>
-				<th class="attributes">Order Date</th>
-				<th class="attributes">Status</th>
-				<th class="attributes">Actions</th>
+				<th class="attributes"><?= _('ID') ?></th>
+				<th class="attributes"><?= _('Client Email')?></th>
+				<th class="attributes"><?= _('Order Date')?></th>
+				<th class="attributes"><?= _('Status')?></th>
+				<th class="attributes"><?= _('Actions')?></th>
 			</tr>
 		
 			<?php foreach ($data as $order) { ?>

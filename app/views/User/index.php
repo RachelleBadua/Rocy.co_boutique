@@ -1,9 +1,9 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/login.css">
 
-<?php $this->view('shared/header','Login'); ?>
+<?php $this->view('shared/header', _('Login')); ?>
 
 <!-- <body> -->
-	<h1 class='pageTitle'>Log In</h1>
+	<h1 class='pageTitle'><?= _('Log In')?></h1>
 	<div class="main" style="">
 	<a href="/Main/index"><img class="logoImage" src="../resources/images/rocylogoTransBG.png" alt=""></a>
 
@@ -29,7 +29,7 @@
 				<input class="loginButton" type="submit" name="action" value="Login"><br>
 				<br>
 
-				<div class="">Don't have an account? <a href="/User/create">Create</a></div>
+				<div class=""><?= _('Don\'t have an account? ')?><a href="/User/create">Create</a></div>
 			</form>
 
 			

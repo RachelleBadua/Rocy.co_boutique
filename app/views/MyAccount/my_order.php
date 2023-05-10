@@ -4,13 +4,13 @@
 
 <!-- <body> -->
 <?php $this->view('shared/navBar'); ?>
-<h1 class='pageTitle'>My Orders</h1>
+<h1 class='pageTitle'><?= _('My Orders')?></h1>
 <div class='content'>
 <table>
     <tr class="attributes">
-        <th>Order Number</th>
-        <th>Order Date</th>
-        <th>Status</th>
+        <th><?= _('Order Number')?></th>
+        <th><?= _('Order Date')?></th>
+        <th><?= _('Status')?></th>
     </tr>
 
     <?php foreach ($data as $order) { ?>

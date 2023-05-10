@@ -3,9 +3,16 @@ Feature: Remove Product from cart
   As a Customer
   I need to press "remove"
 
-  Scenario: try removing "Chill Summer Bracelet" from cart
-  	Given I am logged in as Customer 
-    And I am on Cart page
-  	And I see "Chill Summer Bracelet" in cart
-  	When I press "remove"
-  	Then I don't see "Chill Summer Bracelet" in cart
+  Scenario: try removing "Dark Red Fabric Scrunchy" from cart
+    Given I am on "/User/index" page 
+    And I input "hello@email.com" in "email"
+    And I input "1234" in "password"
+    And I click on "Login"
+    And I click on "Cart"
+    And I see "My Cart"
+    When I click on "#deleteButton"
+    Then I see "Items Removed"
+
+
+
+  

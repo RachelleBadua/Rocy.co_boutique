@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/pageContent.css">
 <link rel="stylesheet" type="text/css" href="/resources/styles/cart.css">
 
-<?php $this->view('shared/header','Main Index');?>
+<?php $this->view('shared/header',_('Main Index'));?>
 
 <!-- <body> -->
 
@@ -10,18 +10,18 @@
     $detail = $data['detail'];
     $address = $data['address'];
 ?>
-<h1 class='pageTitle'>My Cart</h1>
+<h1 class='pageTitle'><?= _('My Cart')?></h1>
 <div class='content'>
     <div class='main'>
         <div class='top'>
-            <h3 onclick="toggleVisible('#products')">1. Products<hr></h3>
+            <h3 onclick="toggleVisible('#products')"><?= _('1. Products')?><hr></h3>
             <div id='products'>
                 <table style="width:100%">
                     <tr>
-                        <th class='nameCol'><h5>Name</h5></th>
-                        <th class='priceCol'><h5>Unit Price</h5></th>
-                        <th class='qtyCol'><h5>Quantity</h5></th>
-                        <th class='actionCol'><h5>Action</h5></th>
+                        <th class='nameCol'><h5><?= _('Name')?></h5></th>
+                        <th class='priceCol'><h5><?= _('Unit Price')?></h5></th>
+                        <th class='qtyCol'><h5><?= _('Quantity')?></h5></th>
+                        <th class='actionCol'><h5><?= _('Action')?></h5></th>
                     </tr>
                     <?php
                         foreach ($detail as $product) {
@@ -31,7 +31,7 @@
                                     <th class='priceCol'><label>$$product->sellingPrice</label></th>
                                     <th class='qtyCol'><input id='$product->product_id' class='qty' type='number' step='1' min='1' value='1'></th>
                                     <th class='actionCol'>
-                                        <a href='/Cart/delete/$product->product_id'>Delete</a>
+                                        <a id='deleteButton' href='/Cart/delete/$product->product_id'>Delete</a>
                                     </th>
                                 </tr>
                             ";
@@ -41,46 +41,46 @@
             </div>
         </div>
         <div class='bottom'>
-            <h3 onclick="toggleVisible('#shipMethod')"><hr>2. Shipping Method<hr></h3>
+            <h3 onclick="toggleVisible('#shipMethod')"><hr><?= _('2. Shipping Method')?><hr></h3>
             <div style="display: none" id='shipMethod'>
                 <table>
                     <tr class="shipMethodOpts">
                         <th >
-                            <label>Pick Up</label>
+                            <label><?= _('Pick Up')?></label>
                             <input type="radio" id="pickUp" name="shipMethod" value='pickUp'>
                         </th>
                         <th>
-                            <label>Delivery</label>    
+                            <label><?= _('Delivery')?></label>    
                             <input checked type="radio" id="delivery" name="shipMethod" value='delivery'>
                         </th>
                     </tr>
                     <tr>
                         <th>
-                            <label class="shipInfoLabel">Phone Number:</label>
+                            <label class="shipInfoLabel"><?= _('Phone Number:')?></label>
                             <input class="shipInfoInput" type="text" value="<?=$address->phoneNo?>">
                         </th>
                     </tr>
                     <tr class="address">
                         <th>
-                            <label class="shipInfoLabel">Address:</label>
+                            <label class="shipInfoLabel"><?= _('ddress:')?></label>
                             <input class="shipInfoInput" type="text" value="<?=$address->address?>">
                         </th>
                     </tr>
                     <tr class="address">
                         <th>
-                            <label class="shipInfoLabel">City:</label>
+                            <label class="shipInfoLabel"><?= _('City:')?></label>
                             <input class="shipInfoInput" type="text" value="<?=$address->city?>">
                         </th>
                     </tr>
                     <tr class="address">
                         <th>
-                            <label class="shipInfoLabel">Province:</label>
+                            <label class="shipInfoLabel"><?= _('Province:')?></label>
                             <input class="shipInfoInput" type="text" value="<?=$address->province?>">
                         </th>
                     </tr>
                     <tr class="address">
                         <th>
-                            <label class="shipInfoLabel">Postal Code:</label>
+                            <label class="shipInfoLabel"><?= _('Postal Code:')?></label>
                             <input class="shipInfoInput" type="text" value="<?=$address->postal?>">
                         </th>
                     </tr>
@@ -88,7 +88,7 @@
             </div>
         </div>
         <div id='submitBdiv'>
-            <button id='submitB' onclick='placeOrder()'>Place Order</button>
+            <button id='submitB' onclick='placeOrder()'><?= _('Place Order')?></button>
         </div>
     </div>
 </div>

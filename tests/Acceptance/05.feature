@@ -4,7 +4,7 @@ Feature: View product's detail
   I need to be able to click on the product
   And see the products information in detail
 
-  Scenario: try viewing product "Chill Summer Bracelet"
-  	Given I am on the Catalog page
-  	When I click on the product "Chill Summer Bracelet"
-  	Then I see all "Chill Summer Bracelet" information
+  Scenario: try viewing product "Dark Red Fabric Scrunchy"
+  	Given I am on "/Product/index" page
+  	When I click on "Dark Red Fabric Scrunchy"
+  	Then I see "Dark Red Fabric Scrunchy" 

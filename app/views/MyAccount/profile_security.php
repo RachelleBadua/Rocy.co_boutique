@@ -29,7 +29,7 @@ $profile = $data['profile'];
         <div id='space'>
             <div hidden id='showPswdRow'>
                 <input type="checkbox" id='showPswd'>
-                Show Password
+                <?= _('Show Password')?>
             </div>
         </div>
         <a id="backButton" class="btn btn-secondary" href="/MyAccount/index">Back</a>

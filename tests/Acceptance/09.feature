@@ -4,7 +4,13 @@ Feature: Modify quantity of products in cart
   I need to click on the up arrow or the down arrow button to increase or decrease number of products
 
   Scenario: try increasing by 1 the quantity of a product in the cart 
-  	Given I am an user who is logged in
-  	And I am on Cart page 
-  	When I click on the Up arrow one time
-  	Then I see the quantity of the "bracelet1" will increase by 1
+	  Given I am on "/User/index" page 
+    And I input "hello@email.com" in "email"
+    And I input "1234" in "password"
+    And I click on "Login"
+    And I click on "Cart"
+    And I see "My Cart"
+    When I input "2" in ".qty"
+    Then I see "2"
+
+    

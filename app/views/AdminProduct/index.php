@@ -4,16 +4,16 @@
 <?php $this->view('shared/sideBar'); ?>
 
 	<div class="main">
-		<h2>Product List</h2>
+		<h2><?= _('Product List')?></h2>
 		<table>
 				<tr>
 					<!-- <div class="attributes"> -->
-					<th class="attributes">ID</th>
-					<th class="attributes">Name</th>
-					<th class="attributes">Category</th>
-					<th class="attributes">Price</th>
-					<th class="attributes">Qty</th>
-					<th class="attributes">Actions</th>
+					<th class="attributes"><?= _('ID')?></th>
+					<th class="attributes"><?= _('Name')?></th>
+					<th class="attributes"><?= _('Category')?></th>
+					<th class="attributes"><?= _('Price')?></th>
+					<th class="attributes"><?= _('Qty')?></th>
+					<th class="attributes"><?= _('Actions')?></th>
 					<!-- </div> -->
 				</tr>
 			

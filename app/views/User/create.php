@@ -1,10 +1,10 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/register.css">
 
 
-<?php $this->view('shared/header','Create Account'); ?>
+<?php $this->view('shared/header', _('Create Account')); ?>
 
 <!-- <body> -->
-	<h1 class='pageTitle'>Create Account</h1>
+	<h1 class='pageTitle'><?= _('Create Account')?></h1>
 	<div class="main" style="">
 		<a href="/Main/index"><img class="logoImage" src="../resources/images/rocylogoTransBG.png" alt=""></a>
 		<div class="inputLogin">
@@ -70,7 +70,7 @@
 				<input class="registerButton"  type="submit" name="action" value="Create Account"><br>
 				<br>
 
-				<div class="">You have an account? <a href="/User/index">Login</a></div>
+				<div class=""><?= _('You have an account? ') ?><a href="/User/index"><?= _('Login')?></a></div>
 			</form>
 
 			

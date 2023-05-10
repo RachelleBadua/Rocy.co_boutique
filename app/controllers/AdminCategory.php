@@ -11,7 +11,7 @@ class AdminCategory extends \app\core\Controller{
 
 				$category->category = htmlentities($_POST['category']);
 				$success = $category->insert();
-				header('location:/AdminCategory/index');
+				header('location:/AdminCategory/index?success=Category added');
 			} else {
 				header('location:/AdminCategory/index?error=Fill up the criteria');
 			}

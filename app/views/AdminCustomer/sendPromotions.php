@@ -12,7 +12,7 @@
 		</style>
 		<div align="center" style="">
 			<!-- <a href='/AdminProduct/index/'><?= _('back') ?></a> -->
-			<h2>Send Promotions</h2>
+			<h2><?= _('Send Promotions') ?></h2>
 			<form method ="post" action="" enctype="multipart/form-data">	
 			<!-- TODO: add image here-->
 				<!-- <div>

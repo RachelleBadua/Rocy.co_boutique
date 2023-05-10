@@ -23,36 +23,6 @@ class AcceptanceTester extends \Codeception\Actor
 {
     use _generated\AcceptanceTesterActions;
 
-    // /**
-    //  * Define custom actions here
-    //  */
-
-    // /**
-    //  * @Given I am on :arg1 page
-    //  */
-    //  public function iAmOnPage($arg1)
-    //  {
-    //     $this->amOnPage($arg1);
-    //  }
-
-    // /**
-    //  * @Given I click :arg1
-    //  */
-    //  public function iClick($arg1)
-    //  {
-    //     $this->click($arg1);
-    //  }
-    //   /**
-    //  * @Then I see :arg1
-    //  */
-    //  public function iSee($arg1)
-    //  {
-    //     $this->see($arg1);
-    //  }
-
-
-
-    // 01.feature //
       /**
      * @Given I am on :arg1 page
      */
@@ -78,7 +48,6 @@ class AcceptanceTester extends \Codeception\Actor
      }
 
 
-    // 04.feature //
      /**
      * @When I input :arg1 in :arg2
      */
@@ -94,5 +63,22 @@ class AcceptanceTester extends \Codeception\Actor
      {
         $this->click($text);
      }
+
+        /**
+     * @Given I select :arg1 in :arg2
+     */
+     public function iSelectIn($arg1, $arg2)
+     {
+         $this->selectOption($arg2, $arg1);
+     }
+
+    /**
+     * @Given I attach file :arg1 in :arg2
+     */
+     public function iAttachFileIn($arg1, $arg2)
+     {
+         $this->attachFile($arg2, $arg1);
+     }
+
 
 }

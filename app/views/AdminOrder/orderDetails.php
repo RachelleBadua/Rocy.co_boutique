@@ -14,7 +14,7 @@
 				<div class="backButton">
 					<a class="btn btn-secondary" href='/AdminOrder/index/'><?= _('back') ?></a>
 				</div>
-				<h2 class="title">Order Details</h2>
+				<h2 class="title"><?= _('Order Details')?></h2>
 			</div>
 			<div class="infoCustomer">
 				<div class="btn-orderInfo">
@@ -52,8 +52,8 @@
  					<table class="btn-productsQty">
 			
 						<tr>
-							<th class="attributes">Product</th>
-							<th class="attributes">Quantity</th>
+							<th class="attributes"><?= _('Product')?></th>
+							<th class="attributes"><?= _('Quantity')?></th>
 						</tr>
 
 						<?php foreach ($products as $product){ ?>

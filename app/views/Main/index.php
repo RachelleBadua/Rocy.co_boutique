@@ -7,7 +7,7 @@
 <?php $this->view('shared/navBar'); 
 ?>
 
-<h1 class='pageTitle'>Home Page</h1>
+<h1 class='pageTitle'><?= _('Home Page')?></h1>
 <div class='content'>
 <div class="carouselSize">
   <div class="container text-center my-3">

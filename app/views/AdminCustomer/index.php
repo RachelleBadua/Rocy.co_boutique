@@ -5,7 +5,7 @@
 
 	<div class="main">
 		
-		<h2>Customer List</h2>
+		<h2><?= _('Customer List')?></h2>
 		<table>
 			<tr>
 				<th class="attributes"><?= _('ID') ?></th>

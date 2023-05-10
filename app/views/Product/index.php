@@ -7,17 +7,17 @@
 <?php $this->view('shared/navBar'); 
 $cur_cat = 0;
 ?>
-<h1 class='pageTitle'>Catalog</h1>
+<h1 class='pageTitle'><?= _('Catalog')?></h1>
 	<div class="content">
         <div class="sideBar">
             <div class='search-tool'>
                 <form action="/Product/search" method='GET'>
                     <input type="text" class="search-value" placeholder="Search product name" name="value" value=""/>
-                    <button type="submit"><img src="/resources/images/searchIcon.png"></button>
+                    <button name="searching" type="submit"><img src="/resources/images/searchIcon.png"></button>
                 </form>
             </div>
             <div class="hl"></div>
-            <h4>Category:</h4>
+            <h4><?= _('Category:')?></h4>
             <?php foreach($data as $product) {
                 if ($product->category_id != $cur_cat) {
                     $cur_cat = $product->category_id;

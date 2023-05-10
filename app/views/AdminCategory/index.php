@@ -12,13 +12,13 @@
 		<?php 
 		?> 
 		<div class="categoryList">
-			<h2>Category</h2>
+			<h2><?= _('Category')?></h2>
 			<table>
 					<tr>
 						<!-- <div class="attributes"> -->
-						<th class="attributes">ID</th>
-						<th class="attributes">Category Name</th>
-						<th class="attributes">Actions</th>
+						<th class="attributes"><?= _('ID')?></th>
+						<th class="attributes"><?= _('Category Name') ?></th>
+						<th class="attributes"><?= _('Actions') ?></th>
 						<!-- </div> -->
 					</tr>
 				
@@ -38,7 +38,7 @@
 		</div>
 		<div class="addEdit">
 			<div class="addCategory">
-				<h4>Add Category</h4>
+				<h4><?= _('Add Category')?></h4>
 				<form class="form-addCategory" method="post" action="" enctype="multipart/form-data" style="">
 					<div class="btn-addCategory">
 						<input type="text" name="category">
@@ -47,7 +47,7 @@
 				</form>
 			</div>
 			<div class="editCategory">
-				<h4>Edit Category</h4>
+				<h4><?= _('Edit Category')?></h4>
 				<form class="form-editCategory" method="post" enctype="multipart/form-data" action="/AdminCategory/edit/">
 					<div class="btn-editCategory">
 						<input type="text" name="categoryId" style="" readonly value="">

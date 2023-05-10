@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/pageContent.css">
 <link rel="stylesheet" type="text/css" href="/resources/styles/product_detail.css">
 
-<?php $this->view('shared/header','Product Detail'); ?>
+<?php $this->view('shared/header',_('Product Detail')); ?>
 
 <!-- body -->
 <?php $this->view('shared/navBar');?>
@@ -20,7 +20,7 @@
                 <p class='product_desc'><?= $data->description ?></p>
             </div>
             <div class='button'>
-                <button class='btn btn-success' onclick="addToCart()"><?=_('Add to Cart')?></button>
+                <button id='addToCart'class='btn btn-success' onclick="addToCart()"><?=_('Add to Cart')?></button>
             </div>
         </div>
     </div>

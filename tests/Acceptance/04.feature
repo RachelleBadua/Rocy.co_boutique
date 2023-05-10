@@ -6,5 +6,5 @@ Feature: Search products by name
   Scenario: try searching products that contains "red" in its name 
   	Given I am on "/Product/index" page
   	When I input "red" in "value"
-  	And I press "search"
+  	And I press "searching"
   	Then I see "red"

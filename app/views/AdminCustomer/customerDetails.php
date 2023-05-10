@@ -9,7 +9,7 @@
 				<div class="backButton">
 					<a class="btn btn-secondary" href='/AdminCustomer/index/'><?= _('back') ?></a>
 				</div>
-				<h2 class="title">Customer Details</h2>
+				<h2 class="title"><?= _('Customer Details') ?></h2>
 			</div>
 			<div class="infoCustomer">
 				<div class="btn-customerInfo">
