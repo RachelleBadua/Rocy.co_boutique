@@ -4,18 +4,17 @@
 } */
 
 .inputLogin {
-	/*border: 1px solid black;*/
+	/* border: 1px solid black; */
 	text-align: center;
 	background: white;
 	/*width: 600px;*/
 	/*height: 76%;*/
-  height: 65%;
+  /* height: 65%; */
 	/*padding-bottom: 50px;*/
-  padding-top: 20px;
 	display: flex;
-	justify-content: center;
+	/* justify-content: center; */
 	align-items: center;
-  /*margin-bottom: 25px;*/
+  /* margin-bottom: 25px; */
 }
 
 .btn-login {
@@ -32,17 +31,16 @@
 
 .btn-input {
   flex: 80%;
-  margin-right: 50px;
+  /* margin-right: 50px; */
   /*border: 1px solid black;*/
   text-align: left;
 }
 
 .main {
-  /*border: 1px solid black;  */
+  /* border: 1px solid black;  */
   margin-left: auto;
   margin-right: auto;
   /*margin-bottom: 100px;*/
-  margin-top: 60px;
   min-width: 1000px;
   width: 90%;
   /*height: 100%;*/
@@ -56,13 +54,13 @@
   overflow-x: hidden;
 }
 
-.pageTitle {
-  /*padding-top: 25px;*/
+/* .pageTitle {
+  padding-top: 25px;
   padding-bottom: 20px;
-  /*height: 50px;*/
+  height: 50px;
   text-align: center;
-  /*font-size: 40px;*/
-}
+  font-size: 40px;
+} */
 
 .outside{
   /*padding-top: 20px;*/

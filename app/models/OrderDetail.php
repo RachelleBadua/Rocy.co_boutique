@@ -11,10 +11,6 @@ class OrderDetail extends \app\core\Model{
     public $quantity;
 
     public function insert(){
-        if ($this->isProductInCart()) {
-            $this->updateQuantity();
-            return;
-        }
 		$SQL = "INSERT INTO detail (order_id, product_id, unit_price, quantity) 
                 value (:order_id, :product_id, :unit_price, :quantity)";
 		$STH = self::$connection->prepare($SQL);
@@ -27,27 +23,17 @@ class OrderDetail extends \app\core\Model{
 		$STH->execute($data);
 	}
 
-    //increase by 1
     public function updateQuantity() {
-        $SQL = "SELECT quantity FROM  detail 
+        $SQL = "UPDATE detail
+                SET  quantity=:quantity
                 WHERE product_id=:product_id AND order_id=:order_id";
         $STH = self::$connection->prepare($SQL);
         $data = [
+            'quantity'=>$this->quantity,
             'order_id'=>$this->order_id,
-            'product_id'=>$this->product->product_id
+            'product_id'=>$this->product_id
         ];
-        $STH->execute($data);
-        $currentQuantity = $STH->fetch(PDO::FETCH_COLUMN);
 
-        $SQL = "UPDATE detail 
-                SET quantity = :quantity
-                WHERE product_id=:product_id AND order_id=:order_id";
-        $data = [
-            'quantity'=>$currentQuantity + 1,
-            'order_id'=>$this->order_id,
-            'product_id'=>$this->product->product_id
-        ];
-		$STH = self::$connection->prepare($SQL);
 		$STH->execute($data);
     }
 
@@ -86,5 +72,17 @@ class OrderDetail extends \app\core\Model{
         $STH->execute($data);
         $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\OrderDetail');
         return $STH->fetchAll();
+    }
+
+    public function getByProductId(){
+        $SQL = "SELECT *
+                FROM detail
+                WHERE order_id=:order_id
+                AND product_id=:product_id";
+        $STH = self::$connection->prepare($SQL);
+        $data = ['order_id'=>$this->order_id, 'product_id'=>$this->product_id];
+        $STH->execute($data);
+        $STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\OrderDetail');
+        return $STH->fetch();
     }
 }

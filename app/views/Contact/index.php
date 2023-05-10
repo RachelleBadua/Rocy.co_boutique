@@ -1,10 +1,13 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/contactUs.css">
+<link rel="stylesheet" type="text/css" href="/resources/styles/pageContent.css">
 
 <?php $this->view('shared/header', _('Contact Us')); ?>
 
 <!-- <body> -->
-    <?php $this->view('shared/navBar'); ?>
-    <div class='outside'>
+<?php $this->view('shared/navBar'); ?>
+
+<h1 class="pageTitle" >Contact Us</h1>
+<div class='outside'>
     <div class="main" style="">
         
         <div class="inputLogin">
@@ -18,7 +21,6 @@
             margin: 2em auto;
               
               ">
-              <h1 class="pageTitle" >Contact Us</h1>
                 <div class="btn-login ">
                     <label class="btn-label"><?= _('Email:') ?></label>
                     <input class="btn-input" type="email" name="email"><br>

@@ -27,12 +27,15 @@
 </div>
 
 <script type='text/javascript'>
-    const url = '/Cart/addToCart/<?= $data->product_id ?>';
-    const pUrl = '/Product/productDetail/<?= $data->product_id ?>';
+    const url = '/Cart/addToCart';
+    const pId = <?= $data->product_id ?>;
+    const pUrl = '/Product/productDetail/' + pId;
     function addToCart() {
-        $.post(url, () => {})
-        .done(() => {
-            window.location.replace(pUrl.concat('?success=Product added to cart'))
+        $.post(url, {product_id: <?= $data->product_id ?>},function(op) {
+            if (op == 1)
+                window.location.replace(pUrl.concat('?success=Product added to cart'));
+            else
+            window.location.replace(pUrl.concat('?error=Product is already in cart'));
         })
     }
 </script>

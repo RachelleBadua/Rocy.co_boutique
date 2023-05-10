@@ -13,7 +13,7 @@ $cur_cat = 0;
             <div class='search-tool'>
                 <form action="/Product/search" method='GET'>
                     <input type="text" class="search-value" placeholder="Search product name" name="value" value=""/>
-                    <button name="search" type="submit"><img src="/resources/images/searchIcon.png"></button>
+                    <button type="submit"><img src="/resources/images/searchIcon.png"></button>
                 </form>
             </div>
             <div class="hl"></div>

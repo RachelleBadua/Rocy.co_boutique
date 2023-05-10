@@ -36,23 +36,25 @@ class Cart extends \app\core\Controller{
 
 	#[\app\filters\Login]
 	#[\app\filters\Customer]
-    function addToCart($product_id) {
+    function addToCart() {
 		$this->checkCartExist();
 
 		$order = new \app\models\Order();
 		$order->user_id = $_SESSION['user_id'];
-		$order_id = $order->getOrderId($user_id);
+		$order_id = $order->getOrderId();
 
 		$product = new \app\models\Product();
-		$product = $product->getProduct($product_id);
+		$product = $product->getProduct($_POST['product_id']);
 
 		$detail = new \app\models\OrderDetail();
 		$detail->order_id = $order_id;
 		$detail->product = $product;
 
-		$detail->insert();
-		$order->order_id = $order_id;
-		$order->updateTotalPrice();
+		if (!$detail->isProductInCart()) {
+			$detail->insert();
+			echo 1;
+		} else
+		echo 0;
 	}
 
 	#[\app\filters\Login]
@@ -66,9 +68,6 @@ class Cart extends \app\core\Controller{
 		$detail->order_id = $order_id;
 		$detail->delete(htmlentities($product_id));
 
-		$order->order_id = $order_id;
-		$order->updateTotalPrice();
-
 		header('location:/Cart/index?error=Items Removed');
 	}
 
@@ -76,16 +75,26 @@ class Cart extends \app\core\Controller{
 	#[\app\filters\Customer]
 	function placeOrder() {
 		$order = new \app\models\Order();
-		$detail = new \app\models\OrderDetail();
-		$detail = $detail->getProductsByOrderId($_POST['order_id']);
+		$detail = new \app\models\OrderDetail();		
+		
+		foreach ($_POST['qty'] as $e) {
+			$detail->order_id = $_POST['order_id'];
+			$detail->product_id = $e['product_id'];
+			$detail->getByProductId();
+			$detail->quantity = $e['qty'];
+			$detail->updateQuantity();
+		}
 
-		if ($detail){
-			$order->order_id = htmlentities($_POST['order_id']);
-			$order->isDelivery = (bool)htmlentities($_POST['isDelivery']);
-
-			echo $order->placeOrder();
+		if (!$detail){
+			echo 0;
 			return;
 		}
-		echo 0;
+
+		$order->order_id = htmlentities($_POST['order_id']);
+		$order->isDelivery = (bool)htmlentities($_POST['isDelivery']);
+		$order->updateTotalPrice();
+
+		$order->placeOrder();
+		echo 1;
 	}
 }
