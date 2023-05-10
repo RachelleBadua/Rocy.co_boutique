@@ -65,7 +65,7 @@
 					</div>
 					<br>
 				</div>
-					<input type="submit" name="action" value="Edit Product">
+					<input type="submit" name="action" value="<?= _('Edit Product')?>">
 			</form>
 		</div>		
 	</div>

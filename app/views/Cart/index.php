@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/pageContent.css">
 <link rel="stylesheet" type="text/css" href="/resources/styles/cart.css">
 
-<?php $this->view('shared/header',_('Main Index'));?>
+<?php $this->view('shared/header',_('Cart'));?>
 
 <!-- <body> -->
 
@@ -119,9 +119,9 @@
             };
             $.post(url, data, function (op) {
                 if (op == 0)
-                    window.location.replace('/Cart/index?error=Cart is empty');
+                    window.location.replace('/Cart/index?error=' + <?= _('Cart is empty')?>);
                 else 
-                    window.location.replace('/Cart/index?success=Order Placed');
+                    window.location.replace('/Cart/index?success=' + <?= _('Order Placed')?>);
                 // console.log(op);
             })
         }

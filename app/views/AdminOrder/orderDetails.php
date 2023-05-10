@@ -82,7 +82,7 @@
 				<br>
 				<div class="btn-orderInfo">
 					<label class="btn-label"><?= _('Delivery:') ?></label>
-					<div class="btn-input"><?= ($clientInfo->isDelivery== 0 ? "YES" : "NO") ?></div>
+					<div class="btn-input"><?= ($clientInfo->isDelivery == 0 ? _('YES') : _('NO')) ?></div>
 					<br>
 				</div>
 			</div >

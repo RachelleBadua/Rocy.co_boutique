@@ -32,7 +32,7 @@ $profile = $data['profile'];
                 <?= _('Show Password')?>
             </div>
         </div>
-        <a id="backButton" class="btn btn-secondary" href="/MyAccount/index">Back</a>
+        <a id="backButton" class="btn btn-secondary" href="/MyAccount/index"><?= _('Back')?></a>
         <a id="editButton" class="btn btn-success"><?=_('Edit')?></a>
     </div>
     <script>
@@ -60,7 +60,7 @@ $profile = $data['profile'];
                 password: $('#password').val()
             };
             $.post(url, data, function(op) {
-                window.location.replace('/MyAccount/profileSecurity?success=Information Updated');
+                window.location.replace('/MyAccount/profileSecurity?success=' <?= _('Information Updated')?> );
             })
         }
     </script>

@@ -1,0 +1,582 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-10 18:11-0400\n"
+"PO-Revision-Date: 2023-05-10 18:28-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: app/controllers/Contact.php:50
+msgid "Email not sent an error was encountered: "
+msgstr "Courriel non envoyé. erreur: "
+
+#: app/controllers/AdminCustomer.php:72
+msgid "Email has been sent"
+msgstr "Courriel envoyé"
+
+#: app/controllers/AdminOrder.php:38
+msgid "Succesfully updated to Finished"
+msgstr "Mis à jour avec succès"
+
+#: app/controllers/AdminOrder.php:40
+msgid "Something went wrong"
+msgstr "Erreur"
+
+#: app/controllers/AdminOrder.php:45
+msgid "Succesfully updated to Ordered"
+msgstr "Mis à jour avec succès"
+
+#: app/controllers/AdminOrder.php:47
+msgid "Something went wrong to O"
+msgstr "Erreur"
+
+#: app/views/Contact/index.php:4 app/views/Contact/index.php:9
+#: app/views/shared/navBar.php:15
+msgid "Contact Us"
+msgstr "Contactez-nous"
+
+#: app/views/Contact/index.php:25 app/views/User/create.php:22
+#: app/views/User/index.php:21 app/views/AdminCustomer/customerDetails.php:28
+msgid "Email:"
+msgstr "Courriel:"
+
+#: app/views/Contact/index.php:30 app/views/AdminCustomer/sendPromotions.php:30
+msgid "Subject:"
+msgstr "Sujet :"
+
+#: app/views/Contact/index.php:35 app/views/AdminCustomer/sendPromotions.php:35
+msgid "Message:"
+msgstr "Message:"
+
+#: app/views/Contact/index.php:39
+msgid "Send"
+msgstr "Envoyer une promotion"
+
+#: app/views/Main/about_us.php:3 app/views/Main/about_us.php:6
+#: app/views/shared/navBar.php:13 app/views/shared/sideBar.php:40
+msgid "About Us"
+msgstr "À propos de nous"
+
+#: app/views/Main/index.php:3
+msgid "Home"
+msgstr "Accueil"
+
+#: app/views/Main/index.php:10
+msgid "Home Page"
+msgstr "Page d’accueil"
+
+#: app/views/Main/index.php:14
+msgid "Latest Product"
+msgstr "Nouveauté"
+
+#: app/views/Product/index.php:4
+msgid "Main Index"
+msgstr "Accueil"
+
+#: app/views/Product/index.php:10
+msgid "Catalog"
+msgstr "Catalogue"
+
+#: app/views/Product/index.php:20 app/views/AdminProduct/create.php:39
+#: app/views/AdminProduct/edit.php:39
+#: app/views/AdminProduct/productDetails.php:36
+msgid "Category:"
+msgstr "Catégorie:"
+
+#: app/views/Product/product_detail.php:4
+msgid "Product Detail"
+msgstr "Detail de produit"
+
+#: app/views/Product/product_detail.php:23
+msgid "Add to Cart"
+msgstr "Ajouter au panier"
+
+#: app/views/Product/product_detail.php:36
+msgid "Product added to cart"
+msgstr "Ajouter produit au panier"
+
+#: app/views/Product/product_detail.php:38
+msgid "Product is already in cart"
+msgstr "Produit est deja dans le panier"
+
+#: app/views/shared/navBar.php:11 app/views/MyAccount/orderDetail.php:38
+msgid "Products"
+msgstr "Produits"
+
+#: app/views/shared/navBar.php:22 app/views/MyAccount/index.php:4
+#: app/views/MyAccount/index.php:10
+msgid "My Account"
+msgstr "Mon compte"
+
+#: app/views/shared/navBar.php:27 app/views/Cart/index.php:4
+msgid "Cart"
+msgstr "Panier"
+
+#: app/views/shared/sideBar.php:19 app/views/AdminOrder/orderDetails.php:55
+msgid "Product"
+msgstr "Produit"
+
+#: app/views/shared/sideBar.php:23 app/views/AdminProduct/index.php:3
+#: app/views/AdminProduct/index.php:7
+msgid "Product List"
+msgstr "Liste de Produits"
+
+#: app/views/shared/sideBar.php:24
+msgid "Add product"
+msgstr "Ajouter le produit"
+
+#: app/views/shared/sideBar.php:25 app/views/AdminProduct/index.php:13
+#: app/views/AdminCategory/index.php:3 app/views/AdminCategory/index.php:15
+msgid "Category"
+msgstr "Catégorie"
+
+#: app/views/shared/sideBar.php:27
+msgid "Orders"
+msgstr "Commandes"
+
+#: app/views/shared/sideBar.php:31 app/views/AdminOrder/index.php:3
+#: app/views/AdminOrder/index.php:8
+msgid "Order List"
+msgstr "Liste de Commandes"
+
+#: app/views/shared/sideBar.php:33
+msgid "Customers"
+msgstr "Clients"
+
+#: app/views/shared/sideBar.php:37 app/views/AdminCustomer/index.php:3
+#: app/views/AdminCustomer/index.php:8
+msgid "Customer List"
+msgstr "Liste de Clients"
+
+#: app/views/shared/sideBar.php:38 app/views/AdminCustomer/sendPromotions.php:4
+#: app/views/AdminCustomer/sendPromotions.php:15
+msgid "Send Promotions"
+msgstr "Envoyer une promotion"
+
+#: app/views/shared/sideBar.php:44 app/views/AdminAboutUs/index.php:4
+#: app/views/AdminAboutUs/index.php:10
+msgid "Edit About Us"
+msgstr "Modifier À propos de nous"
+
+#: app/views/shared/sideBar.php:47 app/views/MyAccount/index.php:43
+msgid "Sign out"
+msgstr "Se déconnecter"
+
+#: app/views/MainAdmin/index.php:3
+msgid "Admin Home"
+msgstr "Page d'accueil de l'administrateur"
+
+#: app/views/AdminOrder/index.php:11 app/views/AdminProduct/index.php:11
+#: app/views/AdminCategory/index.php:19 app/views/AdminCustomer/index.php:11
+msgid "ID"
+msgstr "ID"
+
+#: app/views/AdminOrder/index.php:12
+msgid "Client Email"
+msgstr "Courriel du client"
+
+#: app/views/AdminOrder/index.php:13 app/views/MyAccount/my_order.php:12
+#: app/views/MyAccount/orderDetail.php:22
+msgid "Order Date"
+msgstr "Date de  Commande"
+
+#: app/views/AdminOrder/index.php:14 app/views/MyAccount/my_order.php:13
+#: app/views/MyAccount/orderDetail.php:26
+msgid "Status"
+msgstr "Statut"
+
+#: app/views/AdminOrder/index.php:15 app/views/AdminProduct/index.php:16
+#: app/views/AdminCategory/index.php:21
+msgid "Actions"
+msgstr "Actions"
+
+#: app/views/AdminOrder/index.php:29 app/views/AdminOrder/index.php:37
+msgid "done"
+msgstr "accompli"
+
+#: app/views/AdminOrder/index.php:29 app/views/AdminOrder/index.php:37
+msgid "undone"
+msgstr "non accompli"
+
+#: app/views/AdminOrder/orderDetails.php:3
+#: app/views/AdminOrder/orderDetails.php:17
+msgid "Order Details"
+msgstr "Details de la Commande"
+
+#: app/views/AdminOrder/orderDetails.php:15 app/views/AdminProduct/edit.php:13
+#: app/views/AdminProduct/productDetails.php:9
+#: app/views/AdminCustomer/customerDetails.php:10
+#: app/views/AdminCustomer/sendPromotions.php:14
+#: app/views/AdminAboutUs/index.php:9
+msgid "back"
+msgstr "retourner"
+
+#: app/views/AdminOrder/orderDetails.php:21
+msgid "Order ID:"
+msgstr "Commande ID:"
+
+#: app/views/AdminOrder/orderDetails.php:27
+msgid "Client Name:"
+msgstr "Nom du client:"
+
+#: app/views/AdminOrder/orderDetails.php:33
+msgid "Client Email:"
+msgstr "Courriel du client:"
+
+#: app/views/AdminOrder/orderDetails.php:38
+msgid "Products:"
+msgstr "Produits:"
+
+#: app/views/AdminOrder/orderDetails.php:56 app/views/Cart/index.php:23
+#: app/views/MyAccount/orderDetail.php:39
+msgid "Quantity"
+msgstr "Quantité"
+
+#: app/views/AdminOrder/orderDetails.php:78
+msgid "Total Price:"
+msgstr "Prix total:"
+
+#: app/views/AdminOrder/orderDetails.php:84
+msgid "Delivery:"
+msgstr "Livraison:"
+
+#: app/views/AdminOrder/orderDetails.php:85
+msgid "YES"
+msgstr "OUI"
+
+#: app/views/AdminOrder/orderDetails.php:85
+msgid "NO"
+msgstr "NON"
+
+#: app/views/AdminProduct/index.php:12 app/views/AdminCustomer/index.php:12
+#: app/views/Cart/index.php:21 app/views/MyAccount/profile_security.php:17
+msgid "Name"
+msgstr "Nom"
+
+#: app/views/AdminProduct/index.php:14
+msgid "Price"
+msgstr "Prix"
+
+#: app/views/AdminProduct/index.php:15
+msgid "Qty"
+msgstr "Qté"
+
+#: app/views/AdminProduct/index.php:32
+msgid "delete"
+msgstr "supprimer"
+
+#: app/views/AdminProduct/index.php:34
+msgid "edit"
+msgstr "modifier"
+
+#: app/views/AdminProduct/create.php:4 app/views/AdminProduct/create.php:9
+msgid "Add Product"
+msgstr "Ajouter le produit"
+
+#: app/views/AdminProduct/create.php:16 app/views/AdminProduct/edit.php:20
+#: app/views/AdminProduct/productDetails.php:16
+#: app/views/AdminCustomer/sendPromotions.php:20
+#: app/views/AdminAboutUs/index.php:16
+msgid "Image:"
+msgstr "Image:"
+
+#: app/views/AdminProduct/create.php:26 app/views/AdminProduct/edit.php:29
+#: app/views/AdminProduct/productDetails.php:24
+#: app/views/AdminCustomer/customerDetails.php:16
+msgid "ID:"
+msgstr "ID:"
+
+#: app/views/AdminProduct/create.php:33 app/views/AdminProduct/edit.php:34
+#: app/views/AdminProduct/productDetails.php:30 app/views/User/create.php:40
+#: app/views/AdminCustomer/customerDetails.php:22
+msgid "Name:"
+msgstr "Nom:"
+
+#: app/views/AdminProduct/create.php:41
+msgid "Select a Category"
+msgstr "Selectioner un catégorie"
+
+#: app/views/AdminProduct/create.php:54 app/views/AdminProduct/edit.php:53
+#: app/views/AdminProduct/productDetails.php:41
+msgid "Price:"
+msgstr "Prix:"
+
+#: app/views/AdminProduct/create.php:59 app/views/AdminProduct/edit.php:58
+#: app/views/AdminProduct/productDetails.php:47
+msgid "Quantity:"
+msgstr "Quantité:"
+
+#: app/views/AdminProduct/create.php:64 app/views/AdminProduct/edit.php:63
+#: app/views/AdminProduct/productDetails.php:53
+msgid "Description:"
+msgstr "Description:"
+
+#: app/views/AdminProduct/create.php:70
+msgid "Create"
+msgstr "Créer un compte"
+
+#: app/views/AdminProduct/edit.php:4 app/views/AdminProduct/edit.php:14
+#: app/views/AdminProduct/edit.php:68
+msgid "Edit Product"
+msgstr "Modifier le produit"
+
+#: app/views/AdminProduct/productDetails.php:4
+#: app/views/AdminProduct/productDetails.php:10
+msgid "Product Details"
+msgstr "Detail de produit"
+
+#: app/views/User/create.php:4 app/views/User/create.php:7
+#: app/views/User/create.php:70
+msgid "Create Account"
+msgstr "Créer un compte"
+
+#: app/views/User/create.php:27 app/views/User/index.php:26
+msgid "Password:"
+msgstr "Mot de passe:"
+
+#: app/views/User/create.php:32 app/views/AdminCustomer/customerDetails.php:39
+msgid "Subscription:"
+msgstr "Abonnement:"
+
+#: app/views/User/create.php:34 app/views/AdminCustomer/index.php:22
+#: app/views/AdminCustomer/customerDetails.php:42
+msgid "Yes"
+msgstr "Oui"
+
+#: app/views/User/create.php:36 app/views/AdminCustomer/index.php:22
+#: app/views/AdminCustomer/customerDetails.php:42
+msgid "No"
+msgstr "Non"
+
+#: app/views/User/create.php:45 app/views/AdminCustomer/customerDetails.php:33
+#: app/views/Cart/index.php:59
+msgid "Phone Number:"
+msgstr "Numero de telephone:"
+
+#: app/views/User/create.php:50
+msgid "Address:"
+msgstr "Addresse:"
+
+#: app/views/User/create.php:55 app/views/AdminCustomer/customerDetails.php:49
+#: app/views/Cart/index.php:71
+msgid "City:"
+msgstr "Ville:"
+
+#: app/views/User/create.php:60 app/views/Cart/index.php:77
+msgid "Province:"
+msgstr "Province:"
+
+#: app/views/User/create.php:65 app/views/Cart/index.php:83
+msgid "Postal Code:"
+msgstr "Code Postal:"
+
+#: app/views/User/create.php:73
+msgid "You have an account? "
+msgstr "Avez-vous un compte? "
+
+#: app/views/User/create.php:73 app/views/User/index.php:3
+msgid "Login"
+msgstr "Connexion"
+
+#: app/views/User/index.php:6
+msgid "Log In"
+msgstr "Connexion"
+
+#: app/views/User/index.php:32
+msgid "Don't have an account? "
+msgstr "Pas de compte? "
+
+#: app/views/AdminCategory/index.php:20
+msgid "Category Name"
+msgstr "Nom de catégorie"
+
+#: app/views/AdminCategory/index.php:31
+msgid "remove"
+msgstr "supprimer"
+
+#: app/views/AdminCategory/index.php:41
+msgid "Add Category"
+msgstr "Ajouter une catégorie"
+
+#: app/views/AdminCategory/index.php:45
+msgid "Add"
+msgstr "Ajouter"
+
+#: app/views/AdminCategory/index.php:50
+msgid "Edit Category"
+msgstr "Modifier une catégorie"
+
+#: app/views/AdminCategory/index.php:55
+#: app/views/MyAccount/profile_security.php:36
+#: app/views/MyAccount/shipping_address.php:30
+msgid "Edit"
+msgstr "Modifer"
+
+#: app/views/AdminCustomer/index.php:13
+msgid "Email"
+msgstr "Courriel"
+
+#: app/views/AdminCustomer/index.php:14
+msgid "Subscription"
+msgstr "Abondement"
+
+#: app/views/AdminCustomer/customerDetails.php:3
+#: app/views/AdminCustomer/customerDetails.php:12
+msgid "Customer Details"
+msgstr "Détail du client"
+
+#: app/views/AdminCustomer/sendPromotions.php:40
+msgid "Send!"
+msgstr "Envoyer!"
+
+#: app/views/Cart/index.php:13
+msgid "My Cart"
+msgstr "Mon panier"
+
+#: app/views/Cart/index.php:17
+msgid "1. Products"
+msgstr "1. Produits"
+
+#: app/views/Cart/index.php:22
+msgid "Unit Price"
+msgstr "Produit unitaire"
+
+#: app/views/Cart/index.php:24
+msgid "Action"
+msgstr "Action"
+
+#: app/views/Cart/index.php:44
+msgid "2. Shipping Method"
+msgstr "2. Mode de livraison"
+
+#: app/views/Cart/index.php:49 app/views/MyAccount/orderDetail.php:31
+msgid "Pick Up"
+msgstr "Ramasser"
+
+#: app/views/Cart/index.php:53 app/views/MyAccount/orderDetail.php:31
+msgid "Delivery"
+msgstr "Livraison"
+
+#: app/views/Cart/index.php:65
+msgid "ddress:"
+msgstr "addresse:"
+
+#: app/views/Cart/index.php:91
+msgid "Place Order"
+msgstr "Placer une commande"
+
+#: app/views/Cart/index.php:122
+msgid "Cart is empty"
+msgstr "Panier est vide"
+
+#: app/views/Cart/index.php:124
+msgid "Order Placed"
+msgstr "Commande passée"
+
+#: app/views/MyAccount/index.php:16 app/views/MyAccount/my_order.php:3
+#: app/views/MyAccount/my_order.php:7
+msgid "My Orders"
+msgstr "Mes commandes"
+
+#: app/views/MyAccount/index.php:17
+msgid "View all orders and track order's status"
+msgstr "Afficher toutes les commandes et suivre l'état de la commande"
+
+#: app/views/MyAccount/index.php:26 app/views/MyAccount/profile_security.php:4
+#: app/views/MyAccount/profile_security.php:12
+msgid "Profile & Security"
+msgstr "Profil et sécurité"
+
+#: app/views/MyAccount/index.php:27
+msgid "Manage profile and security's information"
+msgstr "Gérer les informations de profil et de sécurité"
+
+#: app/views/MyAccount/index.php:36 app/views/MyAccount/shipping_address.php:3
+#: app/views/MyAccount/shipping_address.php:7
+msgid "Shipping Address"
+msgstr "Addresse de livraison"
+
+#: app/views/MyAccount/index.php:37
+msgid "Edit shipping address"
+msgstr "Modifier l'adresse de livraison"
+
+#: app/views/MyAccount/my_order.php:11
+msgid "Order ID"
+msgstr "Commande ID"
+
+#: app/views/MyAccount/orderDetail.php:4 app/views/MyAccount/orderDetail.php:12
+msgid "Order Detail"
+msgstr "Detail de commande"
+
+#: app/views/MyAccount/orderDetail.php:14
+#: app/views/MyAccount/profile_security.php:35
+msgid "Back"
+msgstr "retourner"
+
+#: app/views/MyAccount/orderDetail.php:18
+msgid "Order Number"
+msgstr "numéro de commande"
+
+#: app/views/MyAccount/orderDetail.php:30
+msgid "Shipping Method"
+msgstr "Mode de livraison"
+
+#: app/views/MyAccount/orderDetail.php:34
+msgid "Total Price"
+msgstr "Prix total"
+
+#: app/views/MyAccount/profile_security.php:21
+msgid "Phone Number"
+msgstr "Numero de telephone"
+
+#: app/views/MyAccount/profile_security.php:25
+msgid "New Password"
+msgstr "Nouveau mot de passe"
+
+#: app/views/MyAccount/profile_security.php:32
+msgid "Show Password"
+msgstr "Montrer le mot de passe"
+
+#: app/views/MyAccount/profile_security.php:63
+msgid "Information Updated"
+msgstr "Informations mises à jour"
+
+#: app/views/MyAccount/shipping_address.php:12
+msgid "Address"
+msgstr "Addresse"
+
+#: app/views/MyAccount/shipping_address.php:16
+msgid "City"
+msgstr "Ville"
+
+#: app/views/MyAccount/shipping_address.php:20
+msgid "Province"
+msgstr "Province"
+
+#: app/views/MyAccount/shipping_address.php:24
+msgid "Postal Code"
+msgstr "Code postal"
+
+#: app/views/MyAccount/shipping_address.php:51
+msgid "Address Updated"
+msgstr "Addresse mise à jour"
+
+#: app/views/AdminAboutUs/index.php:25
+msgid "Text:"
+msgstr "Text:"
+
+#: app/views/AdminAboutUs/index.php:30
+msgid "Update"
+msgstr "mis à jour"

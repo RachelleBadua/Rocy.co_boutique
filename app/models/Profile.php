@@ -61,6 +61,14 @@ class Profile extends \app\core\Model{
 		return $STH->fetchAll();
 	}
 
+	public function getAllCustomer(){
+		$SQL = "SELECT * FROM profile JOIN user ON profile.user_id = user.user_id WHERE roleType='customer' ORDER BY user.user_id";
+		$STH = self::$connection->prepare($SQL);
+		$STH->execute();
+		$STH->setFetchMode(\PDO::FETCH_CLASS, 'app\\models\\Profile');
+		return $STH->fetchAll();
+	}
+
 	public function getAllByUserId($user_id){
 		$SQL = 'SELECT * FROM profile JOIN user ON profile.user_id = user.user_id WHERE profile.user_id = :user_id';
 		$STH = self::$connection->prepare($SQL);

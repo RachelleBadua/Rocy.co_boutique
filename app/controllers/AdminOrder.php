@@ -35,16 +35,16 @@ class AdminOrder extends \app\core\Controller{
 		if($order->status=='ordered'){
 			$success = $order->updateOrderedToFinished();
 			if(!$succes) {
-				header('location:/AdminOrder/index?success=Succesfully updated to Finished');
+				header('location:/AdminOrder/index?success='. _('Succesfully updated to Finished'));
 			}else {
-				header('location:/AdminOrder/index?success=Something went wrong');
+				header('location:/AdminOrder/index?success='. _('Something went wrong'));
 			}
 		}else {
 			$success = $order->updateFinishedToOrdered();
 			if(!$succes) {
-				header('location:/AdminOrder/index?success=Succesfully updated to Ordered');
+				header('location:/AdminOrder/index?success='. _('Succesfully updated to Ordered'));
 			}else {
-				header('location:/AdminOrder/index?success=Something went wrong to O');
+				header('location:/AdminOrder/index?success='. _('Something went wrong to O'));
 			}
 		}
 	}

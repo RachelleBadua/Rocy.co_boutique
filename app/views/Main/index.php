@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/pageContent.css">
 
-<?php $this->view('shared/header', _('Main Index')); ?>
+<?php $this->view('shared/header', _('Home')); ?>
 
 <!-- <body> -->
 

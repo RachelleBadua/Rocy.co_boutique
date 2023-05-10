@@ -40,7 +40,7 @@
     </a>
     
     <div class="signout">
-        <a href="/User/logout"><button>Sign out</button></a>
+        <a href="/User/logout"><button><?= _('Sign out')?></button></a>
     </div>
 </div>
 </div>

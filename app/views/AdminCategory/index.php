@@ -42,7 +42,7 @@
 				<form class="form-addCategory" method="post" action="" enctype="multipart/form-data" style="">
 					<div class="btn-addCategory">
 						<input type="text" name="category">
-						<input type="submit" name="addAction" value="Add">
+						<input type="submit" name="addAction" value="<?= _('Add') ?>">
 					</div>
 				</form>
 			</div>
@@ -52,7 +52,7 @@
 					<div class="btn-editCategory">
 						<input type="text" name="categoryId" style="" readonly value="">
 						<input class="btn-input" type="text" name="categoryName" value="">
-						<input type="submit" name="editAction" value="Edit">
+						<input type="submit" name="editAction" value="<?= _('Edit') ?>">
 					</div>
 				</form>
 			</div>

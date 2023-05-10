@@ -38,7 +38,7 @@
 					<div class="btn-addProduct" style="">
 						<label class="btn-label"><?= _('Category:') ?></label>
 						<select class="btn-input" name="category_id">
-							<option selected disabled="">Select a Category</option>
+							<option selected disabled=""><?= _('Select a Category')?></option>
 
 					<?php
 						foreach($data as $category){
@@ -67,7 +67,7 @@
 					<br>
 					<br>
 				</div>
-					<input type="submit" name="action" value="Create">
+					<input type="submit" name="action" value="<?= _('Create')?>">
 			</form>
 		</div>
 	</div>

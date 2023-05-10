@@ -8,7 +8,7 @@
 <div class='content'>
 <table>
     <tr class="attributes">
-        <th><?= _('Order Number')?></th>
+        <th><?= _('Order ID')?></th>
         <th><?= _('Order Date')?></th>
         <th><?= _('Status')?></th>
     </tr>

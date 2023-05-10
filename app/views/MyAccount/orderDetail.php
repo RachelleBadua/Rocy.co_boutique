@@ -11,7 +11,7 @@ $detail = $data['detail'];
 
 <h1 class='pageTitle'><?=_('Order Detail')?></h1>
 <div class='content'>
-    <a class="btn btn-secondary" href="/MyAccount/myOrders">Back</a>
+    <a class="btn btn-secondary" href="/MyAccount/myOrders"><?= _('Back')?></a>
     <div class='detail'>
         <table class='order'>
             <tr>

@@ -36,7 +36,7 @@
                     <textarea class="btn-input" name="message"></textarea><br>
                 </div>
                 <br>
-                    <input class="btn-contactUs" type="submit" name="action" value="Send"><br>
+                    <input class="btn-contactUs" type="submit" name="action" value="<?= _('Send')?>"><br>
                 <br>
             </form>
         </div>

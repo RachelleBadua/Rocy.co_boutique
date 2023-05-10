@@ -67,7 +67,7 @@
 				</div>
 				<br>
 				<!-- <input type="submit" name="action" value="create"> -->
-				<input class="registerButton"  type="submit" name="action" value="Create Account"><br>
+				<input class="registerButton"  type="submit" name="action" value="<?= _('Create Account')?>"><br>
 				<br>
 
 				<div class=""><?= _('You have an account? ') ?><a href="/User/index"><?= _('Login')?></a></div>

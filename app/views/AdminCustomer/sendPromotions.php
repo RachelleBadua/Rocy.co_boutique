@@ -37,7 +37,7 @@
 					</div>
 					<br>
 				</div>
-					<input type="submit" name="action" value="Send!">
+					<input type="submit" name="action" value="<?= _('Send!')?>">
 			</form>
 		</div>		
 	</div>

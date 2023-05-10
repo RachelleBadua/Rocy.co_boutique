@@ -11,7 +11,7 @@ class AdminCustomer extends \app\core\Controller{
 	#[\app\filters\Admin]
 	public function index(){
 		$customer = new \app\models\Profile();
-		$customers = $customer->getAll();
+		$customers = $customer->getAllCustomer();
 		$this->view('AdminCustomer/index', $customers);
 	}
 
@@ -69,7 +69,7 @@ class AdminCustomer extends \app\core\Controller{
 			    echo 'Email not sent an error was encountered: ' . $mail->ErrorInfo;
 			    // header('location:/AdminCustomer/sendPromotions?error=There is an error');
 			} else {
-			    header('location:/AdminCustomer/sendPromotions?success=Email has been sent');
+			    header('location:/AdminCustomer/sendPromotions?success='. _('Email has been sent'));
 			}
 
 			$mail->smtpClose();

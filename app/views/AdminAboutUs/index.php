@@ -27,7 +27,7 @@
 					</div>
 					<br>
 				</div>
-					<input type="submit" name="action" value="Update">
+					<input type="submit" name="action" value="<?= _('Update')?>">
 			</form>
 		</div>		
 	</div>
