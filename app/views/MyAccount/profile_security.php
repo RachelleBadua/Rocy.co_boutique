@@ -60,7 +60,7 @@ $profile = $data['profile'];
                 password: $('#password').val()
             };
             $.post(url, data, function(op) {
-                window.location.replace('/MyAccount/profileSecurity?success=' <?= _('Information Updated')?> );
+                window.location.replace('/MyAccount/profileSecurity?success=Information Updated');
             })
         }
     </script>

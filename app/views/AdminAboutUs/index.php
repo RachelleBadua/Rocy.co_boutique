@@ -22,12 +22,11 @@
 				<!-- </div> -->
 					<br>		
 					<div class="editText">
-						<!-- <label class="btn-label"><?= _('Text:') ?></label> -->
 						<textarea class="btn-input" name="text"><?= $data->text ?></textarea><br>
 					</div>
 					<br>
 				</div>
-					<input type="submit" name="action" value="<?= _('Update')?>">
+					<input type="submit" name="action" value="Update">
 			</form>
 		</div>		
 	</div>

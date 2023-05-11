@@ -67,7 +67,7 @@
 					<br>
 					<br>
 				</div>
-					<input type="submit" name="action" value="<?= _('Create')?>">
+					<input type="submit" name="action" value="Create">
 			</form>
 		</div>
 	</div>

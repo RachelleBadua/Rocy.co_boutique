@@ -48,7 +48,7 @@
                 postal: $('#postal').val()
             };
             $.post(url, data, function(op) {
-                window.location.replace('/MyAccount/shipAddress?success=' + <?= _('Address Updated')?>);
+                window.location.replace('/MyAccount/shipAddress?success=Address Updated');
             })
         }
     </script>

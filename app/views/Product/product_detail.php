@@ -33,9 +33,9 @@
     function addToCart() {
         $.post(url, {product_id: <?= $data->product_id ?>},function(op) {
             if (op == 1)
-                window.location.replace(pUrl.concat('?success=' + <?= _('Product added to cart')?>));
+                window.location.replace(pUrl.concat('?success=Product added to cart'));
             else
-            window.location.replace(pUrl.concat('?error=' + <?= _('Product is already in cart')?>));
+            window.location.replace(pUrl.concat('?error=Product is already in cart'));
         })
     }
 </script>
