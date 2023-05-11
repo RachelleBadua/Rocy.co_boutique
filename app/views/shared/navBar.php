@@ -23,7 +23,7 @@
             <img class="accIcon">
         </a>
          <!-- not yet created -->
-        <span></span>
+         <span>|</span>
         <a href="/Cart/index"><?= _('Cart') ?><img class="cartIcon"></a> <!-- not yet created -->
     </div>
 </div>

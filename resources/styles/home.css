@@ -1,9 +1,9 @@
 #headerText{
-    margin-top: 30px;
+    margin-top: 3vw;
 }
 
 .carousel-inner{
-    width: 1000px;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -14,7 +14,7 @@
 
 .carouselSize img { 
     object-fit: cover;
-    min-height: 300px
+    min-height: 300px;
 }
 
 @media (max-width: 767px) {
