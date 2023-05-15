@@ -26,10 +26,13 @@
 					<label class="btn-label"><?= _('Password:') ?></label><input class="btn-input" type="password" name="password"><br>
 				</div>
 				<br>
-				<input class="loginButton" type="submit" name="action" value="Login"><br>
-				<br>
+				<div class='tools'>
+					<input class="loginButton" type="submit" name="action" value="Login"><br>
+					<br>
+					<div class="createAcc"><?= _('Don\'t have an account? ')?><a href="/User/create">Create</a></div>
 
-				<div class=""><?= _('Don\'t have an account? ')?><a href="/User/create">Create</a></div>
+				</div>
+				
 			</form>
 
 			

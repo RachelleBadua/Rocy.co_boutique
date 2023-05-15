@@ -1,63 +1,60 @@
 .inputLogin {
-	/*border: 1px solid black;*/
-	text-align: center;
+	/* border: 1px solid black; */
+	/* text-align: center; */
 	background: white;
-	/*width: 600px;*/
-	height: 45%;
-	/*padding: 50px;*/
+	width: 90%;
+	/* height: 45%; */
+
 	justify-content: center;
-	align-items: center;
+
+  margin: 0 auto;
 }
 
 .btn-login {
   display: flex;
-  /*margin-top: 20px;*/
+  width: min(45vw, 100%);
+  /* border: 1px solid black; */
 }
 
 .btn-label {
-  flex: 20%;
-  /*border: 1px solid black;*/
-  margin-left: 50px;
+  order: 1;
+  flex: 30%;
+  /* flex: 4vw; */
+  /* border: 1px solid black; */
+  /* margin-left: 2%; */
   text-align: left;
+
+  font-size: min(1.7vw, 100%);
 } 
 
-.btn-label-checkbox {
-  flex: 60%;
-  /*border: 1px solid black;*/
-  margin-left: 5px;
-  text-align: left;
-}
 
 .btn-input {
-  flex: 80%;
-  margin-right: 50px;
+  order: 2;
+  flex: 75%;
+  /* flex: 4vw; */
+  /* width: 30%; */
   /*border: 1px solid black;*/
   text-align: left;
 }
 
-.btn-input-checkbox {
-  flex: 40%;
-  /*margin-right: 50px;*/
-  /*border: 1px solid black;*/
-  /*text-align: left;*/
-}
+
 
 .main {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 100px;
-    width: 50%;
-    height: 70%;
-    padding-top: 100px;
-    padding-bottom: 50px;
-    overflow: auto;
-    background-color: white;
-    justify-content: space-between;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    border-radius: 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-   /*padding-top: 40px;*/
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-bottom: 100px; */
+  width: 50%;
+  height: 70%;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  overflow: auto;
+  background-color: white;
+  justify-content: space-between;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  /*padding-top: 40px;*/
 
 }
 
@@ -69,20 +66,31 @@
     font-size: 40px;
 }
 
-.loginButton{
-  color: white;
-  font-size: 15px;
-  border: none;
-  height: 30px;
-  width: 150px;
-  background-color: gray;
-  border-radius: 25px;
-}
-
 .logoImage{
   margin-right: auto;
   margin-left: auto;
   width: 220px;
   height: 140;
   display: block;
+}
+
+.tools {
+  text-align: center;
+  width: min(45vw, 100%);
+  /* border: 1px solid black; */
+}
+
+.loginButton{
+  color: white;
+  font-size: min(2vw, 100%);
+  border: none;
+  height: 30px;
+  width: min(11vw, 20%);
+  background-color: gray;
+  border-radius: 25px;
+  
+}
+
+.createAcc {
+  font-size: 100%;
 }
