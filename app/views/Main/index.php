@@ -1,11 +1,12 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/pageContent.css">
+<link rel="stylesheet" type="text/css" href="/resources/styles/home.css">
+<link rel="stylesheet" href="/resources/styles/bootstrap.css">
 
 <?php $this->view('shared/header', _('Home')); ?>
 
 <!-- <body> -->
 
-<?php $this->view('shared/navBar'); 
-?>
+<?php $this->view('shared/navBar'); ?>
 
 <h1 class='pageTitle'><?= _('Home Page')?></h1>
 <div class='content'>
@@ -19,7 +20,7 @@
                     for ($i = 0; $i < 6 && $i < count($data); $i++) {
                         $p = $data[$i];
                 ?>
-                    <a href='/Product/productDetail/<?=$p->product_id?>' class="carousel-item <?php if ($i == 1)  echo'active';?>">
+                    <a href='/Product/productDetail/<?=$p->product_id?>' class="carousel-item <?php if ($i == 1) echo 'active'?>">
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-img">

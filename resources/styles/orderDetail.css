@@ -7,8 +7,9 @@
 }
 
 .content a {
-    font-size: 20px;
-    height: 45px
+    font-size: min(2.3vw, 20px);
+    height: min(6vw, 45px);
+    width: min(20%, 150px);
 }
 
 .detail {
@@ -19,26 +20,21 @@ table {
     margin: auto;
     border-collapse: separate;
     border-spacing: 30px;
-
-    max-width: 550px;
-    min-width: 550px;
-    font-size: 23px;
+    width: min(60vw, 550px);
+    font-size: min(2.7vw ,22px);
     /* border: 1px solid black; */
     /* text-align: center; */
 }
 
 .left {
     /* width: 70%; */
-    min-width: 430px;
-    max-width: 430px;
-    /* border: 1px solid black; */
+    width: 70%;
+
 }
 
 .right {
-    /* width: 25%; */
-    min-width: 130px;
-    max-width: 130px;
-    /* border: 1px solid black; */
+    width: 25%;
+    /* width: 130px; */
 }
 
 table tr {

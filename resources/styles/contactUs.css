@@ -1,79 +1,47 @@
-/* .main {
-	border: 1px solid black;
-	text-align: center;
-} */
 
 .inputLogin {
-	/* border: 1px solid black; */
 	text-align: center;
 	background: white;
-	/*width: 600px;*/
-	/*height: 76%;*/
-  /* height: 65%; */
-	/*padding-bottom: 50px;*/
 	display: flex;
-	/* justify-content: center; */
-	align-items: center;
-  /* margin-bottom: 25px; */
 }
 
 .btn-login {
   display: flex;
-  /*margin-top: 20px;*/
-
+  /* width */
 }
 
 .btn-label {
   flex: 20%;
-  margin-left: 50px;
   text-align: left;
+  font-size: min(2vw, 20px);
 } 
 
 .btn-input {
   flex: 80%;
-  /* margin-right: 50px; */
-  /*border: 1px solid black;*/
+
   text-align: left;
 }
 
 .main {
-  /* border: 1px solid black;  */
+
   margin-left: auto;
   margin-right: auto;
-  /*margin-bottom: 100px;*/
-  min-width: 1000px;
+
   width: 90%;
-  /*height: 100%;*/
-  /*padding-top: 50px;*/
-  /*padding-bottom: 50px;*/
+
   overflow: auto;
   background-color: white;
-  /* display: flex; */
+
   justify-content: space-between;
   overflow-y: hidden;
   overflow-x: hidden;
 }
 
-/* .pageTitle {
-  padding-top: 25px;
-  padding-bottom: 20px;
-  height: 50px;
-  text-align: center;
-  font-size: 40px;
-} */
-
-.outside{
-  /*padding-top: 20px;*/
-  /*padding-bottom: 70px;*/
-  /*height: 50px;*/
-  /*margin-bottom: 50px;*/
-  /*margin-top: 50px;*/
-}
-
 textarea {
-  height: 100px;
+  height: max(100px, 10vw);
 } 
 
-/*.btn-contactUs {
-  align-items: center;
-}*/
+.user-input {
+  margin: 0 auto;
+  width: min(45vw, 100%);
+}

@@ -1,7 +1,7 @@
 .main {
     display: block;
-    width: 500px;
-    /* border: 1px solid black; */
+    width: min(75%, 600px);
+    border: 1px solid black;
     margin: 0 auto;
     margin-top: 50px;
     text-align: end;
@@ -15,6 +15,7 @@ table {
 
 table td {
     font-weight: 600;
+    font-size: min(2vw,17px);
     width: 10%;
     /* border: 1px solid black; */
 }
@@ -33,5 +34,5 @@ table td {
 }
 
 #showPswdRow {
-    font-size: 15px;
+    font-size: min(2vw,15px);
 }

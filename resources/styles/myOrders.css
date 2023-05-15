@@ -17,7 +17,7 @@ table tr {
 
 
 td, th {
-    font-size: 19px;
+    font-size: min(1.8vw, 22px);
     padding: 8px;
     padding-left: 20px;
 }

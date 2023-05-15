@@ -21,6 +21,7 @@
             margin: 2em auto;
               
               ">
+              <div class='user-input'>
                 <div class="btn-login ">
                     <label class="btn-label"><?= _('Email:') ?></label>
                     <input class="btn-input" type="email" name="email"><br>
@@ -35,6 +36,7 @@
                     <label class="btn-label"><?= _('Message:') ?></label>
                     <textarea class="btn-input" name="message"></textarea><br>
                 </div>
+              </div>
                 <br>
                     <input class="btn-contactUs" type="submit" name="action" value="Send"><br>
                 <br>

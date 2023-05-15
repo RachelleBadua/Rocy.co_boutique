@@ -6,7 +6,7 @@
 <!-- body -->
 <?php $this->view('shared/navBar');?>
 
-<h1 class='pageTitle'></h1>
+<h1 class='pageTitle'>.</h1>
 <div class='content'>
     <div class ='main'>
         <div class='img'>
@@ -20,7 +20,7 @@
                 <p class='product_desc'><?= $data->description ?></p>
             </div>
             <div class='button'>
-                <button id='addToCart'class='btn btn-success' onclick="addToCart()"><?=_('Add to Cart')?></button>
+                <button id='addToCart' class='btn btn-success' onclick="addToCart()"><?=_('Add to Cart')?></button>
             </div>
         </div>
     </div>

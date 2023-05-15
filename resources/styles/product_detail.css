@@ -1,32 +1,33 @@
 .main {
+    padding: 2% 0;
     margin: 0 auto;
     display: flex;
-    min-height: 400px;
-    width: 830px;
+    height: 27vw;
+    width: 70vw;
     justify-content: center;
-    gap: 0 50px;
+    gap: 0 6%;
+    /* border: 1px solid black; */
 }
 
+.pageTitle {
+    color: #00000000;
+}
 .img {
     order: 1;
     text-align: end;
-    min-height: 400px;
-    max-height: 400px;
-    min-width: 350px;
-    max-width: 350px;
-    border: 1px solid black;
+    height: 100%;
+    border: 1px solid grey;
     
 }
 .img img {
     height: 100%;
-    width: 100%;
+    aspect-ratio: 1 / 1;
 }
 
 .vl {
     order: 2;
-    width: 1px;
     border: 1px solid grey;
-    margin: 40px 0;
+    margin: 2% 0;
 }
 
 .left{
@@ -34,31 +35,37 @@
     order: 3;
     display: inline-flex;
     flex-direction: column;
-    min-width: 300px;
-    max-width: 410px;
 }
 
 .left .information {
     width: 100%;
+    height: 15vw;
 }
 
 .left .information h3 {
-    font-size: 25px;
+    font-size: min(35px, 2.6vw);
 }
 
 .left .information h6 {
-    font-size: 19px;
+    font-size: min(25px, 2vw);
 }
 
 
 .left .information p {
-    font-size: 16px;
+    font-size: min(18px, 1.7vw);
 }
 
 
 .left .button {
+    width: 15vw;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 3%;
+}
+
+.left button {
+    height: min(max(25px, 40px), 4.5vw);
+    font-size: min(max(1.3vw, 1.3vw), 18px);
+    text-align: center;
 }
 
 .left button {

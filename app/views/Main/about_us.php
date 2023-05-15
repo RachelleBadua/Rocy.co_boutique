@@ -1,9 +1,10 @@
 <link rel="stylesheet" type="text/css" href="/resources/styles/aboutUs.css">
+<link rel="stylesheet" type="text/css" href="/resources/styles/pageContent.css">
 
 <?php $this->view('shared/header', _('About Us')); ?>
 
-    <?php $this->view('shared/navBar'); ?>
-    <h1 class='pageTitle'><?= _('About Us')?></h1>
+<?php $this->view('shared/navBar'); ?>
+<h1 class='pageTitle'><?= _('About Us')?></h1>
     <div class="main" style="">
         
         <div class="infoAboutUs">
@@ -12,7 +13,7 @@
             </div>
 
             <div class="displayText">
-                <?= $data->text?>
+                <p><?= $data->text?></p>
             </div>
         </div>
 

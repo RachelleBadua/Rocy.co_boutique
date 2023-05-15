@@ -10,7 +10,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 	<link rel="stylesheet" href="/resources/styles/bootstrap.css">
-	<link rel="stylesheet" href="/resources/styles/home.css">
 </head>
 	
 <body>
@@ -21,4 +20,4 @@
 		if(isset($_GET['error'])){
 			echo '<div class="alert alert-danger" style="margin-bottom: 0px"><button class="btn-close" data-bs-dismiss="alert"></button>'.$_GET['error'].'</div>';
 		}
-		?>
+	?>
