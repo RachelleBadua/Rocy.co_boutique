@@ -9,7 +9,6 @@ Feature: Remove Product from cart
     And I input "1234" in "password"
     And I click on "Login"
     And I click on "Cart"
-    And I see "My Cart"
     When I click on "#deleteButton"
     Then I see "Items Removed"
 

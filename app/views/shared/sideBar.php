@@ -16,12 +16,12 @@
 			<div class="signout">
 				<a href="?lang=fr_CA">FR</a>
 			</div>
-			<button class="dropdown-btn" name=""><?= _('Product')?> 
+			<button id="Products" class="dropdown-btn" name=""><?= _('Product')?> 
 			<i class="fa fa-caret-down"></i>
 			</button>
 				<div class="dropdown-container">
 				<a href="/AdminProduct/index"><?= _('Product List')?></a>
-				<a href="/AdminProduct/create"><?= _('Add product')?></a>
+				<a id="addProducts" href="/AdminProduct/create"><?= _('Add product')?></a>
 				<a href="/AdminCategory/index"><?= _('Category')?></a>
 				</div>
 			<button class="dropdown-btn"><?= _('Orders')?> 

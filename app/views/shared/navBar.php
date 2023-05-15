@@ -8,7 +8,7 @@
         <span>|</span>
         <a href='?lang=fr_CA'>FR</a>
         <span>|</span>
-        <a href="/Product/index"><?= _('Products')?></a>
+        <a id="Products" href="/Product/index"><?= _('Products')?></a>
         <span>|</span>
         <a href="/Main/about_us"><?= _('About Us') ?></a>
         <span>|</span>
@@ -24,6 +24,6 @@
         </a>
          <!-- not yet created -->
          <span>|</span>
-        <a href="/Cart/index"><?= _('Cart') ?><img class="cartIcon"></a> <!-- not yet created -->
+        <a id="navCart" href="/Cart/index"><?= _('Cart') ?><img class="cartIcon"></a> <!-- not yet created -->
     </div>
 </div>

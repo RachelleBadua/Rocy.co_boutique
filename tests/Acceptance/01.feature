@@ -6,5 +6,5 @@ Feature: view catalog
 
   Scenario: try viewing catalog
   	Given I am on "/Main/index" page
-  	When I click on "Products"
+  	When I click on "#Products"
   	Then I see "Catalog"  
