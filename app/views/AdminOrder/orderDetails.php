@@ -19,7 +19,7 @@
 			<div class="infoCustomer">
 				<div class="btn-orderInfo">
 					<label class="btn-label"><?= _('Order ID:') ?></label>
-					<div class="btn-input"><?= $clientInfo->user_id ?></div>
+					<div id="order_id" class="btn-input"><?= $clientInfo->user_id ?></div>
 					<br>
 				</div>
 				<br>

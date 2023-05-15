@@ -1,6 +1,6 @@
-Feature: View Edit About Us
-  In order to view edit About Us
-  I need to click on edit about us
+Feature: View Order detail
+  In order to view Order detail
+  I need to click on id of an order
 
   Scenario: try to view orders list
     Given I am on "/User/index" page 
@@ -8,6 +8,7 @@ Feature: View Edit About Us
     And I input "eto123" in "password"
     And I click on "Login"
     And I see "Logged in"
-    When I click on "About Us"
-    And I click on "Edit About Us"
-    Then I see "Edit About Us"
+    And I click on "Order"
+    And I click on "Order List"
+    When I click on 21
+    Then I see "Order Details"
