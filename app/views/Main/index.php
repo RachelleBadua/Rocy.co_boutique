@@ -20,16 +20,16 @@
                     for ($i = 0; $i < 6 && $i < count($data); $i++) {
                         $p = $data[$i];
                 ?>
-                    <a href='/Product/productDetail/<?=$p->product_id?>' class="carousel-item <?php if ($i == 1) echo 'active'?>">
-                        <div class="col-md-3">
+                    <div class="carousel-item <?php if ($i == 1) echo 'active'?>">
+                        <a href='/Product/productDetail/<?=$p->product_id?>' class="col-md-3">
                             <div class="card">
                                 <div class="card-img">
                                     <img src="/resources/productImages/<?=$p->image?>" class="img-fluid">
                                 </div>
                                 <div class="card-img-overlay"></div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 <?php
                     }
                 ?>
